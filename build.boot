@@ -20,7 +20,7 @@
 (def +version+ "0.1.0")
 
 (task-options!
-  pom {:project     'respo-mvc/ui
+  pom {:project     'respo/ui
        :version     +version+
        :description "Command styles for Respo apps"
        :url         "https://github.com/respo-mvc/respo-ui"
