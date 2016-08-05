@@ -34,6 +34,12 @@
 
 (def flex {:flex 1})
 
+(def center
+ {:align-items "center",
+  :justify-content "center",
+  :display "flex",
+  :flex-direction "column"})
+
 (def row
  {:align-items "strech", :display "flex", :flex-direction "row"})
 

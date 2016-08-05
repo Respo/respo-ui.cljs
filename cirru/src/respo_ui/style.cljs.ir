@@ -7,6 +7,7 @@
 [ "def" "button" [ "{}" [ ":min-width" "|64px" ] [ ":line-height" "|24px" ] [ ":text-align" "|center" ] [ ":background-color" [ "hsl" "200" "80" "60" ] ] [ ":color" [ "hsl" "0" "0" "100" ] ] [ ":cursor" "|pointer" ] ] ]
 [ "def" "input" [ "merge" "global" [ "{}" [ ":border" "|none" ] [ ":outline" "|none" ] [ ":background-color" [ "hsl" "0" "0" "96" ] ] [ ":font-size" "|14px" ] [ ":padding" "|0 8px" ] [ ":width" "|auto" ] [ ":line-height" "2" ] ] ] ]
 [ "def" "flex" [ "{}" [ ":flex" "1" ] ] ]
+[ "def" "center" [ "{}" [ ":display" "|flex" ] [ ":flex-direction" "|column" ] [ ":justify-content" "|center" ] [ ":align-items" "|center" ] ] ]
 [ "def" "row" [ "{}" [ ":display" "|flex" ] [ ":align-items" "|strech" ] [ ":flex-direction" "|row" ] ] ]
 [ "def" "row-center" [ "{}" [ ":display" "|flex" ] [ ":align-items" "|center" ] [ ":flex-direction" "|row" ] ] ]
 [ "def" "column" [ "{}" [ ":display" "|flex" ] [ ":align-items" "|strech" ] [ ":flex-direction" "|column" ] ] ]
