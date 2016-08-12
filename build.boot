@@ -17,14 +17,14 @@
          '[adzerk.boot-test   :refer :all]
          '[clojure.java.io    :as    io])
 
-(def +version+ "0.1.0")
+(def +version+ "0.1.1")
 
 (task-options!
   pom {:project     'respo/ui
        :version     +version+
        :description "Command styles for Respo apps"
-       :url         "https://github.com/respo-mvc/respo-ui"
-       :scm         {:url "https://github.com/respo-mvc/respo-ui"}
+       :url         "https://github.com/Respo/respo-ui"
+       :scm         {:url "https://github.com/Respo/respo-ui"}
        :license     {"MIT" "http://opensource.org/licenses/mit-license.php"}})
 
 (deftask compile-cirru []
@@ -99,7 +99,7 @@
 
 (deftask rsync []
   (with-pre-wrap fileset
-    (sh "rsync" "-r" "target/" "tiye:repo/respo-mvc/ui" "--exclude" "main.out" "--delete")
+    (sh "rsync" "-r" "target/" "tiye:repo/Respo/ui" "--exclude" "main.out" "--delete")
     fileset))
 
 (deftask send-tiye []
