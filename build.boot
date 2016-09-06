@@ -6,7 +6,7 @@
                  [adzerk/boot-reload        "0.4.11"      :scope "test"]
                  [cirru/boot-cirru-sepal    "0.1.9"       :scope "test"]
                  [adzerk/boot-test          "1.1.2"       :scope "test"]
-                 [respo                     "0.3.9"       :scope "test"]
+                 [respo                     "0.3.16"       :scope "test"]
                  [mvc-works/hsl             "0.1.2"]])
 
 (require '[adzerk.boot-cljs   :refer [cljs]]
@@ -17,7 +17,7 @@
          '[adzerk.boot-test   :refer :all]
          '[clojure.java.io    :as    io])
 
-(def +version+ "0.1.1")
+(def +version+ "0.1.2")
 
 (task-options!
   pom {:project     'respo/ui

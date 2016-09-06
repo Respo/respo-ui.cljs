@@ -4,7 +4,9 @@
             [respo.alias :refer [create-comp div span input]]
             [respo.comp.text :refer [comp-text]]
             [respo.comp.space :refer [comp-space]]
-            [respo-ui.style :as ui]))
+            [respo-ui.style :as ui]
+            [respo-ui.common :refer [init-input
+                                     update-input on-input]]))
 
 (defn render [store]
   (fn [state mutate!]
@@ -18,6 +20,11 @@
       (comp-space nil "16px")
       (div
         {:style ui/row-center}
-        (input {:style ui/input, :attrs {:placeholder "input"}})))))
+        (input
+          {:style ui/input,
+           :event {:input (on-input mutate!)},
+           :attrs {:placeholder "input"}})
+        (comp-text state nil)))))
 
-(def comp-container (create-comp :container render))
+(def comp-container
+ (create-comp :container init-input update-input render))
