@@ -4,7 +4,7 @@ Respo UI
 
 Command styles for Respo apps.
 
-Demo http://repo.tiye.me/respo-mvc/ui/
+Demo http://repo.respo.site/ui/
 
 Read stylesheets: https://github.com/Respo/respo-ui/blob/master/compiled/src/respo_ui/style.cljc
 
