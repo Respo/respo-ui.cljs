@@ -17,7 +17,7 @@
          '[adzerk.boot-test   :refer :all]
          '[clojure.java.io    :as    io])
 
-(def +version+ "0.1.0")
+(def +version+ "0.1.2")
 
 (task-options!
   pom {:project     'respo/ui
@@ -61,7 +61,7 @@
     :asset-paths #{"assets"})
   (comp
     (repl)
-    (start-stack-editor!)
+    (start-stack-editor! :extname ".cljc")
     (target :dir #{"src/"})
     (html-file :data {:build? false})
     (reload :on-jsload 'respo-ui.core/on-jsload
@@ -71,14 +71,14 @@
 
 (deftask generate-code []
   (comp
-    (transform-stack :filename "stack-sepal.ir")
+    (transform-stack :filename "stack-sepal.ir" :extname ".cljc")
     (target :dir #{"src/"})))
 
 (deftask build-advanced []
   (set-env!
     :asset-paths #{"assets"})
   (comp
-    (transform-stack :filename "stack-sepal.ir")
+    (transform-stack :filename "stack-sepal.ir" :extname ".cljc")
     (cljs :optimizations :advanced
           :compiler-options {:language-in :ecmascript5})
     (html-file :data {:build? true})
@@ -91,7 +91,7 @@
 
 (deftask build []
   (comp
-    (transform-stack :filename "stack-sepal.ir")
+    (transform-stack :filename "stack-sepal.ir" :extname ".cljc")
     (pom)
     (jar)
     (install)
