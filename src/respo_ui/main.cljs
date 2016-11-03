@@ -5,23 +5,17 @@
             [respo-router.core :refer [render-url!]]
             [respo-router.util.listener :refer [listen! parse-address]]
             [respo-router.core :refer [render-url!]]
-            [respo-router.util.listener :refer [listen! parse-address]]))
-
-(def dict
-  {"" [],
-   "widgets.html" [],
-   "dev.html" [],
-   "index.html" [],
-   "colors.html" []})
+            [respo-router.util.listener :refer [listen! parse-address]]
+            [respo-ui.router :as router]))
 
 (defn updater [store op op-data]
   (case op
     :router/route (assoc store :router op-data)
-    :router/nav (assoc store :router (parse-address op-data dict))
+    :router/nav (assoc store :router (parse-address op-data router/dict))
     store))
 
 (defonce store-ref
-  (atom {:router (parse-address (str (.-pathname js/location) (.-search js/location)) dict)}))
+  (atom {:router (parse-address (str (.-pathname js/location) (.-search js/location)) router/dict)}))
 
 (defn dispatch! [op op-data]
   (println "dispatch!" op op-data)
@@ -36,9 +30,7 @@
 
 (defn on-jsload [] (clear-cache!) (render-app!) (println "code updated."))
 
-(def router-mode :history)
-
-(defn render-router! [] (render-url! (:router @store-ref) dict router-mode))
+(defn render-router! [] (render-url! (:router @store-ref) router/dict router/mode))
 
 (defn -main []
   (enable-console-print!)
@@ -46,10 +38,10 @@
   (add-watch store-ref :changes render-app!)
   (add-watch states-ref :changes render-app!)
   (render-router!)
-  (listen! dict dispatch! router-mode)
+  (listen! router/dict dispatch! router/mode)
   (add-watch store-ref :router-changes render-router!)
   (render-router!)
-  (listen! dict dispatch! router-mode)
+  (listen! router/dict dispatch! router/mode)
   (add-watch store-ref :router-changes render-router!)
   (println "app started!"))
 

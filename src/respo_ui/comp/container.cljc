@@ -5,11 +5,12 @@
             [respo.comp.text :refer [comp-text]]
             [respo.comp.space :refer [comp-space]]
             [respo-ui.style :as ui]
-            [respo-ui.common :refer [init-input update-input on-input]]
             [respo-ui.comp.sidebar :refer [comp-sidebar]]
             [respo-ui.comp.home :refer [comp-home]]
             [respo-ui.comp.colors-page :refer [comp-colors-page]]
-            [respo-ui.comp.widgets-page :refer [comp-widgets-page]]))
+            [respo-ui.comp.widgets-page :refer [comp-widgets-page]]
+            [respo-ui.comp.layouts-page :refer [comp-layouts-page]]
+            [respo-ui.comp.fonts-page :refer [comp-fonts-page]]))
 
 (defn render [store]
   (fn [state mutate!]
@@ -22,13 +23,8 @@
          "dev.html" (comp-home)
          "colors.html" (comp-colors-page)
          "widgets.html" (comp-widgets-page)
-         (comp-text (pr-str router) nil))
-       (div
-        {:style ui/row-center}
-        (input
-         {:style ui/input,
-          :event {:input (on-input mutate!)},
-          :attrs {:placeholder "input"}})
-        (comp-text state nil))))))
+         "layouts.html" (comp-layouts-page)
+         "fonts.html" (comp-fonts-page)
+         (comp-text (pr-str router) nil))))))
 
-(def comp-container (create-comp :container init-input update-input render))
+(def comp-container (create-comp :container render))
