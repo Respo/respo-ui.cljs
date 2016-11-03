@@ -1,19 +1,20 @@
 
 (set-env!
- :dependencies '[[org.clojure/clojurescript "1.9.216"     :scope "test"]
-                 [org.clojure/clojure       "1.8.0"       :scope "test"]
+ :dependencies '[[org.clojure/clojure       "1.8.0"       :scope "test"]
+                 [org.clojure/clojurescript "1.9.293"     :scope "test"]
                  [adzerk/boot-cljs          "1.7.228-1"   :scope "test"]
                  [adzerk/boot-reload        "0.4.12"      :scope "test"]
-                 [cirru/boot-stack-server   "0.1.12"      :scope "test"]
+                 [cirru/boot-stack-server   "0.1.19"      :scope "test"]
                  [adzerk/boot-test          "1.1.2"       :scope "test"]
-                 [respo                     "0.3.23"      :scope "test"]
+                 [respo                     "0.3.28"      :scope "test"]
+                 [respo/router              "0.2.1"       :scope "test"]
                  [mvc-works/hsl             "0.1.2"]])
 
 (require '[adzerk.boot-cljs   :refer [cljs]]
          '[adzerk.boot-reload :refer [reload]]
          '[stack-server.core  :refer [start-stack-editor! transform-stack]]
          '[respo.alias        :refer [html head title script style meta' div link body]]
-         '[respo.render.static-html :refer [make-html]]
+         '[respo.render.html  :refer [make-html]]
          '[adzerk.boot-test   :refer :all]
          '[clojure.java.io    :as    io])
 
@@ -56,15 +57,19 @@
         (add-resource tmp)
         (commit!)))))
 
+(deftask editor! []
+  (comp
+    (repl)
+    (start-stack-editor! :extname ".cljc")
+    (target :dir #{"src/"})))
+
 (deftask dev! []
   (set-env!
     :asset-paths #{"assets"})
   (comp
-    (repl)
-    (start-stack-editor! :extname ".cljc")
-    (target :dir #{"src/"})
+    (editor!)
     (html-file :data {:build? false})
-    (reload :on-jsload 'respo-ui.core/on-jsload
+    (reload :on-jsload 'respo-ui.main/on-jsload
             :cljs-asset-path ".")
     (cljs :compiler-options {:language-in :ecmascript5})
     (target)))

@@ -1,5 +1,5 @@
 
-(ns respo-ui.common)
+(ns respo-ui.common )
 
 (defn on-input [mutate!] (fn [e dispatch!] (mutate! (:value e))))
 
