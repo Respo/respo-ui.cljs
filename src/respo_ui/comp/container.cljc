@@ -19,6 +19,7 @@
        (comp-sidebar)
        (case (:name router)
          "index.html" (comp-home)
+         "dev.html" (comp-home)
          "colors.html" (comp-colors-page)
          "widgets.html" (comp-widgets-page)
          (comp-text (pr-str router) nil))

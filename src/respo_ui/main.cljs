@@ -2,13 +2,17 @@
 (ns respo-ui.main
   (:require [respo.core :refer [render! clear-cache!]]
             [respo-ui.comp.container :refer [comp-container]]
-            [cljs.reader :refer [read-string]]
             [respo-router.core :refer [render-url!]]
             [respo-router.util.listener :refer [listen! parse-address]]
             [respo-router.core :refer [render-url!]]
             [respo-router.util.listener :refer [listen! parse-address]]))
 
-(def dict {"" [], "widgets.html" [], "dev.html" [], "index.html" [], "colors.html" []})
+(def dict
+  {"" [],
+   "widgets.html" [],
+   "dev.html" [],
+   "index.html" [],
+   "colors.html" []})
 
 (defn updater [store op op-data]
   (case op
