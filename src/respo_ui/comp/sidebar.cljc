@@ -5,9 +5,9 @@
             [respo-ui.style.colors :as colors]))
 
 (def style-header
-  {:color "blue",
-   :font-size 24,
-   :font-weight "normal",
+  {:color colors/motif,
+   :font-size 32,
+   :font-weight "lighter",
    :width 200,
    :padding 16,
    :font-family "Josefin Sans, sans-serif"})
@@ -15,7 +15,11 @@
 (defn on-route [path-name] (fn [e dispatch!] (dispatch! :router/nav path-name)))
 
 (def style-entry
-  {:line-height "40px", :color colors/blue, :cursor "pointer", :padding "0 16px"})
+  {:line-height "40px",
+   :color colors/texture,
+   :font-size "16px",
+   :cursor "pointer",
+   :padding "0 16px"})
 
 (defn render-entry [path title]
   (div {:style style-entry, :event {:click (on-route path)}} (comp-text title nil)))

@@ -5,6 +5,7 @@
             [respo.comp.text :refer [comp-text]]
             [respo.comp.space :refer [comp-space]]
             [respo-ui.style :as ui]
+            [respo-ui.style.colors :as colors]
             [respo-ui.comp.sidebar :refer [comp-sidebar]]
             [respo-ui.comp.home :refer [comp-home]]
             [respo-ui.comp.colors-page :refer [comp-colors-page]]

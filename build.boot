@@ -74,7 +74,7 @@
     (reload :on-jsload 'respo-ui.main/on-jsload
             :cljs-asset-path ".")
     (cljs :compiler-options {:language-in :ecmascript5})
-    (target)))
+    (target :no-clean true)))
 
 (deftask generate-code []
   (comp
@@ -89,7 +89,7 @@
     (cljs :optimizations :advanced
           :compiler-options {:language-in :ecmascript5})
     (html-file :data {:build? true})
-    (target :no-clean true)))
+    (target)))
 
 (deftask rsync []
   (with-pre-wrap fileset

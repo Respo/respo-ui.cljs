@@ -1,5 +1,5 @@
 
-(ns respo-ui.style (:require [hsl.core :refer [hsl]]))
+(ns respo-ui.style (:require [hsl.core :refer [hsl]] [respo-ui.style.colors :as colors]))
 
 (def center
   {:align-items "center",
@@ -11,6 +11,7 @@
 
 (def global
   {:line-height 2,
+   :color colors/texture,
    :font-size "14px",
    :font-family "Hind,Verdana,'Hiragino Sans GB','WenQuanYi Micro Hei','Microsoft Yahei',sans-serif"})
 
