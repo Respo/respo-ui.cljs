@@ -6,9 +6,9 @@ Command styles for Respo apps.
 
 Demo http://ui.respo.site/
 
-Read stylesheets: https://github.com/Respo/respo-ui/blob/master/compiled/src/respo_ui/style.cljc
+Read stylesheets: https://github.com/Respo/respo-ui/blob/master/src/respo_ui/style.cljc
 
-Read command functions: https://github.com/Respo/respo-ui/blob/master/compiled/src/respo_ui/common.cljc
+Read command functions: https://github.com/Respo/respo-ui/blob/master/src/respo_ui/common.cljc
 
 ### Usages
 
