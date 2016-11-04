@@ -18,13 +18,14 @@
 (def input
   (merge
    global
-   {:line-height 2,
+   {:line-height "16px",
+    :min-width "120px",
     :font-size "14px",
     :background-color (hsl 0 0 96),
-    :width "auto",
-    :padding "0 8px",
+    :padding "8px 8px",
     :outline "none",
-    :border "none"}))
+    :border "none",
+    :height 32}))
 
 (def column {:align-items "stretch", :display "flex", :flex-direction "column"})
 
