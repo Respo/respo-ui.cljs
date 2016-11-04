@@ -37,8 +37,8 @@
      (render-palette "texture-light" colors/texture-light)
      (render-palette "texture" colors/texture)
      (render-palette "texture-dark" colors/texture-dark)
-     (render-palette "intersected-dark" colors/intersected-dark)
      (render-palette "intersected" colors/intersected)
-     (render-palette "intersected-light" colors/intersected-light))))
+     (render-palette "intersected-light" colors/intersected-light)
+     (render-palette "paper" colors/paper))))
 
 (def comp-colors-page (create-comp :colors-page render))

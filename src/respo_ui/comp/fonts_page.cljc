@@ -18,6 +18,7 @@
      (render-font-demo "Hind" 300)
      (render-font-demo "Hind" 400)
      (render-font-demo "Hind" 500)
+     (render-font-demo "Josefin Sans" 100)
      (render-font-demo "Josefin Sans" 300)
      (render-font-demo "Josefin Sans" 400))))
 

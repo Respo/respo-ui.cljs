@@ -3,6 +3,8 @@
 
 (def warm (hsl 42 100 60))
 
+(def paper (hsl 0 0 96))
+
 (def texture-light (hsl 0 0 64))
 
 (def texture (hsl 0 0 20))
@@ -11,11 +13,9 @@
 
 (def intersected (hsl 0 0 84))
 
-(def attractive (hsl 220 100 71))
+(def attractive (hsl 220 100 76))
 
 (def verdant (hsl 112 90 64))
-
-(def intersected-dark (hsl 0 0 76))
 
 (def motif-light (hsl 200 100 84))
 

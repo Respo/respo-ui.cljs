@@ -11,21 +11,27 @@
             [respo-ui.comp.colors-page :refer [comp-colors-page]]
             [respo-ui.comp.widgets-page :refer [comp-widgets-page]]
             [respo-ui.comp.layouts-page :refer [comp-layouts-page]]
-            [respo-ui.comp.fonts-page :refer [comp-fonts-page]]))
+            [respo-ui.comp.fonts-page :refer [comp-fonts-page]]
+            [respo-ui.comp.navbar :refer [comp-navbar]]))
 
 (defn render [store]
   (fn [state mutate!]
     (let [router (:router store)]
       (div
-       {:style (merge ui/fullscreen ui/global ui/row)}
-       (comp-sidebar)
-       (case (:name router)
-         "index.html" (comp-home)
-         "dev.html" (comp-home)
-         "colors.html" (comp-colors-page)
-         "widgets.html" (comp-widgets-page)
-         "layouts.html" (comp-layouts-page)
-         "fonts.html" (comp-fonts-page)
-         (comp-text (pr-str router) nil))))))
+       {:style (merge ui/fullscreen ui/global)}
+       (comp-navbar)
+       (div
+        {:style (merge ui/row {:padding-top 80})}
+        (comp-sidebar)
+        (div
+         {:style ui/flex}
+         (case (:name router)
+           "index.html" (comp-home)
+           "dev.html" (comp-home)
+           "colors.html" (comp-colors-page)
+           "widgets.html" (comp-widgets-page)
+           "layouts.html" (comp-layouts-page)
+           "fonts.html" (comp-fonts-page)
+           (comp-text (pr-str router) nil))))))))
 
 (def comp-container (create-comp :container render))
