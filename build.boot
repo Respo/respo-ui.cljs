@@ -1,6 +1,5 @@
 
 (set-env!
-  :resource-paths #{"polyfill/"}
   :dependencies '[[org.clojure/clojure       "1.8.0"       :scope "test"]
                   [org.clojure/clojurescript "1.9.293"     :scope "test"]
                   [adzerk/boot-cljs          "1.7.228-1"   :scope "test"]
@@ -8,7 +7,7 @@
                   [cirru/boot-stack-server   "0.1.21"      :scope "test"]
                   [adzerk/boot-test          "1.1.2"       :scope "test"]
                   [respo                     "0.3.28"      :scope "test"]
-                  [respo/router              "0.2.1"       :scope "test"]
+                  [respo/router              "0.2.2"       :scope "test"]
                   [mvc-works/hsl             "0.1.2"]])
 
 (require '[adzerk.boot-cljs   :refer [cljs]]
@@ -19,7 +18,7 @@
          '[adzerk.boot-test   :refer :all]
          '[clojure.java.io    :as    io])
 
-(def +version+ "0.1.2")
+(def +version+ "0.1.3")
 
 (task-options!
   pom {:project     'respo/ui
@@ -67,7 +66,8 @@
 
 (deftask dev! []
   (set-env!
-    :asset-paths #{"assets"})
+    :asset-paths #{"assets"}
+    :source-paths #{"polyfill/"})
   (comp
     (editor!)
     (html-file :data {:build? false})

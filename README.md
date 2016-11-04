@@ -4,7 +4,7 @@ Respo UI
 
 Command styles for Respo apps.
 
-Demo http://repo.respo.site/ui/
+Demo http://ui.respo.site/
 
 Read stylesheets: https://github.com/Respo/respo-ui/blob/master/compiled/src/respo_ui/style.cljc
 
@@ -15,7 +15,7 @@ Read command functions: https://github.com/Respo/respo-ui/blob/master/compiled/s
 [![Clojars Project](https://img.shields.io/clojars/v/respo/ui.svg)](https://clojars.org/respo/ui)
 
 ```clojure
-[respo/ui "0.1.2"]
+[respo/ui "0.1.3"]
 ```
 
 ```clojure
@@ -28,6 +28,27 @@ Use `ui/button` as `style` attributes for buttons.
 ### Develop
 
 https://github.com/mvc-works/boot-workflow
+
+Dev:
+
+```bash
+cd npm-package/
+webpack
+cd ..
+boot dev!
+```
+
+Build:
+
+```bash
+boot build-advanced
+export boot_deps=`boot show -c`
+planck -c $boot_deps:src/ -i render.cljs
+cd npm-package/
+webpack
+cd ..
+# boot rsync
+```
 
 ### License
 

@@ -2,9 +2,11 @@
 (ns ssr-stages.boot
   (:require
     [respo.alias :refer [html head title script style meta' div link body]]
-    [respo.render.static-html :refer [make-html make-string]]
+    [respo.render.html :refer [make-html make-string]]
     [respo-ui.comp.container :refer [comp-container]]
-    [planck.core :refer [spit]]))
+    [respo-ui.router :as router]
+    [planck.core :refer [spit]]
+    [respo-router.util.listener :refer [parse-address]]))
 
 (defn use-text [x] {:attrs {:innerHTML x}})
 (defn html-dsl [data html-content ssr-stages]
@@ -24,12 +26,16 @@
         (div {:attrs {:id "app" :innerHTML html-content}})
         (script {:attrs {:src "main.js"}})))))
 
-(defn generate-html [ssr-stages]
-  (let [ tree (comp-container {} ssr-stages)
+(defn generate-html [router ssr-stages]
+  (let [ tree (comp-container {:router router} ssr-stages)
          html-content (make-string tree)]
     (html-dsl {:build? true} html-content ssr-stages)))
 
 (defn -main []
-  (spit "target/index.html" (generate-html #{:shell})))
+  (spit "target/index.html" (generate-html (parse-address "/index.html" router/dict) #{:shell}))
+  (spit "target/widgets.html" (generate-html (parse-address "/widgets.html" router/dict) #{:shell}))
+  (spit "target/colors.html" (generate-html (parse-address "/colors.html" router/dict) #{:shell}))
+  (spit "target/layouts.html" (generate-html (parse-address "/layouts.html" router/dict) #{:shell}))
+  (spit "target/fonts.html" (generate-html (parse-address "/fonts.html" router/dict) #{:shell})))
 
 (-main)

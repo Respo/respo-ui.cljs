@@ -26,6 +26,7 @@
         (div
          {:style ui/flex}
          (case (:name router)
+           "home" (comp-home)
            "index.html" (comp-home)
            "dev.html" (comp-home)
            "colors.html" (comp-colors-page)
