@@ -5,7 +5,7 @@
                   [org.clojure/clojurescript "1.9.293"     :scope "test"]
                   [adzerk/boot-cljs          "1.7.228-1"   :scope "test"]
                   [adzerk/boot-reload        "0.4.12"      :scope "test"]
-                  [cirru/boot-stack-server   "0.1.19"      :scope "test"]
+                  [cirru/boot-stack-server   "0.1.20"      :scope "test"]
                   [adzerk/boot-test          "1.1.2"       :scope "test"]
                   [respo                     "0.3.28"      :scope "test"]
                   [respo/router              "0.2.1"       :scope "test"]
@@ -36,6 +36,7 @@
       (head {}
         (title (use-text "Respo UI"))
         (link {:attrs {:rel "icon" :type "image/png" :href "http://logo.respo.site/respo.png"}})
+        (link {:attrs {:rel "stylesheet" :href "style.css"}})
         (meta'{:attrs {:charset "utf-8"}})
         (meta' {:attrs {:name "viewport" :content "width=device-width, initial-scale=1"}})
         (meta' {:attrs {:id "ssr-stages" :content "#{}"}})
@@ -88,7 +89,7 @@
     (cljs :optimizations :advanced
           :compiler-options {:language-in :ecmascript5})
     (html-file :data {:build? true})
-    (target)))
+    (target :no-clean true)))
 
 (deftask rsync []
   (with-pre-wrap fileset

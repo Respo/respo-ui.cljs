@@ -4,6 +4,14 @@
             [respo.comp.text :refer [comp-text]]
             [respo-ui.style.colors :as colors]))
 
+(def style-header
+  {:color "blue",
+   :font-size 24,
+   :font-weight "normal",
+   :width 200,
+   :padding 16,
+   :font-family "Josefin Sans, sans-serif"})
+
 (defn on-route [path-name] (fn [e dispatch!] (dispatch! :router/nav path-name)))
 
 (def style-entry
@@ -16,6 +24,7 @@
   (fn [state mutate!]
     (div
      {}
+     (div {:style style-header} (comp-text "Respo UI" nil))
      (render-entry "/index.html" "Home")
      (render-entry "/colors.html" "Colors")
      (render-entry "/fonts.html" "Fonts")

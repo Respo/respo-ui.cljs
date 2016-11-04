@@ -12,7 +12,7 @@
 (def global
   {:line-height 2,
    :font-size "14px",
-   :font-family "Verdana,'Hiragino Sans GB','WenQuanYi Micro Hei','Microsoft Yahei',sans-serif"})
+   :font-family "Hind,Verdana,'Hiragino Sans GB','WenQuanYi Micro Hei','Microsoft Yahei',sans-serif"})
 
 (def input
   (merge
