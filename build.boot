@@ -66,8 +66,7 @@
 
 (deftask dev! []
   (set-env!
-    :asset-paths #{"assets"}
-    :source-paths #{"polyfill/"})
+    :source-paths #{"assets" "polyfill/"})
   (comp
     (editor!)
     (html-file :data {:build? false})
@@ -83,7 +82,7 @@
 
 (deftask build-advanced []
   (set-env!
-    :asset-paths #{"assets"})
+    :source-paths #{"assets"})
   (comp
     (transform-stack :filename "stack-sepal.ir" :extname ".cljc")
     (cljs :optimizations :advanced

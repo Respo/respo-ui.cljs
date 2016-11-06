@@ -31,11 +31,16 @@
          html-content (make-string tree)]
     (html-dsl {:build? true} html-content ssr-stages)))
 
+(def pages
+  ["/index.html"
+   "/widgets.html"
+   "/colors.html"
+   "/layouts.html"
+   "/fonts.html"
+   "/components.html"])
+
 (defn -main []
-  (spit "target/index.html" (generate-html (parse-address "/index.html" router/dict) #{:shell}))
-  (spit "target/widgets.html" (generate-html (parse-address "/widgets.html" router/dict) #{:shell}))
-  (spit "target/colors.html" (generate-html (parse-address "/colors.html" router/dict) #{:shell}))
-  (spit "target/layouts.html" (generate-html (parse-address "/layouts.html" router/dict) #{:shell}))
-  (spit "target/fonts.html" (generate-html (parse-address "/fonts.html" router/dict) #{:shell})))
+  (doseq [page pages]
+    (spit (str "target" page) (generate-html (parse-address page router/dict) #{:shell}))))
 
 (-main)

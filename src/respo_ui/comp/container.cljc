@@ -12,6 +12,7 @@
             [respo-ui.comp.widgets-page :refer [comp-widgets-page]]
             [respo-ui.comp.layouts-page :refer [comp-layouts-page]]
             [respo-ui.comp.fonts-page :refer [comp-fonts-page]]
+            [respo-ui.comp.components :refer [comp-components-page]]
             [respo-ui.comp.navbar :refer [comp-navbar]]))
 
 (defn render [store]
@@ -33,6 +34,7 @@
            "widgets.html" (comp-widgets-page)
            "layouts.html" (comp-layouts-page)
            "fonts.html" (comp-fonts-page)
+           "components.html" (comp-components-page)
            (comp-text (pr-str router) nil))))))))
 
 (def comp-container (create-comp :container render))

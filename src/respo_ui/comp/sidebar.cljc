@@ -26,6 +26,7 @@
      (render-entry "colors.html" "Colors")
      (render-entry "fonts.html" "Fonts")
      (render-entry "widgets.html" "Widgets")
-     (render-entry "layouts.html" "Layouts"))))
+     (render-entry "layouts.html" "Layouts")
+     (render-entry "components.html" "Components"))))
 
 (def comp-sidebar (create-comp :sidebar render))

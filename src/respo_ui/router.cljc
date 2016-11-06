@@ -8,5 +8,6 @@
    "dev.html" [],
    "layouts.html" [],
    "index.html" [],
+   "components.html" [],
    "colors.html" [],
    "fonts.html" []})
