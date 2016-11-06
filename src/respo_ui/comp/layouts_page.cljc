@@ -32,7 +32,7 @@
         (render-flex colors/motif)))
       (div
        {}
-       (div {} (comp-text "Children in column with ui/column" nil))
+       (div {} (comp-text "Children in column with ui/column-center" nil))
        (div
         {:style (merge
                  ui/column-center
