@@ -40,9 +40,6 @@
   (render-router!)
   (listen! router/dict dispatch! router/mode)
   (add-watch store-ref :router-changes render-router!)
-  (render-router!)
-  (listen! router/dict dispatch! router/mode)
-  (add-watch store-ref :router-changes render-router!)
   (println "app started!"))
 
 (set! js/window.onload -main)
