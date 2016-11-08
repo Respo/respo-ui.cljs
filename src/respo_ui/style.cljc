@@ -10,13 +10,16 @@
    :display "flex",
    :flex-direction "column"})
 
+(def default-fonts
+  "Hind,Verdana,'Hiragino Sans GB','WenQuanYi Micro Hei','Microsoft Yahei',sans-serif")
+
 (def select
   {:min-width 120,
    :font-size 14,
    :background-color colors/paper,
    :outline "none",
    :border "none",
-   :font-family "Hind",
+   :font-family default-fonts,
    :height 32})
 
 (def column-center
@@ -26,10 +29,7 @@
    :flex-direction "column"})
 
 (def global
-  {:line-height 2,
-   :color colors/texture,
-   :font-size "14px",
-   :font-family "Hind,Verdana,'Hiragino Sans GB','WenQuanYi Micro Hei','Microsoft Yahei',sans-serif"})
+  {:line-height 2, :color colors/texture, :font-size "14px", :font-family default-fonts})
 
 (def input
   (merge
@@ -41,7 +41,7 @@
     :padding "8px 8px",
     :outline "none",
     :border "none",
-    :font-family "Hind",
+    :font-family default-fonts,
     :height 32}))
 
 (def column {:align-items "stretch", :display "flex", :flex-direction "column"})
@@ -53,7 +53,7 @@
    :padding 8,
    :outline "none",
    :border "none",
-   :font-family "Hind"})
+   :font-family default-fonts})
 
 (def row {:align-items "stretch", :display "flex", :flex-direction "row"})
 

@@ -5,7 +5,7 @@
     [respo.render.html :refer [make-html make-string]]
     [respo-ui.comp.container :refer [comp-container]]
     [respo-ui.router :as router]
-    [planck.core :refer [spit]]
+    [planck.core :refer [spit slurp]]
     [respo-router.util.listener :refer [parse-address]]))
 
 (defn use-text [x] {:attrs {:innerHTML x}})
@@ -21,6 +21,7 @@
         (meta' {:attrs {:id "ssr-stages" :content (pr-str ssr-stages)}})
         (style (use-text "body {margin: 0;}"))
         (style (use-text "body * {box-sizing: border-box;}"))
+        (script {:attrs {:innerHTML (slurp "html/ga.js")}})
         (script {:attrs {:id "config" :type "text/edn" :innerHTML (pr-str data)}}))
       (body {}
         (div {:attrs {:id "app" :innerHTML html-content}})

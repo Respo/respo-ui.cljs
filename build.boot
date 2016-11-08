@@ -4,9 +4,9 @@
                   [org.clojure/clojurescript "1.9.293"     :scope "test"]
                   [adzerk/boot-cljs          "1.7.228-1"   :scope "test"]
                   [adzerk/boot-reload        "0.4.12"      :scope "test"]
-                  [cirru/boot-stack-server   "0.1.21"      :scope "test"]
+                  [cirru/boot-stack-server   "0.1.22"      :scope "test"]
                   [adzerk/boot-test          "1.1.2"       :scope "test"]
-                  [respo                     "0.3.28"      :scope "test"]
+                  [respo                     "0.3.31"      :scope "test"]
                   [respo/router              "0.2.2"       :scope "test"]
                   [mvc-works/hsl             "0.1.2"]])
 
@@ -18,7 +18,7 @@
          '[adzerk.boot-test   :refer :all]
          '[clojure.java.io    :as    io])
 
-(def +version+ "0.1.3")
+(def +version+ "0.1.4")
 
 (task-options!
   pom {:project     'respo/ui
@@ -70,7 +70,7 @@
   (comp
     (editor!)
     (html-file :data {:build? false})
-    (reload :on-jsload 'respo-ui.main/on-jsload
+    (reload :on-jsload 'respo-ui.main/on-jsload!
             :cljs-asset-path ".")
     (cljs :compiler-options {:language-in :ecmascript5})
     (target :no-clean true)))
