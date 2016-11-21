@@ -1,6 +1,6 @@
 
 (ns respo-ui.comp.widgets-page
-  (:require [respo.alias :refer [create-comp create-element div input textarea]]
+  (:require [respo.alias :refer [create-comp create-element div input textarea button]]
             [respo.comp.text :refer [comp-text]]
             [respo.comp.space :refer [comp-space]]
             [respo-ui.style :as ui]
@@ -20,11 +20,11 @@
      (comp-space nil 16)
      (div
       {}
-      (div
+      (button
        {:style (merge ui/button {:background-color colors/attractive})}
        (comp-text "Yes" nil))
       (comp-space 16 nil)
-      (div
+      (button
        {:style (merge ui/button {:background-color colors/irreversible})}
        (comp-text "Yes" nil))
       (comp-space 16 nil))

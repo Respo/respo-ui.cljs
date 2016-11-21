@@ -15,7 +15,7 @@ Read command functions: https://github.com/Respo/respo-ui/blob/master/src/respo_
 [![Clojars Project](https://img.shields.io/clojars/v/respo/ui.svg)](https://clojars.org/respo/ui)
 
 ```clojure
-[respo/ui "0.1.4"]
+[respo/ui "0.1.5"]
 ```
 
 ```clojure

@@ -78,4 +78,6 @@
    :background-color colors/motif,
    :cursor "pointer",
    :padding "0 8px",
-   :display "inline-block"})
+   :outline :none,
+   :display "inline-block",
+   :border :none})
