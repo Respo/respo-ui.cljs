@@ -16,7 +16,11 @@
     (div
      {}
      (comp-text "widgets" nil)
-     (div {} (comp-text "Some text as description" ui/text-label))
+     (div
+      {}
+      (comp-text "Some text as description" ui/text-label)
+      (comp-space nil 16)
+      (comp-text "clickable" ui/clickable-text))
      (comp-space nil 16)
      (div
       {}

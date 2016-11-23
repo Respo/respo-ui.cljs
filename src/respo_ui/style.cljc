@@ -1,6 +1,17 @@
 
 (ns respo-ui.style (:require [hsl.core :refer [hsl]] [respo-ui.style.colors :as colors]))
 
+(def clickable-text
+  {:line-height "24px",
+   :color colors/motif,
+   :cursor :pointer,
+   :padding "0 8px",
+   :text-decoration :underline,
+   :display :inline-block,
+   :user-select :no-select,
+   :height 24,
+   :margin 4})
+
 (def text-label
   {:line-height "32px",
    :color colors/texture,

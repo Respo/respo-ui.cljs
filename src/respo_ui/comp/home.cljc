@@ -2,9 +2,16 @@
 (ns respo-ui.comp.home
   (:require [respo.alias :refer [create-comp div a]]
             [respo.comp.text :refer [comp-text]]
+            [respo.comp.space :refer [comp-space]]
             [respo-ui.style.colors :as colors]))
 
 (def repo-url "http://github.com/Respo/respo-ui")
+
+(def style-logo
+  {:width 160,
+   :background-image "url(http://logo.respo.site/respo.png)",
+   :background-size :cover,
+   :height 160})
 
 (defn render []
   (fn [state mutate!]
@@ -16,6 +23,8 @@
                :font-weight 100,
                :font-family "Josefin Sans"}}
       (comp-text "A simple collection of styles for Respo." nil))
+     (div {:style style-logo})
+     (comp-space nil 32)
      (div
       {}
       (comp-text "Find more at: ")
