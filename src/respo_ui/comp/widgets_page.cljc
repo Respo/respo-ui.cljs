@@ -36,7 +36,9 @@
         :event {:input (on-input mutate!)},
         :attrs {:placeholder "Some short text"}})
       (comp-space 16 nil)
-      (comp-text state ui/text-label))
+      (button {:style (merge ui/button)} (comp-text "Add" nil))
+      (comp-space 16 nil)
+      (comp-text "nothing" ui/text-label))
      (comp-space nil 16)
      (div
       {}
@@ -46,6 +48,10 @@
        (option {:attrs {:selected true, :inner-text "Clojure"}})
        (option {:attrs {:selected false, :inner-text "OCaml"}})))
      (comp-space nil 16)
-     (div {} (textarea {:style ui/textarea, :attrs {:placeholder "Some long text"}})))))
+     (div
+      {}
+      (textarea {:style ui/textarea, :attrs {:placeholder "Some long text"}})
+      (comp-space 16 nil)
+      (button {:style (merge ui/button)} (comp-text "Add" nil))))))
 
 (def comp-widgets-page (create-comp :widget-page init-input update-input render))
