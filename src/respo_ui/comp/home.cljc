@@ -1,6 +1,6 @@
 
 (ns respo-ui.comp.home
-  (:require [respo.alias :refer [create-comp div a]]
+  (:require [respo.alias :refer [create-comp div a img]]
             [respo.comp.text :refer [comp-text]]
             [respo.comp.space :refer [comp-space]]
             [respo-ui.style.colors :as colors]))
@@ -22,7 +22,9 @@
                :font-size 48,
                :font-weight 100,
                :font-family "Josefin Sans"}}
-      (comp-text "A simple collection of styles for Respo." nil))
+      (comp-text "Styles for Respo" nil)
+      (comp-space 16 nil)
+      (img {:attrs {:src "https://img.shields.io/clojars/v/respo/ui.svg"}}))
      (div {:style style-logo})
      (comp-space nil 32)
      (div
