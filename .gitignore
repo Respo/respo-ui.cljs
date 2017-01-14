@@ -4,3 +4,5 @@
 .nrepl-port
 /src/*.*
 /src/.*
+
+.lumo_cache/
