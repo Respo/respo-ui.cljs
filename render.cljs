@@ -5,8 +5,15 @@
     [respo.render.html :refer [make-html make-string]]
     [respo-ui.comp.container :refer [comp-container]]
     [respo-ui.router :as router]
-    [planck.core :refer [spit slurp]]
     [respo-router.util.listener :refer [parse-address]]))
+
+(def fs (js/require "fs"))
+
+(defn slurp [file-name]
+  (fs.readFileSync file-name "utf-8"))
+
+(defn spit [file-name content]
+  (fs.writeFileSync file-name content))
 
 (defn html-dsl [data html-content ssr-stages]
   (make-html

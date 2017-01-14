@@ -43,7 +43,7 @@ Build:
 ```bash
 boot build-advanced
 export boot_deps=`boot show -c`
-planck -c $boot_deps:src/ -i render.cljs
+lumo -Kc $boot_deps:src/ -i render.cljs
 cd npm-package/
 webpack
 cd ..
