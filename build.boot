@@ -6,7 +6,7 @@
                   [adzerk/boot-reload        "0.4.13"      :scope "test"]
                   [cirru/boot-stack-server   "0.1.24"      :scope "test"]
                   [adzerk/boot-test          "1.1.2"       :scope "test"]
-                  [respo                     "0.3.33"      :scope "test"]
+                  [respo                     "0.3.35"      :scope "test"]
                   [respo/router              "0.2.2"       :scope "test"]
                   [mvc-works/hsl             "0.1.2"]])
 

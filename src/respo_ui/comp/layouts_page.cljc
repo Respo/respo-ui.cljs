@@ -1,7 +1,8 @@
 
 (ns respo-ui.comp.layouts-page
-  (:require [respo.alias :refer [create-comp div]]
+  (:require [respo.alias :refer [create-comp div a]]
             [respo.comp.text :refer [comp-text]]
+            [respo.comp.space :refer [comp-space]]
             [respo-ui.style :as ui]
             [respo-ui.style.colors :as colors]))
 
@@ -13,7 +14,14 @@
   (fn [state mutate!]
     (div
      {}
-     (comp-text "layouts" nil)
+     (div
+      {}
+      (comp-text "Layouts" nil)
+      (comp-space 8 nil)
+      (a
+       {:attrs {:inner-text "Source",
+                :target "_blank",
+                :href "https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/layouts_page.cljc"}}))
      (div
       {}
       (div {} (comp-text "Children in row with ui/row" nil))

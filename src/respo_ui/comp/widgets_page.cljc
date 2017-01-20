@@ -1,6 +1,6 @@
 
 (ns respo-ui.comp.widgets-page
-  (:require [respo.alias :refer [create-comp create-element div input textarea button]]
+  (:require [respo.alias :refer [create-comp create-element div input textarea button a]]
             [respo.comp.text :refer [comp-text]]
             [respo.comp.space :refer [comp-space]]
             [respo-ui.style :as ui]
@@ -15,7 +15,14 @@
   (fn [state mutate!]
     (div
      {}
-     (comp-text "widgets" nil)
+     (div
+      {}
+      (comp-text "Widgets" nil)
+      (comp-space 8 nil)
+      (a
+       {:attrs {:inner-text "Source",
+                :target "_blank",
+                :href "https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/widgets_page.cljc"}}))
      (div
       {}
       (comp-text "Some text as description" ui/text-label)

@@ -29,6 +29,14 @@
         (comp-space nil 32)
         (div
          {}
+         (comp-text "Built-in Components")
+         (comp-space 8 nil)
+         (a
+          {:attrs {:inner-text "Source",
+                   :target "_blank",
+                   :href "https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/components.cljc"}}))
+        (div
+         {}
          (comp-text "respo-ui.comp.switcher/comp-switcher")
          (comp-space 16 nil)
          (comp-switcher
