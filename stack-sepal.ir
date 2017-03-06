@@ -543,7 +543,7 @@
                                   ["[]" "respo.alias" ":refer" ["[]" "create-comp" "div" "a"]]
                                   ["[]" "respo.comp.text" ":refer" ["[]" "comp-text"]]
                                   ["[]" "respo.comp.space" ":refer" ["[]" "comp-space"]]
-                                  ["[]" "respo-ui.comp.switcher" ":refer" ["[]" "comp-switcher"]]]],
+                                  ["[]" "respo-ui.comp.switchy" ":refer" ["[]" "comp-switch"]]]],
                             :defs {"update-state" ["defn" "update-state" ["state" "new-state"] "new-state"],
                                    "render-entry" ["defn"
                                                    "render-entry"
@@ -552,7 +552,7 @@
                                                     ["{}"]
                                                     ["a"
                                                      ["{}" [":attrs" ["{}" [":href" "url"] [":inner-text" "title"]]]]]]],
-                                   "init-state" ["defn" "init-state" ["&" "args"] ["{}" [":switcher-on?" "false"]]],
+                                   "init-state" ["defn" "init-state" ["&" "args"] ["{}" [":switch-on?" "false"]]],
                                    "comp-components-page" ["def"
                                                            "comp-components-page"
                                                            ["create-comp"
@@ -594,14 +594,14 @@
                                                                     [":inner-text" "|Source"]]]]]]
                                                                ["div"
                                                                 ["{}"]
-                                                                ["comp-text" "|respo-ui.comp.switcher/comp-switcher"]
+                                                                ["comp-text" "|respo-ui.comp.switchy/comp-switch"]
                                                                 ["comp-space" "16" "nil"]
-                                                                ["comp-switcher"
-                                                                 [":switcher-on?" "state"]
+                                                                ["comp-switch"
+                                                                 [":switch-on?" "state"]
                                                                  ["fn"
                                                                   ["new-status"]
                                                                   ["mutate!"
-                                                                   ["assoc" "state" ":switcher-on?" "new-status"]]]]]]]]]]},
+                                                                   ["assoc" "state" ":switch-on?" "new-status"]]]]]]]]]]},
                             :procs []},
          "comp.home" {:ns ["ns"
                            "respo-ui.comp.home"
@@ -648,6 +648,56 @@
                                            ["{}" [":attrs" ["{}" [":href" "repo-url"]]]]
                                            ["comp-text" "repo-url" "nil"]]]]]]},
                       :procs []},
+         "comp.switchy" {:ns ["ns"
+                              "respo-ui.comp.switchy"
+                              [":require"
+                               ["[]" "respo.alias" ":refer" ["[]" "create-comp" "div" "a" "img"]]
+                               ["[]" "respo.comp.text" ":refer" ["[]" "comp-text"]]
+                               ["[]" "respo.comp.space" ":refer" ["[]" "comp-space"]]
+                               ["[]" "respo-ui.style.colors" ":as" "colors"]]],
+                         :defs {"style-button" ["def"
+                                                "style-button"
+                                                ["{}"
+                                                 [":background-color" "colors/motif"]
+                                                 [":height" "32"]
+                                                 [":width" "32"]
+                                                 [":position" ":absolute"]
+                                                 [":left" "0"]
+                                                 [":opacity" "0.3"]
+                                                 [":transition-duration" "|300ms"]]],
+                                "comp-switch" ["def"
+                                               "comp-switch"
+                                               ["create-comp"
+                                                ":switch"
+                                                ["fn"
+                                                 ["status" "on-change"]
+                                                 ["fn"
+                                                  ["state" "mutate!"]
+                                                  ["div"
+                                                   ["{}"
+                                                    [":style" "style-switch"]
+                                                    [":event"
+                                                     ["{}"
+                                                      [":click" ["fn" ["e" "dispatch!"] ["on-change" ["not" "status"]]]]]]]
+                                                   ["div"
+                                                    ["{}"
+                                                     [":style"
+                                                      ["merge"
+                                                       "style-button"
+                                                       ["if" "status" ["{}" [":left" "64"] [":opacity" "1"]]]]]]]]]]]],
+                                "style-switch" ["def"
+                                                "style-switch"
+                                                ["{}"
+                                                 [":background-color" "colors/paper"]
+                                                 [":width" "96"]
+                                                 [":height" "16"]
+                                                 [":position" ":relative"]
+                                                 [":cursor" ":pointer"]
+                                                 [":transition-duration" "|300ms"]
+                                                 [":margin-bottom" "16"]
+                                                 [":display" ":inline-block"]
+                                                 [":vertical-align" ":top"]]]},
+                         :procs []},
          "router" {:ns ["ns" "respo-ui.router"],
                    :defs {"dict" ["def"
                                   "dict"
@@ -661,57 +711,6 @@
                                    ["|components.html" ["[]"]]]],
                           "mode" ["def" "mode" ":history"]},
                    :procs []},
-         "comp.switcher" {:ns ["ns"
-                               "respo-ui.comp.switcher"
-                               [":require"
-                                ["[]" "respo.alias" ":refer" ["[]" "create-comp" "div" "a" "img"]]
-                                ["[]" "respo.comp.text" ":refer" ["[]" "comp-text"]]
-                                ["[]" "respo.comp.space" ":refer" ["[]" "comp-space"]]
-                                ["[]" "respo-ui.style.colors" ":as" "colors"]]],
-                          :defs {"style-switcher" ["def"
-                                                   "style-switcher"
-                                                   ["{}"
-                                                    [":background-color" "colors/paper"]
-                                                    [":width" "96"]
-                                                    [":height" "16"]
-                                                    [":position" ":relative"]
-                                                    [":cursor" ":pointer"]
-                                                    [":transition-duration" "|300ms"]
-                                                    [":margin-bottom" "16"]
-                                                    [":display" ":inline-block"]
-                                                    [":vertical-align" ":top"]]],
-                                 "style-button" ["def"
-                                                 "style-button"
-                                                 ["{}"
-                                                  [":background-color" "colors/motif"]
-                                                  [":height" "32"]
-                                                  [":width" "32"]
-                                                  [":position" ":absolute"]
-                                                  [":left" "0"]
-                                                  [":opacity" "0.3"]
-                                                  [":transition-duration" "|300ms"]]],
-                                 "comp-switcher" ["def"
-                                                  "comp-switcher"
-                                                  ["create-comp"
-                                                   ":switcher"
-                                                   ["fn"
-                                                    ["status" "on-change"]
-                                                    ["fn"
-                                                     ["state" "mutate!"]
-                                                     ["div"
-                                                      ["{}"
-                                                       [":style" "style-switcher"]
-                                                       [":event"
-                                                        ["{}"
-                                                         [":click"
-                                                          ["fn" ["e" "dispatch!"] ["on-change" ["not" "status"]]]]]]]
-                                                      ["div"
-                                                       ["{}"
-                                                        [":style"
-                                                         ["merge"
-                                                          "style-button"
-                                                          ["if" "status" ["{}" [":left" "64"] [":opacity" "1"]]]]]]]]]]]]},
-                          :procs []},
          "comp.sidebar" {:ns ["ns"
                               "respo-ui.comp.sidebar"
                               [":require"

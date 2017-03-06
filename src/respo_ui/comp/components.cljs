@@ -3,13 +3,13 @@
   (:require [respo.alias :refer [create-comp div a]]
             [respo.comp.text :refer [comp-text]]
             [respo.comp.space :refer [comp-space]]
-            [respo-ui.comp.switcher :refer [comp-switcher]]))
+            [respo-ui.comp.switchy :refer [comp-switch]]))
 
 (defn update-state [state new-state] new-state)
 
 (defn render-entry [url title] (div {} (a {:attrs {:href url, :inner-text title}})))
 
-(defn init-state [& args] {:switcher-on? false})
+(defn init-state [& args] {:switch-on? false})
 
 (def comp-components-page
   (create-comp
@@ -37,8 +37,8 @@
                    :inner-text "Source"}}))
         (div
          {}
-         (comp-text "respo-ui.comp.switcher/comp-switcher")
+         (comp-text "respo-ui.comp.switchy/comp-switch")
          (comp-space 16 nil)
-         (comp-switcher
-          (:switcher-on? state)
-          (fn [new-status] (mutate! (assoc state :switcher-on? new-status))))))))))
+         (comp-switch
+          (:switch-on? state)
+          (fn [new-status] (mutate! (assoc state :switch-on? new-status))))))))))
