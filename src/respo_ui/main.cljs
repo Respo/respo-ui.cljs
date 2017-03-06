@@ -5,7 +5,8 @@
             [respo-router.core :refer [render-url!]]
             [respo-router.util.listener :refer [listen! parse-address]]
             [respo-ui.router :as router]
-            [cljs.reader :refer [read-string]]))
+            [cljs.reader :refer [read-string]]
+            [respo-ui.schema :as schema]))
 
 (defn updater [store op op-data]
   (case op
@@ -15,9 +16,12 @@
 
 (defonce store-ref
   (atom
-   {:router (parse-address
-             (str (.-pathname js/location) (.-search js/location))
-             router/dict)}))
+   (merge
+    schema/store
+    {:router (parse-address
+              (str (.-pathname js/location) (.-search js/location))
+              router/dict),
+     :mobile? (< (.-innerWidth js/window) 600)})))
 
 (defn dispatch! [op op-data]
   (println "Dispatch!" op op-data)
@@ -42,7 +46,9 @@
     (let [target (.querySelector js/document "#app")]
       (falsify-stage!
        target
-       (render-element (comp-container @store-ref ssr-stages) states-ref)
+       (render-element
+        (comp-container (assoc @store-ref :mobile? true) ssr-stages)
+        states-ref)
        dispatch!)))
   (render-app!)
   (add-watch store-ref :changes render-app!)

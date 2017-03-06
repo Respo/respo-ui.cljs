@@ -15,26 +15,29 @@
             [respo-ui.comp.components :refer [comp-components-page]]
             [respo-ui.comp.navbar :refer [comp-navbar]]))
 
-(defn render [store]
-  (fn [state mutate!]
-    (let [router (:router store)]
-      (div
-       {:style (merge ui/fullscreen ui/global)}
-       (comp-navbar)
-       (div
-        {:style (merge ui/row {:padding-top 80})}
-        (comp-sidebar)
-        (div
-         {:style ui/flex}
-         (case (:name router)
-           "home" (comp-home)
-           "index.html" (comp-home)
-           "dev.html" (comp-home)
-           "colors.html" (comp-colors-page)
-           "widgets.html" (comp-widgets-page)
-           "layouts.html" (comp-layouts-page)
-           "fonts.html" (comp-fonts-page)
-           "components.html" (comp-components-page)
-           (comp-text (pr-str router) nil))))))))
+(def style-content {:padding 8})
 
-(def comp-container (create-comp :container render))
+(def comp-container
+  (create-comp
+   :container
+   (fn [store]
+     (fn [state mutate!]
+       (let [router (:router store), mobile? (:mobile? store)]
+         (div
+          {:style (merge ui/fullscreen ui/global)}
+          (comp-navbar)
+          (div
+           {:style (if mobile? nil (merge ui/row {:padding-top 32}))}
+           (comp-sidebar mobile?)
+           (div
+            {:style (merge ui/flex style-content)}
+            (case (:name router)
+              "home" (comp-home)
+              "index.html" (comp-home)
+              "dev.html" (comp-home)
+              "colors.html" (comp-colors-page)
+              "widgets.html" (comp-widgets-page)
+              "layouts.html" (comp-layouts-page)
+              "fonts.html" (comp-fonts-page)
+              "components.html" (comp-components-page)
+              (comp-text (pr-str router) nil))))))))))

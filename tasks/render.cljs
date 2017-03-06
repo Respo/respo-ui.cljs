@@ -5,6 +5,7 @@
     [respo.render.html :refer [make-html make-string]]
     [respo-ui.comp.container :refer [comp-container]]
     [respo-ui.router :as router]
+    [respo-ui.schema :as schema]
     [respo-router.util.listener :refer [parse-address]]))
 
 (def pages
@@ -55,6 +56,6 @@
   (if (= js/process.env.env "dev")
     (spit "target/dev.html" (generate-empty-html))
     (doseq [page pages]
-      (spit (str "target" page) (generate-html {:router (parse-address page router/dict)})))))
+      (spit (str "target" page) (generate-html (assoc schema/store :router (parse-address page router/dict)))))))
 
 (-main)

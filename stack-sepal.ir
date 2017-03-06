@@ -7,103 +7,117 @@
                                     ["[]" "respo.comp.space" ":refer" ["[]" "comp-space"]]
                                     ["[]" "respo-ui.style" ":as" "ui"]
                                     ["[]" "respo-ui.style.colors" ":as" "colors"]]],
-                              :defs {"render" ["defn"
-                                               "render"
-                                               []
-                                               ["fn"
-                                                ["state" "mutate!"]
-                                                ["div"
-                                                 ["{}"]
-                                                 ["div"
-                                                  ["{}"]
-                                                  ["comp-text" "|Layouts" "nil"]
-                                                  ["comp-space" "8" "nil"]
-                                                  ["a"
-                                                   ["{}"
-                                                    [":attrs"
-                                                     ["{}"
-                                                      [":href"
-                                                       "|https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/layouts_page.cljc"]
-                                                      [":inner-text" "|Source"]
-                                                      [":target" "|_blank"]]]]]]
-                                                 ["div"
-                                                  ["{}"]
-                                                  ["div" ["{}"] ["comp-text" "|Children in row with ui/row" "nil"]]
-                                                  ["div"
-                                                   ["{}"
-                                                    [":style"
-                                                     ["merge" "ui/row" ["{}" [":width" "80"] [":height" "80"]]]]]
-                                                   ["render-flex" "colors/motif"]
-                                                   ["render-flex" "colors/motif-dark"]
-                                                   ["render-flex" "colors/motif"]]
-                                                  ["div"
-                                                   ["{}"]
-                                                   ["div"
-                                                    ["{}"]
-                                                    ["comp-text" "|Children in column with ui/column" "nil"]]
-                                                   ["div"
-                                                    ["{}"
-                                                     [":style"
-                                                      ["merge" "ui/column" ["{}" [":width" "80"] [":height" "80"]]]]]
-                                                    ["render-flex" "colors/motif"]
-                                                    ["render-flex" "colors/motif-dark"]
-                                                    ["render-flex" "colors/motif"]]]
-                                                  ["div"
-                                                   ["{}"]
-                                                   ["div"
-                                                    ["{}"]
-                                                    ["comp-text" "|Children in column with ui/column-center" "nil"]]
-                                                   ["div"
-                                                    ["{}"
-                                                     [":style"
-                                                      ["merge"
-                                                       "ui/column-center"
-                                                       ["{}"
-                                                        [":width" "100"]
-                                                        [":height" "100"]
-                                                        [":background-color" "colors/motif-light"]]]]]
-                                                    ["render-small" "colors/motif"]
-                                                    ["render-small" "colors/motif-dark"]
-                                                    ["render-small" "colors/motif"]]]
-                                                  ["div"
-                                                   ["{}"]
-                                                   ["div"
-                                                    ["{}"]
-                                                    ["comp-text" "|Children in row with ui/row-center" "nil"]]
-                                                   ["div"
-                                                    ["{}"
-                                                     [":style"
-                                                      ["merge"
-                                                       "ui/row-center"
-                                                       ["{}"
-                                                        [":width" "100"]
-                                                        [":height" "100"]
-                                                        [":background-color" "colors/motif-light"]]]]]
-                                                    ["render-small" "colors/motif"]
-                                                    ["render-small" "colors/motif-dark"]
-                                                    ["render-small" "colors/motif"]]]
-                                                  ["div"
-                                                   ["{}"]
-                                                   ["div" ["{}"] ["comp-text" "|Child centerred with ui/center" "nil"]]
-                                                   ["div"
-                                                    ["{}"
-                                                     [":style"
-                                                      ["merge"
-                                                       "ui/center"
-                                                       ["{}"
-                                                        [":width" "80"]
-                                                        [":height" "80"]
-                                                        [":background-color" "colors/motif"]]]]]
-                                                    ["div"
-                                                     ["{}"
-                                                      [":style"
-                                                       ["{}"
-                                                        [":width" "40"]
-                                                        [":height" "40"]
-                                                        [":background-color" "colors/motif-dark"]]]]]]]]]]],
-                                     "comp-layouts-page" ["def"
+                              :defs {"comp-layouts-page" ["def"
                                                           "comp-layouts-page"
-                                                          ["create-comp" ":layouts-page" "render"]],
+                                                          ["create-comp"
+                                                           ":layouts-page"
+                                                           ["fn"
+                                                            []
+                                                            ["fn"
+                                                             ["state" "mutate!"]
+                                                             ["div"
+                                                              ["{}"]
+                                                              ["div"
+                                                               ["{}"]
+                                                               ["comp-text" "|Layouts" "nil"]
+                                                               ["comp-space" "8" "nil"]
+                                                               ["a"
+                                                                ["{}"
+                                                                 [":attrs"
+                                                                  ["{}"
+                                                                   [":href"
+                                                                    "|https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/layouts_page.cljc"]
+                                                                   [":inner-text" "|Source"]
+                                                                   [":target" "|_blank"]]]]]]
+                                                              ["div"
+                                                               ["{}"]
+                                                               ["div"
+                                                                ["{}"]
+                                                                ["comp-text" "|Children in row with ui/row" "nil"]]
+                                                               ["div"
+                                                                ["{}"
+                                                                 [":style"
+                                                                  ["merge"
+                                                                   "ui/row"
+                                                                   ["{}" [":width" "80"] [":height" "80"]]]]]
+                                                                ["render-flex" "colors/motif"]
+                                                                ["render-flex" "colors/motif-dark"]
+                                                                ["render-flex" "colors/motif"]]
+                                                               ["div"
+                                                                ["{}"]
+                                                                ["div"
+                                                                 ["{}"]
+                                                                 ["comp-text"
+                                                                  "|Children in column with ui/column"
+                                                                  "nil"]]
+                                                                ["div"
+                                                                 ["{}"
+                                                                  [":style"
+                                                                   ["merge"
+                                                                    "ui/column"
+                                                                    ["{}" [":width" "80"] [":height" "80"]]]]]
+                                                                 ["render-flex" "colors/motif"]
+                                                                 ["render-flex" "colors/motif-dark"]
+                                                                 ["render-flex" "colors/motif"]]]
+                                                               ["div"
+                                                                ["{}"]
+                                                                ["div"
+                                                                 ["{}"]
+                                                                 ["comp-text"
+                                                                  "|Children in column with ui/column-center"
+                                                                  "nil"]]
+                                                                ["div"
+                                                                 ["{}"
+                                                                  [":style"
+                                                                   ["merge"
+                                                                    "ui/column-center"
+                                                                    ["{}"
+                                                                     [":width" "100"]
+                                                                     [":height" "100"]
+                                                                     [":background-color" "colors/motif-light"]]]]]
+                                                                 ["render-small" "colors/motif"]
+                                                                 ["render-small" "colors/motif-dark"]
+                                                                 ["render-small" "colors/motif"]]]
+                                                               ["div"
+                                                                ["{}"]
+                                                                ["div"
+                                                                 ["{}"]
+                                                                 ["comp-text"
+                                                                  "|Children in row with ui/row-center"
+                                                                  "nil"]]
+                                                                ["div"
+                                                                 ["{}"
+                                                                  [":style"
+                                                                   ["merge"
+                                                                    "ui/row-center"
+                                                                    ["{}"
+                                                                     [":width" "100"]
+                                                                     [":height" "100"]
+                                                                     [":background-color" "colors/motif-light"]]]]]
+                                                                 ["render-small" "colors/motif"]
+                                                                 ["render-small" "colors/motif-dark"]
+                                                                 ["render-small" "colors/motif"]]]
+                                                               ["div"
+                                                                ["{}"]
+                                                                ["div"
+                                                                 ["{}"]
+                                                                 ["comp-text" "|Child centerred with ui/center" "nil"]]
+                                                                ["div"
+                                                                 ["{}"
+                                                                  [":style"
+                                                                   ["merge"
+                                                                    "ui/center"
+                                                                    ["{}"
+                                                                     [":width" "80"]
+                                                                     [":height" "80"]
+                                                                     [":background-color" "colors/motif"]]]]]
+                                                                 ["div"
+                                                                  ["{}"
+                                                                   [":style"
+                                                                    ["{}"
+                                                                     [":width" "40"]
+                                                                     [":height" "40"]
+                                                                     [":background-color" "colors/motif-dark"]]]]]]]]]]]]],
                                      "render-small" ["defn"
                                                      "render-small"
                                                      ["color"]
@@ -132,7 +146,7 @@
                              :defs {"style-palette" ["def"
                                                      "style-palette"
                                                      ["{}"
-                                                      [":width" "400"]
+                                                      [":max-width" "400"]
                                                       [":height" "40"]
                                                       [":color" "|white"]
                                                       [":margin" "16"]
@@ -152,36 +166,38 @@
                                                           ["{}" [":background-color" "color"]]]]]
                                                        ["comp-text" "title" "nil"]
                                                        ["comp-text" "color" "nil"]]],
-                                    "render" ["defn"
-                                              "render"
-                                              []
-                                              ["fn"
-                                               ["state" "mutate!"]
-                                               ["div"
-                                                ["{}"]
-                                                ["div" ["{}"] ["comp-text" "|respo-ui.style.colors" "nil"]]
-                                                ["div" ["{}"] ["comp-text" "|Motif colors" "nil"]]
-                                                ["render-palette" "|motif" "colors/motif"]
-                                                ["render-palette" "|motif-light" "colors/motif-light"]
-                                                ["render-palette" "|motif-dark" "colors/motif-dark"]
-                                                ["div" ["{}"] ["comp-text" "|Functional colors" "nil"]]
-                                                ["render-palette" "|attractive" "colors/attractive"]
-                                                ["render-palette" "|irreversible" "colors/irreversible"]
-                                                ["render-palette" "|attentive" "colors/attentive"]
-                                                ["render-palette" "|verdant" "colors/verdant"]
-                                                ["render-palette" "|warm" "colors/warm"]
-                                                ["div" ["{}"] ["comp-text" "|Text colors" "nil"]]
-                                                ["render-palette" "|texture" "colors/texture"]
-                                                ["render-palette" "|texture-light" "colors/texture-light"]
-                                                ["render-palette" "|texture-dark" "colors/texture-dark"]
-                                                ["div" ["{}"] ["comp-text" "|Border colors" "nil"]]
-                                                ["render-palette" "|intersected" "colors/intersected"]
-                                                ["render-palette" "|intersected-light" "colors/intersected-light"]
-                                                ["div" ["{}"] ["comp-text" "|Paper colors" "nil"]]
-                                                ["render-palette" "|paper" "colors/paper"]]]],
                                     "comp-colors-page" ["def"
                                                         "comp-colors-page"
-                                                        ["create-comp" ":colors-page" "render"]]},
+                                                        ["create-comp"
+                                                         ":colors-page"
+                                                         ["fn"
+                                                          []
+                                                          ["fn"
+                                                           ["state" "mutate!"]
+                                                           ["div"
+                                                            ["{}"]
+                                                            ["div" ["{}"] ["comp-text" "|respo-ui.style.colors" "nil"]]
+                                                            ["div" ["{}"] ["comp-text" "|Motif colors" "nil"]]
+                                                            ["render-palette" "|motif" "colors/motif"]
+                                                            ["render-palette" "|motif-light" "colors/motif-light"]
+                                                            ["render-palette" "|motif-dark" "colors/motif-dark"]
+                                                            ["div" ["{}"] ["comp-text" "|Functional colors" "nil"]]
+                                                            ["render-palette" "|attractive" "colors/attractive"]
+                                                            ["render-palette" "|irreversible" "colors/irreversible"]
+                                                            ["render-palette" "|attentive" "colors/attentive"]
+                                                            ["render-palette" "|verdant" "colors/verdant"]
+                                                            ["render-palette" "|warm" "colors/warm"]
+                                                            ["div" ["{}"] ["comp-text" "|Text colors" "nil"]]
+                                                            ["render-palette" "|texture" "colors/texture"]
+                                                            ["render-palette" "|texture-light" "colors/texture-light"]
+                                                            ["render-palette" "|texture-dark" "colors/texture-dark"]
+                                                            ["div" ["{}"] ["comp-text" "|Border colors" "nil"]]
+                                                            ["render-palette" "|intersected" "colors/intersected"]
+                                                            ["render-palette"
+                                                             "|intersected-light"
+                                                             "colors/intersected-light"]
+                                                            ["div" ["{}"] ["comp-text" "|Paper colors" "nil"]]
+                                                            ["render-palette" "|paper" "colors/paper"]]]]]]},
                              :procs []},
          "comp.widgets-page" {:ns ["ns"
                                    "respo-ui.comp.widgets-page"
@@ -199,88 +215,6 @@
                                                "option"
                                                ["props" "&" "children"]
                                                ["create-element" ":option" "props" "children"]],
-                                     "render" ["defn"
-                                               "render"
-                                               []
-                                               ["fn"
-                                                ["state" "mutate!"]
-                                                ["div"
-                                                 ["{}"]
-                                                 ["div"
-                                                  ["{}"]
-                                                  ["comp-text" "|Widgets" "nil"]
-                                                  ["comp-space" "8" "nil"]
-                                                  ["a"
-                                                   ["{}"
-                                                    [":attrs"
-                                                     ["{}"
-                                                      [":href"
-                                                       "|https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/widgets_page.cljc"]
-                                                      [":target" "|_blank"]
-                                                      [":inner-text" "|Source"]]]]]]
-                                                 ["div"
-                                                  ["{}"]
-                                                  ["comp-text" "|Some text as description" "ui/text-label"]
-                                                  ["comp-space" "nil" "16"]
-                                                  ["comp-text" "|clickable" "ui/clickable-text"]]
-                                                 ["comp-space" "nil" "16"]
-                                                 ["div"
-                                                  ["{}"]
-                                                  ["button"
-                                                   ["{}"
-                                                    [":style"
-                                                     ["merge"
-                                                      "ui/button"
-                                                      ["{}" [":background-color" "colors/attractive"]]]]]
-                                                   ["comp-text" "|Yes" "nil"]]
-                                                  ["comp-space" "16" "nil"]
-                                                  ["button"
-                                                   ["{}"
-                                                    [":style"
-                                                     ["merge"
-                                                      "ui/button"
-                                                      ["{}" [":background-color" "colors/irreversible"]]]]]
-                                                   ["comp-text" "|Yes" "nil"]]
-                                                  ["comp-space" "16" "nil"]]
-                                                 ["comp-space" "nil" "16"]
-                                                 ["div"
-                                                  ["{}"]
-                                                  ["input"
-                                                   ["{}"
-                                                    [":style" "ui/input"]
-                                                    [":attrs" ["{}" [":placeholder" "|Some short text"]]]
-                                                    [":event" ["{}" [":input" ["on-input" "mutate!"]]]]]]
-                                                  ["comp-space" "16" "nil"]
-                                                  ["button"
-                                                   ["{}" [":style" ["merge" "ui/button"]]]
-                                                   ["comp-text" "|Add" "nil"]]
-                                                  ["comp-space" "16" "nil"]
-                                                  ["comp-text" "|nothing" "ui/text-label"]]
-                                                 ["comp-space" "nil" "16"]
-                                                 ["div"
-                                                  ["{}"]
-                                                  ["select"
-                                                   ["{}" [":style" "ui/select"]]
-                                                   ["option"
-                                                    ["{}"
-                                                     [":attrs" ["{}" [":selected" "true"] [":inner-text" "|Haskell"]]]]]
-                                                   ["option"
-                                                    ["{}"
-                                                     [":attrs" ["{}" [":selected" "true"] [":inner-text" "|Clojure"]]]]]
-                                                   ["option"
-                                                    ["{}"
-                                                     [":attrs" ["{}" [":selected" "false"] [":inner-text" "|OCaml"]]]]]]]
-                                                 ["comp-space" "nil" "16"]
-                                                 ["div"
-                                                  ["{}"]
-                                                  ["textarea"
-                                                   ["{}"
-                                                    [":style" "ui/textarea"]
-                                                    [":attrs" ["{}" [":placeholder" "|Some long text"]]]]]
-                                                  ["comp-space" "16" "nil"]
-                                                  ["button"
-                                                   ["{}" [":style" ["merge" "ui/button"]]]
-                                                   ["comp-text" "|Add" "nil"]]]]]],
                                      "select" ["defn"
                                                "select"
                                                ["props" "&" "children"]
@@ -291,8 +225,98 @@
                                                            ":widget-page"
                                                            "init-input"
                                                            "update-input"
-                                                           "render"]]},
+                                                           ["fn"
+                                                            []
+                                                            ["fn"
+                                                             ["state" "mutate!"]
+                                                             ["div"
+                                                              ["{}"]
+                                                              ["div"
+                                                               ["{}"]
+                                                               ["comp-text" "|Widgets" "nil"]
+                                                               ["comp-space" "8" "nil"]
+                                                               ["a"
+                                                                ["{}"
+                                                                 [":attrs"
+                                                                  ["{}"
+                                                                   [":href"
+                                                                    "|https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/widgets_page.cljc"]
+                                                                   [":target" "|_blank"]
+                                                                   [":inner-text" "|Source"]]]]]]
+                                                              ["div"
+                                                               ["{}"]
+                                                               ["comp-text" "|Some text as description" "ui/text-label"]
+                                                               ["comp-space" "nil" "16"]
+                                                               ["comp-text" "|clickable" "ui/clickable-text"]]
+                                                              ["comp-space" "nil" "16"]
+                                                              ["div"
+                                                               ["{}"]
+                                                               ["button"
+                                                                ["{}"
+                                                                 [":style"
+                                                                  ["merge"
+                                                                   "ui/button"
+                                                                   ["{}" [":background-color" "colors/attractive"]]]]]
+                                                                ["comp-text" "|Yes" "nil"]]
+                                                               ["comp-space" "16" "nil"]
+                                                               ["button"
+                                                                ["{}"
+                                                                 [":style"
+                                                                  ["merge"
+                                                                   "ui/button"
+                                                                   ["{}" [":background-color" "colors/irreversible"]]]]]
+                                                                ["comp-text" "|Yes" "nil"]]
+                                                               ["comp-space" "16" "nil"]]
+                                                              ["comp-space" "nil" "16"]
+                                                              ["div"
+                                                               ["{}"]
+                                                               ["input"
+                                                                ["{}"
+                                                                 [":style" "ui/input"]
+                                                                 [":attrs" ["{}" [":placeholder" "|Some short text"]]]
+                                                                 [":event" ["{}" [":input" ["on-input" "mutate!"]]]]]]
+                                                               ["comp-space" "16" "nil"]
+                                                               ["button"
+                                                                ["{}" [":style" ["merge" "ui/button"]]]
+                                                                ["comp-text" "|Add" "nil"]]
+                                                               ["comp-space" "16" "nil"]
+                                                               ["comp-text" "|nothing" "ui/text-label"]]
+                                                              ["comp-space" "nil" "16"]
+                                                              ["div"
+                                                               ["{}"]
+                                                               ["select"
+                                                                ["{}" [":style" "ui/select"]]
+                                                                ["option"
+                                                                 ["{}"
+                                                                  [":attrs"
+                                                                   ["{}"
+                                                                    [":selected" "true"]
+                                                                    [":inner-text" "|Haskell"]]]]]
+                                                                ["option"
+                                                                 ["{}"
+                                                                  [":attrs"
+                                                                   ["{}"
+                                                                    [":selected" "true"]
+                                                                    [":inner-text" "|Clojure"]]]]]
+                                                                ["option"
+                                                                 ["{}"
+                                                                  [":attrs"
+                                                                   ["{}" [":selected" "false"] [":inner-text" "|OCaml"]]]]]]]
+                                                              ["comp-space" "nil" "16"]
+                                                              ["div"
+                                                               ["{}"]
+                                                               ["textarea"
+                                                                ["{}"
+                                                                 [":style" "ui/textarea"]
+                                                                 [":attrs" ["{}" [":placeholder" "|Some long text"]]]]]
+                                                               ["comp-space" "16" "nil"]
+                                                               ["button"
+                                                                ["{}" [":style" ["merge" "ui/button"]]]
+                                                                ["comp-text" "|Add" "nil"]]]]]]]]},
                               :procs []},
+         "schema" {:ns ["ns" "respo-ui.schema"],
+                   :defs {"store" ["def" "store" ["{}" [":router" "nil"] [":mobile?" "true"]]]},
+                   :procs []},
          "comp.container" {:ns ["ns"
                                 "respo-ui.comp.container"
                                 [":require"
@@ -310,33 +334,42 @@
                                  ["[]" "respo-ui.comp.fonts-page" ":refer" ["[]" "comp-fonts-page"]]
                                  ["[]" "respo-ui.comp.components" ":refer" ["[]" "comp-components-page"]]
                                  ["[]" "respo-ui.comp.navbar" ":refer" ["[]" "comp-navbar"]]]],
-                           :defs {"render" ["defn"
-                                            "render"
-                                            ["store"]
-                                            ["fn"
-                                             ["state" "mutate!"]
-                                             ["let"
-                                              [["router" [":router" "store"]]]
-                                              ["div"
-                                               ["{}" [":style" ["merge" "ui/fullscreen" "ui/global"]]]
-                                               ["comp-navbar"]
-                                               ["div"
-                                                ["{}" [":style" ["merge" "ui/row" ["{}" [":padding-top" "80"]]]]]
-                                                ["comp-sidebar"]
-                                                ["div"
-                                                 ["{}" [":style" "ui/flex"]]
-                                                 ["case"
-                                                  [":name" "router"]
-                                                  ["|home" ["comp-home"]]
-                                                  ["|index.html" ["comp-home"]]
-                                                  ["|dev.html" ["comp-home"]]
-                                                  ["|colors.html" ["comp-colors-page"]]
-                                                  ["|widgets.html" ["comp-widgets-page"]]
-                                                  ["|layouts.html" ["comp-layouts-page"]]
-                                                  ["|fonts.html" ["comp-fonts-page"]]
-                                                  ["|components.html" ["comp-components-page"]]
-                                                  ["comp-text" ["pr-str" "router"] "nil"]]]]]]]],
-                                  "comp-container" ["def" "comp-container" ["create-comp" ":container" "render"]]},
+                           :defs {"comp-container" ["def"
+                                                    "comp-container"
+                                                    ["create-comp"
+                                                     ":container"
+                                                     ["fn"
+                                                      ["store"]
+                                                      ["fn"
+                                                       ["state" "mutate!"]
+                                                       ["let"
+                                                        [["router" [":router" "store"]]
+                                                         ["mobile?" [":mobile?" "store"]]]
+                                                        ["div"
+                                                         ["{}" [":style" ["merge" "ui/fullscreen" "ui/global"]]]
+                                                         ["comp-navbar"]
+                                                         ["div"
+                                                          ["{}"
+                                                           [":style"
+                                                            ["if"
+                                                             "mobile?"
+                                                             "nil"
+                                                             ["merge" "ui/row" ["{}" [":padding-top" "32"]]]]]]
+                                                          ["comp-sidebar" "mobile?"]
+                                                          ["div"
+                                                           ["{}" [":style" ["merge" "ui/flex" "style-content"]]]
+                                                           ["case"
+                                                            [":name" "router"]
+                                                            ["|home" ["comp-home"]]
+                                                            ["|index.html" ["comp-home"]]
+                                                            ["|dev.html" ["comp-home"]]
+                                                            ["|colors.html" ["comp-colors-page"]]
+                                                            ["|widgets.html" ["comp-widgets-page"]]
+                                                            ["|layouts.html" ["comp-layouts-page"]]
+                                                            ["|fonts.html" ["comp-fonts-page"]]
+                                                            ["|components.html" ["comp-components-page"]]
+                                                            ["comp-text" ["pr-str" "router"] "nil"]]]]]]]]]],
+                                  "style-content" ["def" "style-content" ["{}" [":padding" "8"]]]},
                            :procs []},
          "style" {:ns ["ns"
                        "respo-ui.style"
@@ -471,7 +504,8 @@
                        ["[]" "respo-router.core" ":refer" ["[]" "render-url!"]]
                        ["[]" "respo-router.util.listener" ":refer" ["[]" "listen!" "parse-address"]]
                        ["[]" "respo-ui.router" ":as" "router"]
-                       ["[]" "cljs.reader" ":refer" ["[]" "read-string"]]]],
+                       ["[]" "cljs.reader" ":refer" ["[]" "read-string"]]
+                       ["[]" "respo-ui.schema" ":as" "schema"]]],
                  :defs {"dispatch!" ["defn"
                                      "dispatch!"
                                      ["op" "op-data"]
@@ -496,7 +530,9 @@
                                     [["target" [".querySelector" "js/document" "|#app"]]]
                                     ["falsify-stage!"
                                      "target"
-                                     ["render-element" ["comp-container" "@store-ref" "ssr-stages"] "states-ref"]
+                                     ["render-element"
+                                      ["comp-container" ["assoc" "@store-ref" ":mobile?" "true"] "ssr-stages"]
+                                      "states-ref"]
                                      "dispatch!"]]]
                                   ["render-app!"]
                                   ["add-watch" "store-ref" ":changes" "render-app!"]
@@ -518,11 +554,14 @@
                         "store-ref" ["defonce"
                                      "store-ref"
                                      ["atom"
-                                      ["{}"
-                                       [":router"
-                                        ["parse-address"
-                                         ["str" [".-pathname" "js/location"] [".-search" "js/location"]]
-                                         "router/dict"]]]]],
+                                      ["merge"
+                                       "schema/store"
+                                       ["{}"
+                                        [":router"
+                                         ["parse-address"
+                                          ["str" [".-pathname" "js/location"] [".-search" "js/location"]]
+                                          "router/dict"]]
+                                        [":mobile?" ["<" [".-innerWidth" "js/window"] "600"]]]]]],
                         "states-ref" ["defonce" "states-ref" ["atom" ["{}"]]],
                         "on-jsload!" ["defn"
                                       "on-jsload!"
@@ -611,42 +650,45 @@
                             ["[]" "respo.comp.space" ":refer" ["[]" "comp-space"]]
                             ["[]" "respo-ui.style.colors" ":as" "colors"]]],
                       :defs {"repo-url" ["def" "repo-url" "|http://github.com/Respo/respo-ui"],
-                             "comp-home" ["def" "comp-home" ["create-comp" ":home" "render"]],
+                             "comp-home" ["def"
+                                          "comp-home"
+                                          ["create-comp"
+                                           ":home"
+                                           ["fn"
+                                            []
+                                            ["fn"
+                                             ["state" "mutate!"]
+                                             ["div"
+                                              ["{}"]
+                                              ["div"
+                                               ["{}"
+                                                [":style"
+                                                 ["{}"
+                                                  [":font-size" "48"]
+                                                  [":font-family" "|Josefin Sans"]
+                                                  [":color" "colors/motif"]
+                                                  [":font-weight" "100"]]]]
+                                               ["comp-text" "|Styles for Respo" "nil"]
+                                               ["comp-space" "16" "nil"]
+                                               ["img"
+                                                ["{}"
+                                                 [":attrs"
+                                                  ["{}" [":src" "|https://img.shields.io/clojars/v/respo/ui.svg"]]]]]]
+                                              ["div" ["{}" [":style" "style-logo"]]]
+                                              ["comp-space" "nil" "32"]
+                                              ["div"
+                                               ["{}"]
+                                               ["comp-text" "|Find more at: "]
+                                               ["a"
+                                                ["{}" [":attrs" ["{}" [":href" "repo-url"]]]]
+                                                ["comp-text" "repo-url" "nil"]]]]]]]],
                              "style-logo" ["def"
                                            "style-logo"
                                            ["{}"
                                             [":background-image" "|url(http://logo.respo.site/respo.png)"]
                                             [":width" "160"]
                                             [":height" "160"]
-                                            [":background-size" ":cover"]]],
-                             "render" ["defn"
-                                       "render"
-                                       []
-                                       ["fn"
-                                        ["state" "mutate!"]
-                                        ["div"
-                                         ["{}"]
-                                         ["div"
-                                          ["{}"
-                                           [":style"
-                                            ["{}"
-                                             [":font-size" "48"]
-                                             [":font-family" "|Josefin Sans"]
-                                             [":color" "colors/motif"]
-                                             [":font-weight" "100"]]]]
-                                          ["comp-text" "|Styles for Respo" "nil"]
-                                          ["comp-space" "16" "nil"]
-                                          ["img"
-                                           ["{}"
-                                            [":attrs" ["{}" [":src" "|https://img.shields.io/clojars/v/respo/ui.svg"]]]]]]
-                                         ["div" ["{}" [":style" "style-logo"]]]
-                                         ["comp-space" "nil" "32"]
-                                         ["div"
-                                          ["{}"]
-                                          ["comp-text" "|Find more at: "]
-                                          ["a"
-                                           ["{}" [":attrs" ["{}" [":href" "repo-url"]]]]
-                                           ["comp-text" "repo-url" "nil"]]]]]]},
+                                            [":background-size" ":cover"]]]},
                       :procs []},
          "comp.switchy" {:ns ["ns"
                               "respo-ui.comp.switchy"
@@ -721,35 +763,51 @@
                                             "on-route"
                                             ["path-name"]
                                             ["fn" ["e" "dispatch!"] ["dispatch!" ":router/nav" "path-name"]]],
-                                "comp-sidebar" ["def" "comp-sidebar" ["create-comp" ":sidebar" "render"]],
-                                "style-container" ["def" "style-container" ["{}" [":width" "240"]]],
-                                "style-entry" ["def"
+                                "comp-sidebar" ["def"
+                                                "comp-sidebar"
+                                                ["create-comp"
+                                                 ":sidebar"
+                                                 ["fn"
+                                                  ["mobile?"]
+                                                  ["fn"
+                                                   ["state" "mutate!"]
+                                                   ["div"
+                                                    ["{}" [":style" ["style-container" "mobile?"]]]
+                                                    ["render-entry" "|index.html" "|Home" "mobile?"]
+                                                    ["render-entry" "|colors.html" "|Colors" "mobile?"]
+                                                    ["render-entry" "|fonts.html" "|Fonts" "mobile?"]
+                                                    ["render-entry" "|widgets.html" "|Widgets" "mobile?"]
+                                                    ["render-entry" "|layouts.html" "|Layouts" "mobile?"]
+                                                    ["render-entry" "|components.html" "|Components" "mobile?"]]]]]],
+                                "style-container" ["defn"
+                                                   "style-container"
+                                                   ["mobile?"]
+                                                   ["if"
+                                                    "mobile?"
+                                                    ["{}" [":margin-bottom" "16"]]
+                                                    ["{}" [":width" "240"]]]],
+                                "style-entry" ["defn"
                                                "style-entry"
-                                               ["{}"
-                                                [":color" "colors/texture"]
-                                                [":line-height" "|40px"]
-                                                [":padding" "|0 16px"]
-                                                [":font-size" "|16px"]
-                                                [":cursor" "|pointer"]]],
-                                "render" ["defn"
-                                          "render"
-                                          []
-                                          ["fn"
-                                           ["state" "mutate!"]
-                                           ["div"
-                                            ["{}" [":style" "style-container"]]
-                                            ["render-entry" "|index.html" "|Home"]
-                                            ["render-entry" "|colors.html" "|Colors"]
-                                            ["render-entry" "|fonts.html" "|Fonts"]
-                                            ["render-entry" "|widgets.html" "|Widgets"]
-                                            ["render-entry" "|layouts.html" "|Layouts"]
-                                            ["render-entry" "|components.html" "|Components"]]]],
+                                               ["mobile?"]
+                                               ["merge"
+                                                ["{}"
+                                                 [":color" "colors/texture"]
+                                                 [":line-height" "|40px"]
+                                                 [":padding" "|0 16px"]
+                                                 [":font-size" "|16px"]
+                                                 [":cursor" "|pointer"]]
+                                                ["if"
+                                                 "mobile?"
+                                                 ["{}"
+                                                  [":display" ":inline-block"]
+                                                  [":padding" "|0 8px"]
+                                                  [":line-height" "|32px"]]]]],
                                 "render-entry" ["defn"
                                                 "render-entry"
-                                                ["path" "title"]
+                                                ["path" "title" "mobile?"]
                                                 ["div"
                                                  ["{}"
-                                                  [":style" "style-entry"]
+                                                  [":style" ["style-entry" "mobile?"]]
                                                   [":event" ["{}" [":click" ["on-route" "path"]]]]]
                                                  ["comp-text" "title" "nil"]]]},
                          :procs []},
@@ -760,29 +818,30 @@
                               ["[]" "respo.comp.text" ":refer" ["[]" "comp-text"]]
                               ["[]" "respo-ui.style" ":as" "ui"]
                               ["[]" "respo-ui.style.colors" ":as" "colors"]]],
-                        :defs {"comp-navbar" ["def" "comp-navbar" ["create-comp" ":navbar" "render"]],
-                               "render" ["defn"
-                                         "render"
-                                         []
-                                         ["fn"
-                                          ["state" "mutate!"]
-                                          ["div" ["{}" [":style" "style-container"]] ["comp-text" "|Respo UI" "nil"]]]],
+                        :defs {"comp-navbar" ["def"
+                                              "comp-navbar"
+                                              ["create-comp"
+                                               ":navbar"
+                                               ["fn"
+                                                []
+                                                ["fn"
+                                                 ["state" "mutate!"]
+                                                 ["div"
+                                                  ["{}" [":style" "style-container"]]
+                                                  ["comp-text" "|Respo UI" "nil"]]]]]],
                                "style-container" ["def"
                                                   "style-container"
                                                   ["merge"
                                                    "ui/row"
                                                    ["{}"
                                                     [":background-color" "colors/motif"]
-                                                    [":position" "|fixed"]
-                                                    [":top" "0"]
-                                                    [":bottom" "0"]
                                                     [":width" "|100%"]
                                                     [":height" "48"]
                                                     [":align-items" "|center"]
                                                     [":padding" "|0 16px"]
                                                     [":color" "|white"]
                                                     [":font-size" "24"]
-                                                    [":font-weight" "100"]
+                                                    [":font-weight" "300"]
                                                     [":font-family" "|Josefin Sans"]]]]},
                         :procs []},
          "comp.fonts-page" {:ns ["ns"
@@ -806,22 +865,24 @@
                                                           "| "
                                                           "weight"]
                                                          "nil"]]],
-                                   "comp-fonts-page" ["def" "comp-fonts-page" ["create-comp" ":fonts-page" "render"]],
-                                   "render" ["defn"
-                                             "render"
-                                             []
-                                             ["fn"
-                                              ["state" "mutate!"]
-                                              ["div"
-                                               ["{}"]
-                                               ["div" ["{}"] ["comp-text" "|Content fonts:" "nil"]]
-                                               ["render-font-demo" "|Hind" "300"]
-                                               ["render-font-demo" "|Hind" "400"]
-                                               ["render-font-demo" "|Hind" "500"]
-                                               ["div" ["{}"] ["comp-text" "|Fancy fonts:" "nil"]]
-                                               ["render-font-demo" "|Josefin Sans" "100"]
-                                               ["render-font-demo" "|Josefin Sans" "300"]
-                                               ["render-font-demo" "|Josefin Sans" "400"]]]],
+                                   "comp-fonts-page" ["def"
+                                                      "comp-fonts-page"
+                                                      ["create-comp"
+                                                       ":fonts-page"
+                                                       ["fn"
+                                                        []
+                                                        ["fn"
+                                                         ["state" "mutate!"]
+                                                         ["div"
+                                                          ["{}"]
+                                                          ["div" ["{}"] ["comp-text" "|Content fonts:" "nil"]]
+                                                          ["render-font-demo" "|Hind" "300"]
+                                                          ["render-font-demo" "|Hind" "400"]
+                                                          ["render-font-demo" "|Hind" "500"]
+                                                          ["div" ["{}"] ["comp-text" "|Fancy fonts:" "nil"]]
+                                                          ["render-font-demo" "|Josefin Sans" "100"]
+                                                          ["render-font-demo" "|Josefin Sans" "300"]
+                                                          ["render-font-demo" "|Josefin Sans" "400"]]]]]],
                                    "style-demo" ["def"
                                                  "style-demo"
                                                  ["{}"

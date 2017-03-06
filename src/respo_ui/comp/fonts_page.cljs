@@ -11,17 +11,18 @@
     (str "This is a demo of the font, guess what you like: " family " " weight)
     nil)))
 
-(defn render []
-  (fn [state mutate!]
-    (div
-     {}
-     (div {} (comp-text "Content fonts:" nil))
-     (render-font-demo "Hind" 300)
-     (render-font-demo "Hind" 400)
-     (render-font-demo "Hind" 500)
-     (div {} (comp-text "Fancy fonts:" nil))
-     (render-font-demo "Josefin Sans" 100)
-     (render-font-demo "Josefin Sans" 300)
-     (render-font-demo "Josefin Sans" 400))))
-
-(def comp-fonts-page (create-comp :fonts-page render))
+(def comp-fonts-page
+  (create-comp
+   :fonts-page
+   (fn []
+     (fn [state mutate!]
+       (div
+        {}
+        (div {} (comp-text "Content fonts:" nil))
+        (render-font-demo "Hind" 300)
+        (render-font-demo "Hind" 400)
+        (render-font-demo "Hind" 500)
+        (div {} (comp-text "Fancy fonts:" nil))
+        (render-font-demo "Josefin Sans" 100)
+        (render-font-demo "Josefin Sans" 300)
+        (render-font-demo "Josefin Sans" 400))))))

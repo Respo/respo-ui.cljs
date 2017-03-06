@@ -13,23 +13,24 @@
    :height 160,
    :background-size :cover})
 
-(defn render []
-  (fn [state mutate!]
-    (div
-     {}
-     (div
-      {:style {:font-size 48,
-               :font-family "Josefin Sans",
-               :color colors/motif,
-               :font-weight 100}}
-      (comp-text "Styles for Respo" nil)
-      (comp-space 16 nil)
-      (img {:attrs {:src "https://img.shields.io/clojars/v/respo/ui.svg"}}))
-     (div {:style style-logo})
-     (comp-space nil 32)
-     (div
-      {}
-      (comp-text "Find more at: ")
-      (a {:attrs {:href repo-url}} (comp-text repo-url nil))))))
-
-(def comp-home (create-comp :home render))
+(def comp-home
+  (create-comp
+   :home
+   (fn []
+     (fn [state mutate!]
+       (div
+        {}
+        (div
+         {:style {:font-size 48,
+                  :font-family "Josefin Sans",
+                  :color colors/motif,
+                  :font-weight 100}}
+         (comp-text "Styles for Respo" nil)
+         (comp-space 16 nil)
+         (img {:attrs {:src "https://img.shields.io/clojars/v/respo/ui.svg"}}))
+        (div {:style style-logo})
+        (comp-space nil 32)
+        (div
+         {}
+         (comp-text "Find more at: ")
+         (a {:attrs {:href repo-url}} (comp-text repo-url nil))))))))
