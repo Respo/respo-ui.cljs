@@ -6,14 +6,14 @@
             [respo-ui.style :as ui]))
 
 (def style-palette
-  {:align-items "center",
-   :color "white",
-   :font-size 13,
-   :width 400,
-   :justify-content "space-around",
-   :font-family "Menlo,monospace",
+  {:width 400,
    :height 40,
-   :margin 16})
+   :color "white",
+   :margin 16,
+   :justify-content "space-around",
+   :align-items "center",
+   :font-family "Menlo,monospace",
+   :font-size 13})
 
 (defn render-palette [title color]
   (div

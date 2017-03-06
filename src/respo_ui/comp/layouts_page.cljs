@@ -6,7 +6,7 @@
             [respo-ui.style :as ui]
             [respo-ui.style.colors :as colors]))
 
-(defn render-small [color] (div {:style {:background-color color, :width 20, :height 20}}))
+(defn render-small [color] (div {:style {:width 20, :height 20, :background-color color}}))
 
 (defn render-flex [color] (div {:style (merge ui/flex {:background-color color})}))
 
@@ -19,9 +19,9 @@
       (comp-text "Layouts" nil)
       (comp-space 8 nil)
       (a
-       {:attrs {:inner-text "Source",
-                :target "_blank",
-                :href "https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/layouts_page.cljc"}}))
+       {:attrs {:href "https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/layouts_page.cljc",
+                :inner-text "Source",
+                :target "_blank"}}))
      (div
       {}
       (div {} (comp-text "Children in row with ui/row" nil))
@@ -44,7 +44,7 @@
        (div
         {:style (merge
                  ui/column-center
-                 {:background-color colors/motif-light, :width 100, :height 100})}
+                 {:width 100, :height 100, :background-color colors/motif-light})}
         (render-small colors/motif)
         (render-small colors/motif-dark)
         (render-small colors/motif)))
@@ -54,7 +54,7 @@
        (div
         {:style (merge
                  ui/row-center
-                 {:background-color colors/motif-light, :width 100, :height 100})}
+                 {:width 100, :height 100, :background-color colors/motif-light})}
         (render-small colors/motif)
         (render-small colors/motif-dark)
         (render-small colors/motif)))
@@ -62,7 +62,7 @@
        {}
        (div {} (comp-text "Child centerred with ui/center" nil))
        (div
-        {:style (merge ui/center {:background-color colors/motif, :width 80, :height 80})}
-        (div {:style {:background-color colors/motif-dark, :width 40, :height 40}})))))))
+        {:style (merge ui/center {:width 80, :height 80, :background-color colors/motif})}
+        (div {:style {:width 40, :height 40, :background-color colors/motif-dark}})))))))
 
 (def comp-layouts-page (create-comp :layouts-page render))

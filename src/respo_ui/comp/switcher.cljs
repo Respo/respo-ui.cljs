@@ -5,25 +5,25 @@
             [respo.comp.space :refer [comp-space]]
             [respo-ui.style.colors :as colors]))
 
-(def style-button
-  {:background-color colors/motif,
-   :width 32,
-   :opacity 0.3,
-   :position :absolute,
-   :transition-duration "300ms",
-   :height 32,
-   :left 0})
-
 (def style-switcher
-  {:vertical-align :top,
-   :background-color colors/paper,
+  {:background-color colors/paper,
    :width 96,
-   :cursor :pointer,
-   :display :inline-block,
+   :height 16,
    :position :relative,
+   :cursor :pointer,
    :transition-duration "300ms",
    :margin-bottom 16,
-   :height 16})
+   :display :inline-block,
+   :vertical-align :top})
+
+(def style-button
+  {:background-color colors/motif,
+   :height 32,
+   :width 32,
+   :position :absolute,
+   :left 0,
+   :opacity 0.3,
+   :transition-duration "300ms"})
 
 (def comp-switcher
   (create-comp
@@ -32,4 +32,4 @@
      (fn [state mutate!]
        (div
         {:style style-switcher, :event {:click (fn [e dispatch!] (on-change (not status)))}}
-        (div {:style (merge style-button (if status {:opacity 1, :left 64}))}))))))
+        (div {:style (merge style-button (if status {:left 64, :opacity 1}))}))))))

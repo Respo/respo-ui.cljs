@@ -20,9 +20,9 @@
       (comp-text "Widgets" nil)
       (comp-space 8 nil)
       (a
-       {:attrs {:inner-text "Source",
+       {:attrs {:href "https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/widgets_page.cljc",
                 :target "_blank",
-                :href "https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/widgets_page.cljc"}}))
+                :inner-text "Source"}}))
      (div
       {}
       (comp-text "Some text as description" ui/text-label)
@@ -44,8 +44,8 @@
       {}
       (input
        {:style ui/input,
-        :event {:input (on-input mutate!)},
-        :attrs {:placeholder "Some short text"}})
+        :attrs {:placeholder "Some short text"},
+        :event {:input (on-input mutate!)}})
       (comp-space 16 nil)
       (button {:style (merge ui/button)} (comp-text "Add" nil))
       (comp-space 16 nil)

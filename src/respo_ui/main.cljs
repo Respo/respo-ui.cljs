@@ -4,8 +4,6 @@
             [respo-ui.comp.container :refer [comp-container]]
             [respo-router.core :refer [render-url!]]
             [respo-router.util.listener :refer [listen! parse-address]]
-            [respo-router.core :refer [render-url!]]
-            [respo-router.util.listener :refer [listen! parse-address]]
             [respo-ui.router :as router]
             [cljs.reader :refer [read-string]]))
 
@@ -16,27 +14,27 @@
     store))
 
 (defonce store-ref
-  (atom {:router (parse-address (str (.-pathname js/location) (.-search js/location)) router/dict)}))
+  (atom
+   {:router (parse-address
+             (str (.-pathname js/location) (.-search js/location))
+             router/dict)}))
 
 (defn dispatch! [op op-data]
-  (println "dispatch!" op op-data)
-  (reset! store-ref (updater @store-ref op op-data))
+  (println "Dispatch!" op op-data)
   (reset! store-ref (updater @store-ref op op-data)))
 
-(defonce states-ref (atom {}))
+(defn render-router! [] (render-url! (:router @store-ref) router/dict router/mode))
 
-(def ssr-stages
-  (let [ssr-element (.querySelector js/document "#ssr-stages")
-        ssr-markup (.getAttribute ssr-element "content")]
-    (read-string ssr-markup)))
+(defonce states-ref (atom {}))
 
 (defn render-app! []
   (let [target (.querySelector js/document "#app")]
     (render! (comp-container @store-ref) target dispatch! states-ref)))
 
-(defn on-jsload! [] (clear-cache!) (render-app!) (println "code updated."))
-
-(defn render-router! [] (render-url! (:router @store-ref) router/dict router/mode))
+(def ssr-stages
+  (let [ssr-element (.querySelector js/document "#ssr-stages")
+        ssr-markup (.getAttribute ssr-element "content")]
+    (read-string ssr-markup)))
 
 (defn -main! []
   (enable-console-print!)
@@ -52,6 +50,8 @@
   (render-router!)
   (listen! router/dict dispatch! router/mode)
   (add-watch store-ref :router-changes render-router!)
-  (println "app started!"))
+  (println "App started!"))
+
+(defn on-jsload! [] (clear-cache!) (render-app!) (println "Code updated!"))
 
 (set! js/window.onload -main!)

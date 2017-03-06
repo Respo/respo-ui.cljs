@@ -8,18 +8,18 @@
 (def style-container
   (merge
    ui/row
-   {:align-items "center",
-    :color "white",
-    :bottom 0,
-    :font-size 24,
-    :top 0,
-    :font-weight 100,
-    :background-color colors/motif,
-    :width "100%",
-    :padding "0 16px",
+   {:background-color colors/motif,
     :position "fixed",
-    :font-family "Josefin Sans",
-    :height 48}))
+    :top 0,
+    :bottom 0,
+    :width "100%",
+    :height 48,
+    :align-items "center",
+    :padding "0 16px",
+    :color "white",
+    :font-size 24,
+    :font-weight 100,
+    :font-family "Josefin Sans"}))
 
 (defn render []
   (fn [state mutate!] (div {:style style-container} (comp-text "Respo UI" nil))))

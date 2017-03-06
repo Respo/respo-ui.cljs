@@ -6,17 +6,17 @@
 
 (defn on-route [path-name] (fn [e dispatch!] (dispatch! :router/nav path-name)))
 
+(def style-container {:width 240})
+
 (def style-entry
-  {:line-height "40px",
-   :color colors/texture,
+  {:color colors/texture,
+   :line-height "40px",
+   :padding "0 16px",
    :font-size "16px",
-   :cursor "pointer",
-   :padding "0 16px"})
+   :cursor "pointer"})
 
 (defn render-entry [path title]
   (div {:style style-entry, :event {:click (on-route path)}} (comp-text title nil)))
-
-(def style-container {:width 240})
 
 (defn render []
   (fn [state mutate!]

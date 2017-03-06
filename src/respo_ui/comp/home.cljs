@@ -8,20 +8,20 @@
 (def repo-url "http://github.com/Respo/respo-ui")
 
 (def style-logo
-  {:width 160,
-   :background-image "url(http://logo.respo.site/respo.png)",
-   :background-size :cover,
-   :height 160})
+  {:background-image "url(http://logo.respo.site/respo.png)",
+   :width 160,
+   :height 160,
+   :background-size :cover})
 
 (defn render []
   (fn [state mutate!]
     (div
      {}
      (div
-      {:style {:color colors/motif,
-               :font-size 48,
-               :font-weight 100,
-               :font-family "Josefin Sans"}}
+      {:style {:font-size 48,
+               :font-family "Josefin Sans",
+               :color colors/motif,
+               :font-weight 100}}
       (comp-text "Styles for Respo" nil)
       (comp-space 16 nil)
       (img {:attrs {:src "https://img.shields.io/clojars/v/respo/ui.svg"}}))

@@ -7,7 +7,7 @@
 
 (defn update-state [state new-state] new-state)
 
-(defn render-entry [url title] (div {} (a {:attrs {:inner-text title, :href url}})))
+(defn render-entry [url title] (div {} (a {:attrs {:href url, :inner-text title}})))
 
 (defn init-state [& args] {:switcher-on? false})
 
@@ -32,9 +32,9 @@
          (comp-text "Built-in Components")
          (comp-space 8 nil)
          (a
-          {:attrs {:inner-text "Source",
+          {:attrs {:href "https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/components.cljc",
                    :target "_blank",
-                   :href "https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/components.cljc"}}))
+                   :inner-text "Source"}}))
         (div
          {}
          (comp-text "respo-ui.comp.switcher/comp-switcher")

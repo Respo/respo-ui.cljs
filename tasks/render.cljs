@@ -7,13 +7,18 @@
     [respo-ui.router :as router]
     [respo-router.util.listener :refer [parse-address]]))
 
+(def pages
+  ["/index.html"
+   "/widgets.html"
+   "/colors.html"
+   "/layouts.html"
+   "/fonts.html"
+   "/components.html"])
+
 (def fs (js/require "fs"))
 
 (defn slurp [file-name]
   (fs.readFileSync file-name "utf-8"))
-
-(defn spit [file-name content]
-  (fs.writeFileSync file-name content))
 
 (defn html-dsl [data html-content ssr-stages]
   (make-html
@@ -21,7 +26,8 @@
       (head {}
         (title {:attrs {:innerHTML "Respo UI"}})
         (link {:attrs {:rel "icon" :type "image/png" :href "http://logo.respo.site/respo.png"}})
-        (link {:attrs {:rel "stylesheet" :href "style.css"}})
+        (link {:attrs {:rel "stylesheet" :type "text/css" :href "style.css"}})
+        (link (:attrs {:rel "manifest" :href "manifest.json"}))
         (meta' {:attrs {:charset "utf-8"}})
         (meta' {:attrs {:name "viewport" :content "width=device-width, initial-scale=1"}})
         (meta' {:attrs {:id "ssr-stages" :content (pr-str ssr-stages)}})
@@ -33,21 +39,22 @@
         (div {:attrs {:id "app" :innerHTML html-content}})
         (script {:attrs {:src "main.js"}})))))
 
-(defn generate-html [router ssr-stages]
-  (let [ tree (comp-container {:router router} ssr-stages)
+(defn generate-html [store]
+  (let [ tree (comp-container store #{:shell})
          html-content (make-string tree)]
-    (html-dsl {:build? true} html-content ssr-stages)))
+    (html-dsl {:build? true} html-content #{:shell})))
 
-(def pages
-  ["/index.html"
-   "/widgets.html"
-   "/colors.html"
-   "/layouts.html"
-   "/fonts.html"
-   "/components.html"])
+(defn generate-empty-html []
+  (html-dsl {:build? true} "" {}))
+
+(defn spit [file-name content]
+  (let [fs (js/require "fs")]
+    (.writeFileSync fs file-name content)))
 
 (defn -main []
-  (doseq [page pages]
-    (spit (str "target" page) (generate-html (parse-address page router/dict) #{:shell}))))
+  (if (= js/process.env.env "dev")
+    (spit "target/dev.html" (generate-empty-html))
+    (doseq [page pages]
+      (spit (str "target" page) (generate-html {:router (parse-address page router/dict)})))))
 
 (-main)
