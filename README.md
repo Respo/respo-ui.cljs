@@ -20,6 +20,7 @@ Read command functions: https://github.com/Respo/respo-ui/blob/master/src/respo_
 
 ```clojure
 [respo-ui.style :as ui]
+[respo-ui.style.colors :as colors]
 [respo-ui.command :refer [init-input update-input on-input]]
 ```
 
@@ -35,7 +36,12 @@ Dev:
 cd npm-package/
 webpack
 cd ..
-boot dev!
+boot dev
+export boot_deps=`boot show -c`
+env=dev lumo -Kc $boot_deps:src/ -i tasks/render.cljs
+lumo -Kc $boot_deps:src/ -i tasks/server.cljs
+http-server -c-1
+# open localhost:8080/dev.html
 ```
 
 Build:
