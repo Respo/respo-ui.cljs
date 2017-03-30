@@ -32,7 +32,7 @@
          (comp-text "Built-in Components")
          (comp-space 8 nil)
          (a
-          {:attrs {:href "https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/components.cljc",
+          {:attrs {:href "https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/components.cljs",
                    :target "_blank",
                    :inner-text "Source"}}))
         (div

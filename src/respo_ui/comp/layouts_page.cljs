@@ -22,7 +22,7 @@
          (comp-text "Layouts" nil)
          (comp-space 8 nil)
          (a
-          {:attrs {:href "https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/layouts_page.cljc",
+          {:attrs {:href "https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/layouts_page.cljs",
                    :inner-text "Source",
                    :target "_blank"}}))
         (div

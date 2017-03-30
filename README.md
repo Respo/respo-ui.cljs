@@ -38,9 +38,9 @@ cd npm-package/
 webpack
 cd ..
 boot dev
-export boot_deps=`boot show -c`
-env=dev lumo -Kc src/:$boot_deps -i tasks/render.cljs
-lumo -Kc src/:$boot_deps -i tasks/server.cljs
+export deps=`boot show -c`
+env=dev lumo -Kc src/:$deps -i tasks/render.cljs
+lumo -Kc src/:$deps -i tasks/server.cljs
 http-server -c-1
 # open localhost:8080/dev.html
 ```
@@ -49,8 +49,8 @@ Build:
 
 ```bash
 boot build-advanced
-export boot_deps=`boot show -c`
-lumo -Kc src/:$boot_deps -i render.cljs
+export deps=`boot show -c`
+lumo -Kc src/:$deps -i tasks/render.cljs
 cd npm-package/
 webpack
 cd ..

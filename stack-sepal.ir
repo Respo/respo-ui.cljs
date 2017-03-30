@@ -26,7 +26,7 @@
                                                                  [":attrs"
                                                                   ["{}"
                                                                    [":href"
-                                                                    "|https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/layouts_page.cljc"]
+                                                                    "|https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/layouts_page.cljs"]
                                                                    [":inner-text" "|Source"]
                                                                    [":target" "|_blank"]]]]]]
                                                               ["div"
@@ -240,7 +240,7 @@
                                                                  [":attrs"
                                                                   ["{}"
                                                                    [":href"
-                                                                    "|https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/widgets_page.cljc"]
+                                                                    "|https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/widgets_page.cljs"]
                                                                    [":target" "|_blank"]
                                                                    [":inner-text" "|Source"]]]]]]
                                                               ["div"
@@ -628,7 +628,7 @@
                                                                   [":attrs"
                                                                    ["{}"
                                                                     [":href"
-                                                                     "|https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/components.cljc"]
+                                                                     "|https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/components.cljs"]
                                                                     [":target" "|_blank"]
                                                                     [":inner-text" "|Source"]]]]]]
                                                                ["div"

@@ -25,7 +25,7 @@
          (comp-text "Widgets" nil)
          (comp-space 8 nil)
          (a
-          {:attrs {:href "https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/widgets_page.cljc",
+          {:attrs {:href "https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/widgets_page.cljs",
                    :target "_blank",
                    :inner-text "Source"}}))
         (div
