@@ -24,7 +24,7 @@
   (create-comp
    :sidebar
    (fn [mobile?]
-     (fn [state mutate!]
+     (fn [cursor]
        (div
         {:style (style-container mobile?)}
         (render-entry "index.html" "Home" mobile?)

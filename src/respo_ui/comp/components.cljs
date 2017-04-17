@@ -14,31 +14,30 @@
 (def comp-components-page
   (create-comp
    :components
-   init-state
-   update-state
-   (fn []
-     (fn [state mutate!]
-       (div
-        {}
-        (div
-         {}
-         (comp-text "There are also components follow the guidelines of Respo UI:" nil)
-         (render-entry "https://github.com/Respo/global-popup" "global-popup")
-         (render-entry "https://github.com/Respo/inflow-popup" "inflow-popup")
-         (render-entry "https://github.com/Respo/respo-message" "respo-message"))
-        (comp-space nil 32)
-        (div
-         {}
-         (comp-text "Built-in Components")
-         (comp-space 8 nil)
-         (a
-          {:attrs {:href "https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/components.cljs",
-                   :target "_blank",
-                   :inner-text "Source"}}))
-        (div
-         {}
-         (comp-text "respo-ui.comp.switchy/comp-switch")
-         (comp-space 16 nil)
-         (comp-switch
-          (:switch-on? state)
-          (fn [new-status] (mutate! (assoc state :switch-on? new-status))))))))))
+   (fn [states]
+     (fn [cursor]
+       (let [state (or (:data states) false)]
+         (div
+          {}
+          (div
+           {}
+           (comp-text "There are also components follow the guidelines of Respo UI:" nil)
+           (render-entry "https://github.com/Respo/global-popup" "global-popup")
+           (render-entry "https://github.com/Respo/inflow-popup" "inflow-popup")
+           (render-entry "https://github.com/Respo/respo-message" "respo-message"))
+          (comp-space nil 32)
+          (div
+           {}
+           (comp-text "Built-in Components")
+           (comp-space 8 nil)
+           (a
+            {:attrs {:href "https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/components.cljs",
+                     :target "_blank",
+                     :inner-text "Source"}}))
+          (div
+           {}
+           (comp-text "respo-ui.comp.switchy/comp-switch")
+           (comp-space 16 nil)
+           (comp-switch
+            state
+            (fn [new-status dispatch!] (dispatch! :states [cursor (not state)]))))))))))

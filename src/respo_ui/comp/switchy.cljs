@@ -29,7 +29,8 @@
   (create-comp
    :switch
    (fn [status on-change]
-     (fn [state mutate!]
+     (fn [cursor]
        (div
-        {:style style-switch, :event {:click (fn [e dispatch!] (on-change (not status)))}}
+        {:style style-switch,
+         :event {:click (fn [e dispatch!] (on-change (not status) dispatch!))}}
         (div {:style (merge style-button (if status {:left 64, :opacity 1}))}))))))

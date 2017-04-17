@@ -15,7 +15,7 @@
   (create-comp
    :fonts-page
    (fn []
-     (fn [state mutate!]
+     (fn [cursor]
        (div
         {}
         (div {} (comp-text "Content fonts:" nil))

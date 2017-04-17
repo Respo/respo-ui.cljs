@@ -3,21 +3,21 @@
   :asset-paths #{"assets/"}
   :resource-paths #{"src"}
   :dependencies '[[org.clojure/clojure       "1.8.0"       :scope "provided"]
-                  [org.clojure/clojurescript "1.9.494"     :scope "provided"]
+                  [org.clojure/clojurescript "1.9.521"     :scope "provided"]
                   [adzerk/boot-cljs          "1.7.228-1"   :scope "provided"]
                   [adzerk/boot-reload        "0.4.13"      :scope "provided"]
                   [cirru/boot-stack-server   "0.1.30"      :scope "provided"]
-                  [andare                    "0.4.0"       :scope "provided"]
-                  [cumulo/shallow-diff       "0.1.2"       :scope "provided"]
+                  [andare                    "0.5.0"       :scope "provided"]
+                  [cumulo/shallow-diff       "0.1.3"       :scope "provided"]
                   [fipp                      "0.6.9"       :scope "provided"]
-                  [respo                     "0.3.38"      :scope "provided"]
+                  [respo                     "0.4.2"       :scope "provided"]
                   [respo/router              "0.2.2"       :scope "provided"]
                   [mvc-works/hsl             "0.1.2"]])
 
 (require '[adzerk.boot-cljs   :refer [cljs]]
          '[adzerk.boot-reload :refer [reload]])
 
-(def +version+ "0.1.9")
+(def +version+ "0.2.0")
 
 (task-options!
   pom {:project     'respo/ui

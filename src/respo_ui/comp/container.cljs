@@ -2,6 +2,7 @@
 (ns respo-ui.comp.container
   (:require [hsl.core :refer [hsl]]
             [respo.alias :refer [create-comp div span input]]
+            [respo.cursor :refer [with-cursor]]
             [respo.comp.text :refer [comp-text]]
             [respo.comp.space :refer [comp-space]]
             [respo-ui.style :as ui]
@@ -21,8 +22,8 @@
   (create-comp
    :container
    (fn [store]
-     (fn [state mutate!]
-       (let [router (:router store), mobile? (:mobile? store)]
+     (fn [cursor]
+       (let [router (:router store), mobile? (:mobile? store), states (:states store)]
          (div
           {:style (merge ui/fullscreen ui/global)}
           (comp-navbar)
@@ -36,8 +37,9 @@
               "index.html" (comp-home)
               "dev.html" (comp-home)
               "colors.html" (comp-colors-page)
-              "widgets.html" (comp-widgets-page)
+              "widgets.html" (with-cursor :widgets (comp-widgets-page (:widgets states)))
               "layouts.html" (comp-layouts-page)
               "fonts.html" (comp-fonts-page)
-              "components.html" (comp-components-page)
+              "components.html"
+                (with-cursor :components (comp-components-page (:components states)))
               (comp-text (pr-str router) nil))))))))))

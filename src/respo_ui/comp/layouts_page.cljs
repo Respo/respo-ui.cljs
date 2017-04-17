@@ -14,7 +14,7 @@
   (create-comp
    :layouts-page
    (fn []
-     (fn [state mutate!]
+     (fn [cursor]
        (div
         {}
         (div

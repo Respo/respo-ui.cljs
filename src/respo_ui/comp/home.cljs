@@ -17,7 +17,7 @@
   (create-comp
    :home
    (fn []
-     (fn [state mutate!]
+     (fn [cursor]
        (div
         {}
         (div

@@ -25,7 +25,7 @@
   (create-comp
    :colors-page
    (fn []
-     (fn [state mutate!]
+     (fn [cursor]
        (div
         {}
         (div {} (comp-text "respo-ui.style.colors" nil))

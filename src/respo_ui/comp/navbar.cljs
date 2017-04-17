@@ -21,4 +21,4 @@
 (def comp-navbar
   (create-comp
    :navbar
-   (fn [] (fn [state mutate!] (div {:style style-container} (comp-text "Respo UI" nil))))))
+   (fn [] (fn [cursor] (div {:style style-container} (comp-text "Respo UI" nil))))))

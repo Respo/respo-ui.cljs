@@ -14,7 +14,7 @@
                                                            ["fn"
                                                             []
                                                             ["fn"
-                                                             ["state" "mutate!"]
+                                                             ["cursor"]
                                                              ["div"
                                                               ["{}"]
                                                               ["div"
@@ -173,7 +173,7 @@
                                                          ["fn"
                                                           []
                                                           ["fn"
-                                                           ["state" "mutate!"]
+                                                           ["cursor"]
                                                            ["div"
                                                             ["{}"]
                                                             ["div" ["{}"] ["comp-text" "|respo-ui.style.colors" "nil"]]
@@ -209,7 +209,6 @@
                                     ["[]" "respo.comp.text" ":refer" ["[]" "comp-text"]]
                                     ["[]" "respo.comp.space" ":refer" ["[]" "comp-space"]]
                                     ["[]" "respo-ui.style" ":as" "ui"]
-                                    ["[]" "respo-ui.common" ":refer" ["[]" "on-input" "init-input" "update-input"]]
                                     ["[]" "respo-ui.style.colors" ":as" "colors"]]],
                               :defs {"option" ["defn"
                                                "option"
@@ -223,105 +222,117 @@
                                                           "comp-widgets-page"
                                                           ["create-comp"
                                                            ":widget-page"
-                                                           "init-input"
-                                                           "update-input"
                                                            ["fn"
-                                                            []
+                                                            ["states"]
                                                             ["fn"
-                                                             ["state" "mutate!"]
-                                                             ["div"
-                                                              ["{}"]
+                                                             ["cursor"]
+                                                             ["let"
+                                                              [["state" [":data" "states"]]]
                                                               ["div"
                                                                ["{}"]
-                                                               ["comp-text" "|Widgets" "nil"]
-                                                               ["comp-space" "8" "nil"]
-                                                               ["a"
-                                                                ["{}"
-                                                                 [":attrs"
-                                                                  ["{}"
-                                                                   [":href"
-                                                                    "|https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/widgets_page.cljs"]
-                                                                   [":target" "|_blank"]
-                                                                   [":inner-text" "|Source"]]]]]]
-                                                              ["div"
-                                                               ["{}"]
-                                                               ["comp-text" "|Some text as description" "ui/text-label"]
+                                                               ["div"
+                                                                ["{}"]
+                                                                ["comp-text" "|Widgets" "nil"]
+                                                                ["comp-space" "8" "nil"]
+                                                                ["a"
+                                                                 ["{}"
+                                                                  [":attrs"
+                                                                   ["{}"
+                                                                    [":href"
+                                                                     "|https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/widgets_page.cljs"]
+                                                                    [":target" "|_blank"]
+                                                                    [":inner-text" "|Source"]]]]]]
+                                                               ["div"
+                                                                ["{}"]
+                                                                ["comp-text"
+                                                                 "|Some text as description"
+                                                                 "ui/text-label"]
+                                                                ["comp-space" "nil" "16"]
+                                                                ["comp-text" "|clickable" "ui/clickable-text"]]
                                                                ["comp-space" "nil" "16"]
-                                                               ["comp-text" "|clickable" "ui/clickable-text"]]
-                                                              ["comp-space" "nil" "16"]
-                                                              ["div"
-                                                               ["{}"]
-                                                               ["button"
-                                                                ["{}"
-                                                                 [":style"
-                                                                  ["merge"
-                                                                   "ui/button"
-                                                                   ["{}" [":background-color" "colors/attractive"]]]]]
-                                                                ["comp-text" "|Yes" "nil"]]
-                                                               ["comp-space" "16" "nil"]
-                                                               ["button"
-                                                                ["{}"
-                                                                 [":style"
-                                                                  ["merge"
-                                                                   "ui/button"
-                                                                   ["{}" [":background-color" "colors/irreversible"]]]]]
-                                                                ["comp-text" "|Yes" "nil"]]
-                                                               ["comp-space" "16" "nil"]]
-                                                              ["comp-space" "nil" "16"]
-                                                              ["div"
-                                                               ["{}"]
-                                                               ["input"
-                                                                ["{}"
-                                                                 [":style" "ui/input"]
-                                                                 [":attrs" ["{}" [":placeholder" "|Some short text"]]]
-                                                                 [":event" ["{}" [":input" ["on-input" "mutate!"]]]]]]
-                                                               ["comp-space" "16" "nil"]
-                                                               ["button"
-                                                                ["{}" [":style" ["merge" "ui/button"]]]
-                                                                ["comp-text" "|Add" "nil"]]
-                                                               ["comp-space" "16" "nil"]
-                                                               ["comp-text" "|nothing" "ui/text-label"]]
-                                                              ["comp-space" "nil" "16"]
-                                                              ["div"
-                                                               ["{}"]
-                                                               ["select"
-                                                                ["{}" [":style" "ui/select"]]
-                                                                ["option"
+                                                               ["div"
+                                                                ["{}"]
+                                                                ["button"
                                                                  ["{}"
-                                                                  [":attrs"
+                                                                  [":style"
+                                                                   ["merge"
+                                                                    "ui/button"
+                                                                    ["{}" [":background-color" "colors/attractive"]]]]]
+                                                                 ["comp-text" "|Yes" "nil"]]
+                                                                ["comp-space" "16" "nil"]
+                                                                ["button"
+                                                                 ["{}"
+                                                                  [":style"
+                                                                   ["merge"
+                                                                    "ui/button"
+                                                                    ["{}" [":background-color" "colors/irreversible"]]]]]
+                                                                 ["comp-text" "|Yes" "nil"]]
+                                                                ["comp-space" "16" "nil"]]
+                                                               ["comp-space" "nil" "16"]
+                                                               ["div"
+                                                                ["{}"]
+                                                                ["input"
+                                                                 ["{}"
+                                                                  [":style" "ui/input"]
+                                                                  [":attrs" ["{}" [":placeholder" "|Some short text"]]]
+                                                                  [":event"
                                                                    ["{}"
-                                                                    [":selected" "true"]
-                                                                    [":inner-text" "|Haskell"]]]]]
-                                                                ["option"
+                                                                    [":input"
+                                                                     ["fn"
+                                                                      ["e" "dispatch!"]
+                                                                      ["dispatch!"
+                                                                       ":states"
+                                                                       ["[]" "cursor" [":value" "e"]]]]]]]]]
+                                                                ["comp-space" "16" "nil"]
+                                                                ["button"
+                                                                 ["{}" [":style" ["merge" "ui/button"]]]
+                                                                 ["comp-text" "|Add" "nil"]]
+                                                                ["comp-space" "16" "nil"]
+                                                                ["comp-text" "|nothing" "ui/text-label"]]
+                                                               ["comp-space" "nil" "16"]
+                                                               ["div"
+                                                                ["{}"]
+                                                                ["select"
+                                                                 ["{}" [":style" "ui/select"]]
+                                                                 ["option"
+                                                                  ["{}"
+                                                                   [":attrs"
+                                                                    ["{}"
+                                                                     [":selected" "true"]
+                                                                     [":inner-text" "|Haskell"]]]]]
+                                                                 ["option"
+                                                                  ["{}"
+                                                                   [":attrs"
+                                                                    ["{}"
+                                                                     [":selected" "true"]
+                                                                     [":inner-text" "|Clojure"]]]]]
+                                                                 ["option"
+                                                                  ["{}"
+                                                                   [":attrs"
+                                                                    ["{}"
+                                                                     [":selected" "false"]
+                                                                     [":inner-text" "|OCaml"]]]]]]]
+                                                               ["comp-space" "nil" "16"]
+                                                               ["div"
+                                                                ["{}"]
+                                                                ["textarea"
                                                                  ["{}"
-                                                                  [":attrs"
-                                                                   ["{}"
-                                                                    [":selected" "true"]
-                                                                    [":inner-text" "|Clojure"]]]]]
-                                                                ["option"
-                                                                 ["{}"
-                                                                  [":attrs"
-                                                                   ["{}" [":selected" "false"] [":inner-text" "|OCaml"]]]]]]]
-                                                              ["comp-space" "nil" "16"]
-                                                              ["div"
-                                                               ["{}"]
-                                                               ["textarea"
-                                                                ["{}"
-                                                                 [":style" "ui/textarea"]
-                                                                 [":attrs" ["{}" [":placeholder" "|Some long text"]]]]]
-                                                               ["comp-space" "16" "nil"]
-                                                               ["button"
-                                                                ["{}" [":style" ["merge" "ui/button"]]]
-                                                                ["comp-text" "|Add" "nil"]]]]]]]]},
+                                                                  [":style" "ui/textarea"]
+                                                                  [":attrs" ["{}" [":placeholder" "|Some long text"]]]]]
+                                                                ["comp-space" "16" "nil"]
+                                                                ["button"
+                                                                 ["{}" [":style" ["merge" "ui/button"]]]
+                                                                 ["comp-text" "|Add" "nil"]]]]]]]]]},
                               :procs []},
          "schema" {:ns ["ns" "respo-ui.schema"],
-                   :defs {"store" ["def" "store" ["{}" [":router" "nil"] [":mobile?" "true"]]]},
+                   :defs {"store" ["def" "store" ["{}" [":router" "nil"] [":mobile?" "true"] [":states" ["{}"]]]]},
                    :procs []},
          "comp.container" {:ns ["ns"
                                 "respo-ui.comp.container"
                                 [":require"
                                  ["[]" "hsl.core" ":refer" ["[]" "hsl"]]
                                  ["[]" "respo.alias" ":refer" ["[]" "create-comp" "div" "span" "input"]]
+                                 ["[]" "respo.cursor" ":refer" ["[]" "with-cursor"]]
                                  ["[]" "respo.comp.text" ":refer" ["[]" "comp-text"]]
                                  ["[]" "respo.comp.space" ":refer" ["[]" "comp-space"]]
                                  ["[]" "respo-ui.style" ":as" "ui"]
@@ -341,10 +352,11 @@
                                                      ["fn"
                                                       ["store"]
                                                       ["fn"
-                                                       ["state" "mutate!"]
+                                                       ["cursor"]
                                                        ["let"
                                                         [["router" [":router" "store"]]
-                                                         ["mobile?" [":mobile?" "store"]]]
+                                                         ["mobile?" [":mobile?" "store"]]
+                                                         ["states" [":states" "store"]]]
                                                         ["div"
                                                          ["{}" [":style" ["merge" "ui/fullscreen" "ui/global"]]]
                                                          ["comp-navbar"]
@@ -364,10 +376,16 @@
                                                             ["|index.html" ["comp-home"]]
                                                             ["|dev.html" ["comp-home"]]
                                                             ["|colors.html" ["comp-colors-page"]]
-                                                            ["|widgets.html" ["comp-widgets-page"]]
+                                                            ["|widgets.html"
+                                                             ["with-cursor"
+                                                              ":widgets"
+                                                              ["comp-widgets-page" [":widgets" "states"]]]]
                                                             ["|layouts.html" ["comp-layouts-page"]]
                                                             ["|fonts.html" ["comp-fonts-page"]]
-                                                            ["|components.html" ["comp-components-page"]]
+                                                            ["|components.html"
+                                                             ["with-cursor"
+                                                              ":components"
+                                                              ["comp-components-page" [":components" "states"]]]]
                                                             ["comp-text" ["pr-str" "router"] "nil"]]]]]]]]]],
                                   "style-content" ["def" "style-content" ["{}" [":padding" "8"]]]},
                            :procs []},
@@ -500,6 +518,7 @@
                       "respo-ui.main"
                       [":require"
                        ["[]" "respo.core" ":refer" ["[]" "render!" "clear-cache!" "falsify-stage!" "render-element"]]
+                       ["[]" "respo.cursor" ":refer" ["[]" "mutate"]]
                        ["[]" "respo-ui.comp.container" ":refer" ["[]" "comp-container"]]
                        ["[]" "respo-router.core" ":refer" ["[]" "render-url!"]]
                        ["[]" "respo-router.util.listener" ":refer" ["[]" "listen!" "parse-address"]]
@@ -516,6 +535,7 @@
                                    ["store" "op" "op-data"]
                                    ["case"
                                     "op"
+                                    [":states" ["update" "store" ":states" ["mutate" "op-data"]]]
                                     [":router/route" ["assoc" "store" ":router" "op-data"]]
                                     [":router/nav"
                                      ["assoc" "store" ":router" ["parse-address" "op-data" "router/dict"]]]
@@ -531,12 +551,10 @@
                                     ["falsify-stage!"
                                      "target"
                                      ["render-element"
-                                      ["comp-container" ["assoc" "@store-ref" ":mobile?" "true"] "ssr-stages"]
-                                      "states-ref"]
+                                      ["comp-container" ["assoc" "@store-ref" ":mobile?" "true"] "ssr-stages"]]
                                      "dispatch!"]]]
                                   ["render-app!"]
                                   ["add-watch" "store-ref" ":changes" "render-app!"]
-                                  ["add-watch" "states-ref" ":changes" "render-app!"]
                                   ["render-router!"]
                                   ["listen!" "router/dict" "dispatch!" "router/mode"]
                                   ["add-watch" "store-ref" ":router-changes" "render-router!"]
@@ -550,7 +568,7 @@
                                        []
                                        ["let"
                                         [["target" [".querySelector" "js/document" "|#app"]]]
-                                        ["render!" ["comp-container" "@store-ref"] "target" "dispatch!" "states-ref"]]],
+                                        ["render!" ["comp-container" "@store-ref"] "target" "dispatch!"]]],
                         "store-ref" ["defonce"
                                      "store-ref"
                                      ["atom"
@@ -562,7 +580,6 @@
                                           ["str" [".-pathname" "js/location"] [".-search" "js/location"]]
                                           "router/dict"]]
                                         [":mobile?" ["<" [".-innerWidth" "js/window"] "600"]]]]]],
-                        "states-ref" ["defonce" "states-ref" ["atom" ["{}"]]],
                         "on-jsload!" ["defn"
                                       "on-jsload!"
                                       []
@@ -596,51 +613,52 @@
                                                            "comp-components-page"
                                                            ["create-comp"
                                                             ":components"
-                                                            "init-state"
-                                                            "update-state"
                                                             ["fn"
-                                                             []
+                                                             ["states"]
                                                              ["fn"
-                                                              ["state" "mutate!"]
-                                                              ["div"
-                                                               ["{}"]
+                                                              ["cursor"]
+                                                              ["let"
+                                                               [["state" ["or" [":data" "states"] "false"]]]
                                                                ["div"
                                                                 ["{}"]
-                                                                ["comp-text"
-                                                                 "|There are also components follow the guidelines of Respo UI:"
-                                                                 "nil"]
-                                                                ["render-entry"
-                                                                 "|https://github.com/Respo/global-popup"
-                                                                 "|global-popup"]
-                                                                ["render-entry"
-                                                                 "|https://github.com/Respo/inflow-popup"
-                                                                 "|inflow-popup"]
-                                                                ["render-entry"
-                                                                 "|https://github.com/Respo/respo-message"
-                                                                 "|respo-message"]]
-                                                               ["comp-space" "nil" "32"]
-                                                               ["div"
-                                                                ["{}"]
-                                                                ["comp-text" "|Built-in Components"]
-                                                                ["comp-space" "8" "nil"]
-                                                                ["a"
-                                                                 ["{}"
-                                                                  [":attrs"
-                                                                   ["{}"
-                                                                    [":href"
-                                                                     "|https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/components.cljs"]
-                                                                    [":target" "|_blank"]
-                                                                    [":inner-text" "|Source"]]]]]]
-                                                               ["div"
-                                                                ["{}"]
-                                                                ["comp-text" "|respo-ui.comp.switchy/comp-switch"]
-                                                                ["comp-space" "16" "nil"]
-                                                                ["comp-switch"
-                                                                 [":switch-on?" "state"]
-                                                                 ["fn"
-                                                                  ["new-status"]
-                                                                  ["mutate!"
-                                                                   ["assoc" "state" ":switch-on?" "new-status"]]]]]]]]]]},
+                                                                ["div"
+                                                                 ["{}"]
+                                                                 ["comp-text"
+                                                                  "|There are also components follow the guidelines of Respo UI:"
+                                                                  "nil"]
+                                                                 ["render-entry"
+                                                                  "|https://github.com/Respo/global-popup"
+                                                                  "|global-popup"]
+                                                                 ["render-entry"
+                                                                  "|https://github.com/Respo/inflow-popup"
+                                                                  "|inflow-popup"]
+                                                                 ["render-entry"
+                                                                  "|https://github.com/Respo/respo-message"
+                                                                  "|respo-message"]]
+                                                                ["comp-space" "nil" "32"]
+                                                                ["div"
+                                                                 ["{}"]
+                                                                 ["comp-text" "|Built-in Components"]
+                                                                 ["comp-space" "8" "nil"]
+                                                                 ["a"
+                                                                  ["{}"
+                                                                   [":attrs"
+                                                                    ["{}"
+                                                                     [":href"
+                                                                      "|https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/components.cljs"]
+                                                                     [":target" "|_blank"]
+                                                                     [":inner-text" "|Source"]]]]]]
+                                                                ["div"
+                                                                 ["{}"]
+                                                                 ["comp-text" "|respo-ui.comp.switchy/comp-switch"]
+                                                                 ["comp-space" "16" "nil"]
+                                                                 ["comp-switch"
+                                                                  "state"
+                                                                  ["fn"
+                                                                   ["new-status" "dispatch!"]
+                                                                   ["dispatch!"
+                                                                    ":states"
+                                                                    ["[]" "cursor" ["not" "state"]]]]]]]]]]]]},
                             :procs []},
          "comp.home" {:ns ["ns"
                            "respo-ui.comp.home"
@@ -657,7 +675,7 @@
                                            ["fn"
                                             []
                                             ["fn"
-                                             ["state" "mutate!"]
+                                             ["cursor"]
                                              ["div"
                                               ["{}"]
                                               ["div"
@@ -714,13 +732,16 @@
                                                 ["fn"
                                                  ["status" "on-change"]
                                                  ["fn"
-                                                  ["state" "mutate!"]
+                                                  ["cursor"]
                                                   ["div"
                                                    ["{}"
                                                     [":style" "style-switch"]
                                                     [":event"
                                                      ["{}"
-                                                      [":click" ["fn" ["e" "dispatch!"] ["on-change" ["not" "status"]]]]]]]
+                                                      [":click"
+                                                       ["fn"
+                                                        ["e" "dispatch!"]
+                                                        ["on-change" ["not" "status"] "dispatch!"]]]]]]
                                                    ["div"
                                                     ["{}"
                                                      [":style"
@@ -770,7 +791,7 @@
                                                  ["fn"
                                                   ["mobile?"]
                                                   ["fn"
-                                                   ["state" "mutate!"]
+                                                   ["cursor"]
                                                    ["div"
                                                     ["{}" [":style" ["style-container" "mobile?"]]]
                                                     ["render-entry" "|index.html" "|Home" "mobile?"]
@@ -825,7 +846,7 @@
                                                ["fn"
                                                 []
                                                 ["fn"
-                                                 ["state" "mutate!"]
+                                                 ["cursor"]
                                                  ["div"
                                                   ["{}" [":style" "style-container"]]
                                                   ["comp-text" "|Respo UI" "nil"]]]]]],
@@ -872,7 +893,7 @@
                                                        ["fn"
                                                         []
                                                         ["fn"
-                                                         ["state" "mutate!"]
+                                                         ["cursor"]
                                                          ["div"
                                                           ["{}"]
                                                           ["div" ["{}"] ["comp-text" "|Content fonts:" "nil"]]
@@ -905,9 +926,4 @@
                                 "texture-dark" ["def" "texture-dark" ["hsl" "0" "0" "0"]],
                                 "irreversible" ["def" "irreversible" ["hsl" "6" "100" "60"]],
                                 "motif-dark" ["def" "motif-dark" ["hsl" "200" "100" "46"]]},
-                         :procs []},
-         "common" {:ns ["ns" "respo-ui.common"],
-                   :defs {"on-input" ["defn" "on-input" ["mutate!"] ["fn" ["e" "dispatch!"] ["mutate!" [":value" "e"]]]],
-                          "update-input" ["defn" "update-input" ["state" "text"] "text"],
-                          "init-input" ["defn" "init-input" ["&" "args"] "|"]},
-                   :procs []}}}
+                         :procs []}}}
