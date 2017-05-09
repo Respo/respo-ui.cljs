@@ -13,7 +13,7 @@ module.exports =
         fallback: 'style-loader', use: 'css-loader'
     ,
       test: /\.(eot|svg|ttf|woff2?)(\?.+)?$/, loader: 'url-loader'
-      query: {limit: 100, name: 'fonts/[name].[ext]'}
+      query: {limit: 100, name: 'fonts/[hash:8].[ext]'}
     ]
   plugins: [
     new ExtractTextPlugin("[name].css")
