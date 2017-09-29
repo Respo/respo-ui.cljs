@@ -27,33 +27,7 @@ Use `ui/button` as `style` attributes for buttons.
 
 ### Develop
 
-https://github.com/mvc-works/boot-workflow
-
-Dev:
-
-```bash
-cd npm-package/
-webpack
-cd ..
-boot dev
-export deps=`boot show -c`
-env=dev lumo -Kc src/:$deps -i tasks/render.cljs
-stack-editor
-http-server -c-1
-# open localhost:8080/dev.html
-```
-
-Build:
-
-```bash
-boot build-advanced
-export deps=`boot show -c`
-lumo -Kc src/:$deps -i tasks/render.cljs
-cd npm-package/
-webpack
-cd ..
-# boot rsync
-```
+https://github.com/mvc-works/coworkflow
 
 ### License
 
