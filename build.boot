@@ -1,49 +1,18 @@
 
-(set-env!
-  :asset-paths #{"assets/"}
-  :resource-paths #{"src"}
-  :dependencies '[[org.clojure/clojure       "1.8.0"       :scope "provided"]
-                  [org.clojure/clojurescript "1.9.521"     :scope "provided"]
-                  [adzerk/boot-cljs          "1.7.228-1"   :scope "provided"]
-                  [adzerk/boot-reload        "0.4.13"      :scope "provided"]
-                  [cirru/boot-stack-server   "0.1.30"      :scope "provided"]
-                  [andare                    "0.5.0"       :scope "provided"]
-                  [cumulo/shallow-diff       "0.1.3"       :scope "provided"]
-                  [fipp                      "0.6.9"       :scope "provided"]
-                  [respo                     "0.4.2"       :scope "provided"]
-                  [respo/router              "0.2.2"       :scope "provided"]
-                  [mvc-works/hsl             "0.1.2"]])
-
-(require '[adzerk.boot-cljs   :refer [cljs]]
-         '[adzerk.boot-reload :refer [reload]])
-
 (def +version+ "0.2.0")
 
-(task-options!
-  pom {:project     'respo/ui
-       :version     +version+
-       :description "Command styles for Respo apps"
-       :url         "https://github.com/Respo/respo-ui"
-       :scm         {:url "https://github.com/Respo/respo-ui"}
-       :license     {"MIT" "http://opensource.org/licenses/mit-license.php"}})
-
-(deftask dev []
-  (comp
-    (watch)
-    (reload :on-jsload 'respo-ui.main/on-jsload!
-            :cljs-asset-path ".")
-    (cljs :compiler-options {:language-in :ecmascript5})
-    (target :no-clean true)))
-
-(deftask build-advanced []
-  (comp
-    (cljs :optimizations :advanced
-          :compiler-options {:language-in :ecmascript5})
-    (target :no-clean true)))
+(set-env!
+  :resource-paths #{"src"}
+  :dependencies '[])
 
 (deftask build []
   (comp
-    (pom)
+    (pom :project     'respo/ui
+         :version     +version+
+         :description "Workflow"
+         :url         "https://github.com/Respo/respo-ui"
+         :scm         {:url "https://github.com/Respo/respo-ui"}
+         :license     {"MIT" "http://opensource.org/licenses/mit-license.php"})
     (jar)
     (install)
     (target)))

@@ -1,8 +1,8 @@
 
 (ns respo-ui.comp.widgets-page
-  (:require [respo.alias :refer [create-comp create-element div input textarea button a]]
-            [respo.comp.text :refer [comp-text]]
-            [respo.comp.space :refer [comp-space]]
+  (:require-macros [respo.macros :refer [defcomp div input textarea button span a <>]])
+  (:require [respo.core :refer [create-comp create-element]]
+            [respo.comp.space :refer [=<]]
             [respo-ui.style :as ui]
             [respo-ui.style.colors :as colors]))
 
@@ -10,60 +10,55 @@
 
 (defn select [props & children] (create-element :select props children))
 
-(def comp-widgets-page
-  (create-comp
-   :widget-page
-   (fn [states]
-     (fn [cursor]
-       (let [state (:data states)]
-         (div
-          {}
-          (div
-           {}
-           (comp-text "Widgets" nil)
-           (comp-space 8 nil)
-           (a
-            {:attrs {:href "https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/widgets_page.cljs",
-                     :target "_blank",
-                     :inner-text "Source"}}))
-          (div
-           {}
-           (comp-text "Some text as description" ui/text-label)
-           (comp-space nil 16)
-           (comp-text "clickable" ui/clickable-text))
-          (comp-space nil 16)
-          (div
-           {}
-           (button
-            {:style (merge ui/button {:background-color colors/attractive})}
-            (comp-text "Yes" nil))
-           (comp-space 16 nil)
-           (button
-            {:style (merge ui/button {:background-color colors/irreversible})}
-            (comp-text "Yes" nil))
-           (comp-space 16 nil))
-          (comp-space nil 16)
-          (div
-           {}
-           (input
-            {:style ui/input,
-             :attrs {:placeholder "Some short text"},
-             :event {:input (fn [e dispatch!] (dispatch! :states [cursor (:value e)]))}})
-           (comp-space 16 nil)
-           (button {:style (merge ui/button)} (comp-text "Add" nil))
-           (comp-space 16 nil)
-           (comp-text "nothing" ui/text-label))
-          (comp-space nil 16)
-          (div
-           {}
-           (select
-            {:style ui/select}
-            (option {:attrs {:selected true, :inner-text "Haskell"}})
-            (option {:attrs {:selected true, :inner-text "Clojure"}})
-            (option {:attrs {:selected false, :inner-text "OCaml"}})))
-          (comp-space nil 16)
-          (div
-           {}
-           (textarea {:style ui/textarea, :attrs {:placeholder "Some long text"}})
-           (comp-space 16 nil)
-           (button {:style (merge ui/button)} (comp-text "Add" nil)))))))))
+(defcomp
+ comp-widgets-page
+ (states)
+ (let [state (:data states)]
+   (div
+    {}
+    (div
+     {}
+     (<> "Widgets")
+     (=< 8 nil)
+     (a
+      {:href "https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/widgets_page.cljs",
+       :target "_blank",
+       :inner-text "Source"}))
+    (div
+     {}
+     (<> span "Some text as description" ui/text-label)
+     (=< nil 16)
+     (<> span "clickable" ui/clickable-text))
+    (=< nil 16)
+    (div
+     {}
+     (button {:style (merge ui/button {:background-color colors/attractive})} (<> "Yes"))
+     (=< 16 nil)
+     (button {:style (merge ui/button {:background-color colors/irreversible})} (<> "Yes"))
+     (=< 16 nil))
+    (=< nil 16)
+    (div
+     {}
+     (input
+      {:placeholder "Some short text",
+       :value state,
+       :style ui/input,
+       :event {:input (fn [e dispatch! mutate!] (mutate! (:value e)))}})
+     (=< 16 nil)
+     (button {:style (merge ui/button)} (<> "Add"))
+     (=< 16 nil)
+     (<> span "nothing" ui/text-label))
+    (=< nil 16)
+    (div
+     {}
+     (select
+      {:style ui/select}
+      (option {:selected true, :inner-text "Haskell"})
+      (option {:selected true, :inner-text "Clojure"})
+      (option {:selected false, :inner-text "OCaml"})))
+    (=< nil 16)
+    (div
+     {}
+     (textarea {:placeholder "Some long text", :style ui/textarea})
+     (=< 16 nil)
+     (button {:style (merge ui/button)} (<> "Add"))))))

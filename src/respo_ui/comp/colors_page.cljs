@@ -1,7 +1,7 @@
 
 (ns respo-ui.comp.colors-page
-  (:require [respo.alias :refer [create-comp div]]
-            [respo.comp.text :refer [comp-text]]
+  (:require-macros [respo.macros :refer [defcomp div <>]])
+  (:require [respo.core :refer [create-comp]]
             [respo-ui.style.colors :as colors]
             [respo-ui.style :as ui]))
 
@@ -16,35 +16,30 @@
    :font-size 13})
 
 (defn render-palette [title color]
-  (div
-   {:style (merge ui/row style-palette {:background-color color})}
-   (comp-text title nil)
-   (comp-text color nil)))
+  (div {:style (merge ui/row style-palette {:background-color color})} (<> title) (<> color)))
 
-(def comp-colors-page
-  (create-comp
-   :colors-page
-   (fn []
-     (fn [cursor]
-       (div
-        {}
-        (div {} (comp-text "respo-ui.style.colors" nil))
-        (div {} (comp-text "Motif colors" nil))
-        (render-palette "motif" colors/motif)
-        (render-palette "motif-light" colors/motif-light)
-        (render-palette "motif-dark" colors/motif-dark)
-        (div {} (comp-text "Functional colors" nil))
-        (render-palette "attractive" colors/attractive)
-        (render-palette "irreversible" colors/irreversible)
-        (render-palette "attentive" colors/attentive)
-        (render-palette "verdant" colors/verdant)
-        (render-palette "warm" colors/warm)
-        (div {} (comp-text "Text colors" nil))
-        (render-palette "texture" colors/texture)
-        (render-palette "texture-light" colors/texture-light)
-        (render-palette "texture-dark" colors/texture-dark)
-        (div {} (comp-text "Border colors" nil))
-        (render-palette "intersected" colors/intersected)
-        (render-palette "intersected-light" colors/intersected-light)
-        (div {} (comp-text "Paper colors" nil))
-        (render-palette "paper" colors/paper))))))
+(defcomp
+ comp-colors-page
+ ()
+ (div
+  {}
+  (div {} (<> "respo-ui.style.colors"))
+  (div {} (<> "Motif colors"))
+  (render-palette "motif" colors/motif)
+  (render-palette "motif-light" colors/motif-light)
+  (render-palette "motif-dark" colors/motif-dark)
+  (div {} (<> "Functional colors"))
+  (render-palette "attractive" colors/attractive)
+  (render-palette "irreversible" colors/irreversible)
+  (render-palette "attentive" colors/attentive)
+  (render-palette "verdant" colors/verdant)
+  (render-palette "warm" colors/warm)
+  (div {} (<> "Text colors"))
+  (render-palette "texture" colors/texture)
+  (render-palette "texture-light" colors/texture-light)
+  (render-palette "texture-dark" colors/texture-dark)
+  (div {} (<> "Border colors"))
+  (render-palette "intersected" colors/intersected)
+  (render-palette "intersected-light" colors/intersected-light)
+  (div {} (<> "Paper colors"))
+  (render-palette "paper" colors/paper)))

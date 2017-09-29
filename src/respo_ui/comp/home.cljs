@@ -1,8 +1,8 @@
 
 (ns respo-ui.comp.home
-  (:require [respo.alias :refer [create-comp div a img]]
-            [respo.comp.text :refer [comp-text]]
-            [respo.comp.space :refer [comp-space]]
+  (:require-macros [respo.macros :refer [defcomp div a img <>]])
+  (:require [respo.core :refer [create-comp]]
+            [respo.comp.space :refer [=<]]
             [respo-ui.style.colors :as colors]))
 
 (def repo-url "http://github.com/Respo/respo-ui")
@@ -13,24 +13,19 @@
    :height 160,
    :background-size :cover})
 
-(def comp-home
-  (create-comp
-   :home
-   (fn []
-     (fn [cursor]
-       (div
-        {}
-        (div
-         {:style {:font-size 48,
-                  :font-family "Josefin Sans",
-                  :color colors/motif,
-                  :font-weight 100}}
-         (comp-text "Styles for Respo" nil)
-         (comp-space 16 nil)
-         (img {:attrs {:src "https://img.shields.io/clojars/v/respo/ui.svg"}}))
-        (div {:style style-logo})
-        (comp-space nil 32)
-        (div
-         {}
-         (comp-text "Find more at: ")
-         (a {:attrs {:href repo-url}} (comp-text repo-url nil))))))))
+(def style-home
+  {:font-size 48, :font-family "Josefin Sans", :color colors/motif, :font-weight 100})
+
+(defcomp
+ comp-home
+ ()
+ (div
+  {}
+  (div
+   {:style style-home}
+   (<> "Styles for Respo")
+   (=< 16)
+   (img {:src "https://img.shields.io/clojars/v/respo/ui.svg"}))
+  (div {:style style-logo})
+  (=< nil 32)
+  (div {} (<> "Find more at: ") (a {:href repo-url} (<> repo-url)))))

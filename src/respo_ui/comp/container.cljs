@@ -1,10 +1,9 @@
 
 (ns respo-ui.comp.container
+  (:require-macros [respo.macros :refer [defcomp cursor-> div span input <>]])
   (:require [hsl.core :refer [hsl]]
-            [respo.alias :refer [create-comp div span input]]
-            [respo.cursor :refer [with-cursor]]
-            [respo.comp.text :refer [comp-text]]
-            [respo.comp.space :refer [comp-space]]
+            [respo.core :refer [create-comp]]
+            [respo.comp.space :refer [=<]]
             [respo-ui.style :as ui]
             [respo-ui.style.colors :as colors]
             [respo-ui.comp.sidebar :refer [comp-sidebar]]
@@ -18,28 +17,25 @@
 
 (def style-content {:padding 8})
 
-(def comp-container
-  (create-comp
-   :container
-   (fn [store]
-     (fn [cursor]
-       (let [router (:router store), mobile? (:mobile? store), states (:states store)]
-         (div
-          {:style (merge ui/fullscreen ui/global)}
-          (comp-navbar)
-          (div
-           {:style (if mobile? nil (merge ui/row {:padding-top 32}))}
-           (comp-sidebar mobile?)
-           (div
-            {:style (merge ui/flex style-content)}
-            (case (:name router)
-              "home" (comp-home)
-              "index.html" (comp-home)
-              "dev.html" (comp-home)
-              "colors.html" (comp-colors-page)
-              "widgets.html" (with-cursor :widgets (comp-widgets-page (:widgets states)))
-              "layouts.html" (comp-layouts-page)
-              "fonts.html" (comp-fonts-page)
-              "components.html"
-                (with-cursor :components (comp-components-page (:components states)))
-              (comp-text (pr-str router) nil))))))))))
+(defcomp
+ comp-container
+ (store)
+ (let [router (:router store), mobile? (:mobile? store), states (:states store)]
+   (div
+    {:style (merge ui/fullscreen ui/global)}
+    (comp-navbar)
+    (div
+     {:style (if mobile? nil (merge ui/row {:padding-top 32}))}
+     (comp-sidebar mobile?)
+     (div
+      {:style (merge ui/flex style-content)}
+      (case (:name router)
+        "home" (comp-home)
+        "index.html" (comp-home)
+        "dev.html" (comp-home)
+        "colors.html" (comp-colors-page)
+        "widgets.html" (cursor-> :widgets comp-widgets-page states)
+        "layouts.html" (comp-layouts-page)
+        "fonts.html" (comp-fonts-page)
+        "components.html" (cursor-> :components comp-components-page states)
+        (<> (pr-str router))))))))

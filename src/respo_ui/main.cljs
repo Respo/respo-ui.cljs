@@ -1,6 +1,6 @@
 
 (ns respo-ui.main
-  (:require [respo.core :refer [render! clear-cache! falsify-stage! render-element]]
+  (:require [respo.core :refer [render! clear-cache! realize-ssr!]]
             [respo.cursor :refer [mutate]]
             [respo-ui.comp.container :refer [comp-container]]
             [respo-router.core :refer [render-url!]]
@@ -8,6 +8,8 @@
             [respo-ui.router :as router]
             [cljs.reader :refer [read-string]]
             [respo-ui.schema :as schema]))
+
+(def ssr? (some? (.querySelector js/document "meta.respo-ssr")))
 
 (defn updater [store op op-data]
   (case op
@@ -31,30 +33,19 @@
 
 (defn render-router! [] (render-url! (:router @store-ref) router/dict router/mode))
 
-(defn render-app! []
-  (let [target (.querySelector js/document "#app")]
-    (render! (comp-container @store-ref) target dispatch!)))
+(def mount-target (.querySelector js/document ".app"))
 
-(def ssr-stages
-  (let [ssr-element (.querySelector js/document "#ssr-stages")
-        ssr-markup (.getAttribute ssr-element "content")]
-    (read-string ssr-markup)))
+(defn render-app! [renderer] (renderer mount-target (comp-container @store-ref) dispatch!))
 
-(defn -main! []
-  (enable-console-print!)
-  (if (not (empty? ssr-stages))
-    (let [target (.querySelector js/document "#app")]
-      (falsify-stage!
-       target
-       (render-element (comp-container (assoc @store-ref :mobile? true) ssr-stages))
-       dispatch!)))
-  (render-app!)
-  (add-watch store-ref :changes render-app!)
+(defn main! []
+  (if ssr? (render-app! realize-ssr!))
+  (render-app! render!)
+  (add-watch store-ref :changes (fn [] (render-app! render!)))
   (render-router!)
   (listen! router/dict dispatch! router/mode)
   (add-watch store-ref :router-changes render-router!)
   (println "App started!"))
 
-(defn on-jsload! [] (clear-cache!) (render-app!) (println "Code updated!"))
+(defn reload! [] (clear-cache!) (render-app! render!) (println "Code updated!"))
 
-(set! js/window.onload -main!)
+(set! js/window.onload main!)

@@ -1,28 +1,25 @@
 
 (ns respo-ui.comp.fonts-page
-  (:require [respo.alias :refer [create-comp div]] [respo.comp.text :refer [comp-text]]))
+  (:require-macros [respo.macros :refer [defcomp div <>]])
+  (:require [respo.core :refer [create-comp]]))
 
 (def style-demo {:font-size 20, :font-weight "bold", :line-height "56px"})
 
 (defn render-font-demo [family weight]
   (div
    {:style (merge style-demo {:font-family family, :font-weight weight})}
-   (comp-text
-    (str "This is a demo of the font, guess what you like: " family " " weight)
-    nil)))
+   (<> (str "This is a demo of the font, guess what you like: " family " " weight))))
 
-(def comp-fonts-page
-  (create-comp
-   :fonts-page
-   (fn []
-     (fn [cursor]
-       (div
-        {}
-        (div {} (comp-text "Content fonts:" nil))
-        (render-font-demo "Hind" 300)
-        (render-font-demo "Hind" 400)
-        (render-font-demo "Hind" 500)
-        (div {} (comp-text "Fancy fonts:" nil))
-        (render-font-demo "Josefin Sans" 100)
-        (render-font-demo "Josefin Sans" 300)
-        (render-font-demo "Josefin Sans" 400))))))
+(defcomp
+ comp-fonts-page
+ ()
+ (div
+  {}
+  (div {} (<> "Content fonts:"))
+  (render-font-demo "Hind" 300)
+  (render-font-demo "Hind" 400)
+  (render-font-demo "Hind" 500)
+  (div {} (<> "Fancy fonts:"))
+  (render-font-demo "Josefin Sans" 100)
+  (render-font-demo "Josefin Sans" 300)
+  (render-font-demo "Josefin Sans" 400)))

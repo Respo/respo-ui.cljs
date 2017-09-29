@@ -1,8 +1,4 @@
 
 /target/
-.nrepl-history
-.nrepl-port
-/src/*.*
-/src/.*
-
-.lumo_cache/
+/dist
+/node_modules

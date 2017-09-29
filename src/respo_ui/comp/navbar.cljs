@@ -1,7 +1,7 @@
 
 (ns respo-ui.comp.navbar
-  (:require [respo.alias :refer [create-comp div]]
-            [respo.comp.text :refer [comp-text]]
+  (:require-macros [respo.macros :refer [defcomp div <>]])
+  (:require [respo.core :refer [create-comp]]
             [respo-ui.style :as ui]
             [respo-ui.style.colors :as colors]))
 
@@ -18,7 +18,4 @@
     :font-weight 300,
     :font-family "Josefin Sans"}))
 
-(def comp-navbar
-  (create-comp
-   :navbar
-   (fn [] (fn [cursor] (div {:style style-container} (comp-text "Respo UI" nil))))))
+(defcomp comp-navbar () (div {:style style-container} (<> "Respo UI")))

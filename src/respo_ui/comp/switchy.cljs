@@ -1,8 +1,8 @@
 
 (ns respo-ui.comp.switchy
-  (:require [respo.alias :refer [create-comp div a img]]
-            [respo.comp.text :refer [comp-text]]
-            [respo.comp.space :refer [comp-space]]
+  (:require-macros [respo.macros :refer [defcomp div a img <>]])
+  (:require [respo.core :refer [create-comp]]
+            [respo.comp.space :refer [=<]]
             [respo-ui.style.colors :as colors]))
 
 (def style-button
@@ -25,12 +25,10 @@
    :display :inline-block,
    :vertical-align :top})
 
-(def comp-switch
-  (create-comp
-   :switch
-   (fn [status on-change]
-     (fn [cursor]
-       (div
-        {:style style-switch,
-         :event {:click (fn [e dispatch!] (on-change (not status) dispatch!))}}
-        (div {:style (merge style-button (if status {:left 64, :opacity 1}))}))))))
+(defcomp
+ comp-switch
+ (status on-change)
+ (div
+  {:style style-switch,
+   :on {:click (fn [e dispatch! mutate!] (on-change (not status) dispatch! mutate!))}}
+  (div {:style (merge style-button (if status {:left 64, :opacity 1}))})))
