@@ -1,0 +1,15 @@
+{
+  "short_name": "UI",
+  "name": "UI",
+  "icons": [
+    {
+      "src": "http://repo-cdn.b0.upaiyun.com/logo/respo.png",
+      "sizes": "320x320"
+    }
+  ],
+  "start_url": "index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff"
+}

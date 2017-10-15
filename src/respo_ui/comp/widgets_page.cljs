@@ -1,14 +1,12 @@
 
 (ns respo-ui.comp.widgets-page
-  (:require-macros [respo.macros :refer [defcomp div input textarea button span a <>]])
+  (:require-macros [respo.macros
+                    :refer
+                    [defcomp div input textarea button span select option a <>]])
   (:require [respo.core :refer [create-comp create-element]]
             [respo.comp.space :refer [=<]]
             [respo-ui.style :as ui]
             [respo-ui.style.colors :as colors]))
-
-(defn option [props & children] (create-element :option props children))
-
-(defn select [props & children] (create-element :select props children))
 
 (defcomp
  comp-widgets-page
@@ -43,7 +41,7 @@
       {:placeholder "Some short text",
        :value state,
        :style ui/input,
-       :event {:input (fn [e dispatch! mutate!] (mutate! (:value e)))}})
+       :on {:input (fn [e dispatch! mutate!] (mutate! (:value e)))}})
      (=< 16 nil)
      (button {:style (merge ui/button)} (<> "Add"))
      (=< 16 nil)

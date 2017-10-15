@@ -42,4 +42,6 @@
   (render-palette "intersected" colors/intersected)
   (render-palette "intersected-light" colors/intersected-light)
   (div {} (<> "Paper colors"))
-  (render-palette "paper" colors/paper)))
+  (render-palette "paper" colors/paper)
+  (render-palette "paper-light" colors/paper-light)
+  (render-palette "paper-dark" colors/paper-dark)))
