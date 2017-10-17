@@ -7,8 +7,7 @@
             [respo-ui.router :as router]
             [respo-router.util.listener :refer [parse-address]]))
 
-(def base-info
-  {:title "Respo UI", :icon "http://repo-cdn.b0.upaiyun.com/logo/respo.png", :ssr nil})
+(def base-info {:title "Respo UI", :icon "http://cdn.tiye.me/logo/respo.png", :ssr nil})
 
 (defn dev-page []
   (make-page
@@ -23,11 +22,11 @@
 (defn prod-page [path]
   (let [webpack-info (.parse js/JSON (slurp "dist/webpack-manifest.json"))
         cljs-info (.parse js/JSON (slurp "dist/cljs-manifest.json"))
-        cdn (if preview? "" "http://repo-cdn.b0.upaiyun.com/respo-ui/")
+        cdn (if preview? "" "http://cdn.tiye.me/respo-ui/")
         prefix-cdn (fn [x] (str cdn x))
         page-options (merge
                       base-info
-                      {:styles ["http://repo-cdn.b0.upaiyun.com/favored-fonts/main.css"
+                      {:styles ["http://cdn.tiye.me/favored-fonts/main.css"
                                 (prefix-cdn (aget webpack-info "main.css"))],
                        :scripts (map
                                  prefix-cdn
