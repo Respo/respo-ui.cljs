@@ -1,8 +1,7 @@
 
 (ns respo-ui.comp.container
-  (:require-macros [respo.macros :refer [defcomp cursor-> div span input <>]])
   (:require [hsl.core :refer [hsl]]
-            [respo.core :refer [create-comp]]
+            [respo.macros :refer [defcomp cursor-> div span input <>]]
             [respo.comp.space :refer [=<]]
             [respo-ui.style :as ui]
             [respo-ui.style.colors :as colors]
@@ -20,7 +19,9 @@
 (defcomp
  comp-container
  (store)
- (let [router (:router store), mobile? (:mobile? store), states (:states store)]
+ (let [router (first (:path (:router store)))
+       mobile? (:mobile? store)
+       states (:states store)]
    (div
     {:style (merge ui/fullscreen ui/global)}
     (comp-navbar)

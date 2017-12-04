@@ -1,7 +1,6 @@
 
 (ns respo-ui.comp.sidebar
-  (:require-macros [respo.macros :refer [defcomp div <>]])
-  (:require [respo.core :refer [create-comp]] [respo-ui.style.colors :as colors]))
+  (:require [respo.macros :refer [defcomp div <>]] [respo-ui.style.colors :as colors]))
 
 (defn on-route [path-name] (fn [e dispatch! mutate!] (dispatch! :router/nav path-name)))
 

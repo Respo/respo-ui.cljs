@@ -1,7 +1,6 @@
 
 (ns respo-ui.comp.colors-page
-  (:require-macros [respo.macros :refer [defcomp div <>]])
-  (:require [respo.core :refer [create-comp]]
+  (:require [respo.macros :refer [defcomp div <>]]
             [respo-ui.style.colors :as colors]
             [respo-ui.style :as ui]))
 

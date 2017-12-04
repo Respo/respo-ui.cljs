@@ -1,7 +1,5 @@
 
-(ns respo-ui.comp.fonts-page
-  (:require-macros [respo.macros :refer [defcomp div <>]])
-  (:require [respo.core :refer [create-comp]]))
+(ns respo-ui.comp.fonts-page (:require [respo.macros :refer [defcomp div <>]]))
 
 (def style-demo {:font-size 20, :font-weight "bold", :line-height "56px"})
 

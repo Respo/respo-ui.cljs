@@ -1,7 +1,6 @@
 
 (ns respo-ui.comp.home
-  (:require-macros [respo.macros :refer [defcomp div a img <>]])
-  (:require [respo.core :refer [create-comp]]
+  (:require [respo.macros :refer [defcomp div a img <>]]
             [respo.comp.space :refer [=<]]
             [respo-ui.style.colors :as colors]))
 
@@ -24,7 +23,7 @@
   (div
    {:style style-home}
    (<> "Styles for Respo")
-   (=< 16)
+   (=< 16 nil)
    (img {:src "https://img.shields.io/clojars/v/respo/ui.svg"}))
   (div {:style style-logo})
   (=< nil 32)

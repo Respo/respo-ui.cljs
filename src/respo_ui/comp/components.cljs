@@ -1,7 +1,6 @@
 
 (ns respo-ui.comp.components
-  (:require-macros [respo.macros :refer [defcomp div a <>]])
-  (:require [respo.core :refer [create-comp]]
+  (:require [respo.macros :refer [defcomp div a <>]]
             [respo.comp.space :refer [=<]]
             [respo-ui.comp.switchy :refer [comp-switch]]))
 

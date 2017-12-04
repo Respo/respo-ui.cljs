@@ -5,7 +5,8 @@
             [respo-ui.comp.container :refer [comp-container]]
             [respo-ui.schema :as schema]
             [respo-ui.router :as router]
-            [respo-router.util.listener :refer [parse-address]]))
+            [respo-router.parser :refer [parse-address]]
+            [cljs.reader :refer [read-string]]))
 
 (def base-info {:title "Respo UI", :icon "http://cdn.tiye.me/logo/respo.png", :ssr nil})
 
@@ -15,23 +16,18 @@
    (merge
     base-info
     {:styles ["http://localhost:8100/main.css"],
-     :scripts ["/main.js" "/browser/lib.js" "/browser/main.js"]})))
+     :scripts ["/browser/lib.js" "/browser/main.js"]})))
 
 (def preview? (= "preview" js/process.env.prod))
 
 (defn prod-page [path]
-  (let [webpack-info (.parse js/JSON (slurp "dist/webpack-manifest.json"))
-        cljs-info (.parse js/JSON (slurp "dist/cljs-manifest.json"))
+  (let [assets (read-string (slurp "dist/assets.edn"))
         cdn (if preview? "" "http://cdn.tiye.me/respo-ui/")
         prefix-cdn (fn [x] (str cdn x))
         page-options (merge
                       base-info
-                      {:styles ["http://cdn.tiye.me/favored-fonts/main.css"
-                                (prefix-cdn (aget webpack-info "main.css"))],
-                       :scripts (map
-                                 prefix-cdn
-                                 [(-> cljs-info (aget 0) (aget "js-name"))
-                                  (-> cljs-info (aget 1) (aget "js-name"))]),
+                      {:styles ["http://cdn.tiye.me/favored-fonts/main.css"],
+                       :scripts (map #(-> % :output-name prefix-cdn) assets),
                        :ssr nil})]
     (make-page
      (make-string

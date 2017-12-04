@@ -6,7 +6,7 @@ Command styles for Respo apps.
 
 Demo http://ui.respo.site/
 
-Read stylesheets: https://github.com/Respo/respo-ui/blob/master/src/respo_ui/style.cljc
+Read stylesheets: [style.cljs](https://github.com/Respo/respo-ui/blob/master/src/respo_ui/style.cljs)
 
 ### Usages
 
@@ -20,10 +20,9 @@ Read stylesheets: https://github.com/Respo/respo-ui/blob/master/src/respo_ui/sty
 [respo-ui.style :as ui]
 [respo-ui.style.colors :as colors]
 [respo-ui.comp.switchy :refer [comp-switch]] ; `switch` is a reserved word
-[respo-ui.command :refer [init-input update-input on-input]]
 ```
 
-Use `ui/button` as `style` attributes for buttons.
+Use `ui/button` as `:style` attributes for buttons.
 
 ### Develop
 

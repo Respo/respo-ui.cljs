@@ -4,7 +4,8 @@
             [respo.cursor :refer [mutate]]
             [respo-ui.comp.container :refer [comp-container]]
             [respo-router.core :refer [render-url!]]
-            [respo-router.util.listener :refer [listen! parse-address]]
+            [respo-router.listener :refer [listen!]]
+            [respo-router.parser :refer [parse-address]]
             [respo-ui.router :as router]
             [cljs.reader :refer [read-string]]
             [respo-ui.schema :as schema]))
@@ -14,7 +15,6 @@
 (defn updater [store op op-data]
   (case op
     :states (update store :states (mutate op-data))
-    :router/route (assoc store :router op-data)
     :router/nav (assoc store :router (parse-address op-data router/dict))
     store))
 

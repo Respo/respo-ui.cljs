@@ -1,7 +1,6 @@
 
 (ns respo-ui.comp.layouts-page
-  (:require [respo.macros :refer [defcomp div a <>]])
-  (:require [respo.core :refer [create-comp]]
+  (:require [respo.macros :refer [defcomp div a <>]]
             [respo.comp.space :refer [=<]]
             [respo-ui.style :as ui]
             [respo-ui.style.colors :as colors]))
