@@ -79,6 +79,12 @@
 
 (def card {:padding "16px"})
 
+(def row-parted
+  {:display "flex",
+   :align-items "center",
+   :justify-content "space-between",
+   :flex-direction "row"})
+
 (def flex {:flex 1})
 
 (def row-center

@@ -60,6 +60,15 @@
      (render-small colors/motif)))
    (div
     {}
+    (div {} (<> "Children in row with ui/row-parted"))
+    (div
+     {:style (merge
+              ui/row-parted
+              {:width 100, :height 100, :background-color colors/motif-light})}
+     (render-small colors/motif-dark)
+     (render-small colors/motif)))
+   (div
+    {}
     (div {} (<> "Child centerred with ui/center"))
     (div
      {:style (merge ui/center {:width 80, :height 80, :background-color colors/motif})}

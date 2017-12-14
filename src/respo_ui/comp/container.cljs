@@ -31,6 +31,7 @@
      (div
       {:style (merge ui/flex style-content)}
       (case (:name router)
+        nil (comp-home)
         "home" (comp-home)
         "index.html" (comp-home)
         "dev.html" (comp-home)
