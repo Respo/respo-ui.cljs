@@ -38,12 +38,6 @@
    :font-family default-fonts,
    :vertical-align :top})
 
-(def column-center
-  {:display "flex",
-   :align-items "center",
-   :justify-content "space-around",
-   :flex-direction "column"})
-
 (def global
   {:line-height 2, :font-size "14px", :font-family default-fonts, :color colors/texture})
 
@@ -62,6 +56,12 @@
     :vertical-align :top}))
 
 (def column {:display "flex", :align-items "stretch", :flex-direction "column"})
+
+(def column-dispersive
+  {:display "flex",
+   :align-items "center",
+   :justify-content "space-around",
+   :flex-direction "column"})
 
 (def textarea
   {:outline :none,
@@ -85,13 +85,16 @@
    :justify-content "space-between",
    :flex-direction "row"})
 
-(def flex {:flex 1})
-
-(def row-center
+(def row-dispersive
   {:display "flex",
    :align-items "center",
    :justify-content "space-around",
    :flex-direction "row"})
+
+(def flex {:flex 1})
+
+(def row-center
+  {:display "flex", :align-items "center", :justify-content "center", :flex-direction "row"})
 
 (def button
   {:min-width "80px",
