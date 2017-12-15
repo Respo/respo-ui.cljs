@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "cdn": "rsync -avr --progress dist/* tiye.me:cdn/respo-ui",
-    "tiye": "rsync -avr --progress dist/{index.html,manifest.json} tiye.me:repo/Respo/ui/",
+    "tiye": "rsync -avr --progress dist/{*.html,manifest.json} tiye.me:repo/Respo/ui/",
     "upload": "yarn cdn && yarn tiye",
     "release": "shadow-cljs release browser",
     "watch": "shadow-cljs watch browser",
