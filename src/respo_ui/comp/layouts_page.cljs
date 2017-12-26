@@ -61,9 +61,9 @@
    (div {} (<> "ui/column-parted"))
    (div
     {:style (merge ui/column-parted style-area)}
-    (render-small colors/motif)
-    (render-small colors/motif-dark)
-    (render-small colors/motif)))
+    (div {:style {:height 20, :background-color colors/motif, :margin 4}})
+    (div {:style {:height 20, :background-color colors/motif-dark, :margin 4}})
+    (div {:style {:height 20, :background-color colors/motif, :margin 4}})))
   (div
    {}
    (div {} (<> "ui/row-center"))

@@ -39,10 +39,10 @@
    :vertical-align :top})
 
 (def column-parted
-  {:display "flex",
-   :align-items "center",
-   :justify-content "space-between",
-   :flex-direction "column"})
+  {:display :flex,
+   :align-items :stretch,
+   :justify-content :space-between,
+   :flex-direction :column})
 
 (def global
   {:line-height 2, :font-size "14px", :font-family default-fonts, :color colors/texture})
