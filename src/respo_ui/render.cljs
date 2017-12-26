@@ -18,6 +18,14 @@
     {:styles ["http://localhost:8100/main.css"],
      :scripts ["/browser/lib.js" "/browser/main.js"]})))
 
+(def page-routes
+  ["/index.html"
+   "/widgets.html"
+   "/colors.html"
+   "/layouts.html"
+   "/fonts.html"
+   "/components.html"])
+
 (def preview? (= "preview" js/process.env.prod))
 
 (defn prod-page [path]
@@ -33,14 +41,6 @@
      (make-string
       (comp-container (assoc schema/store :router (parse-address path router/dict))))
      page-options)))
-
-(def page-routes
-  ["/index.html"
-   "/widgets.html"
-   "/colors.html"
-   "/layouts.html"
-   "/fonts.html"
-   "/components.html"])
 
 (defn main! []
   (if (= js/process.env.env "dev")

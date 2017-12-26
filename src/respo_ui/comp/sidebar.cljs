@@ -4,8 +4,6 @@
 
 (defn on-route [path-name] (fn [e dispatch! mutate!] (dispatch! :router/nav path-name)))
 
-(defn style-container [mobile?] (if mobile? {:margin-bottom 16} {:width 240}))
-
 (defn style-entry [mobile?]
   (merge
    {:color colors/texture,
@@ -17,6 +15,8 @@
 
 (defn render-entry [path title mobile?]
   (div {:style (style-entry mobile?), :on {:click (on-route path)}} (<> title)))
+
+(defn style-container [mobile?] (if mobile? {:margin-bottom 16} {:width 240}))
 
 (defcomp
  comp-sidebar

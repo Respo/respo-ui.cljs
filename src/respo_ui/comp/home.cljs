@@ -6,14 +6,14 @@
 
 (def repo-url "http://github.com/Respo/respo-ui")
 
+(def style-home
+  {:font-size 48, :font-family "Josefin Sans", :color colors/motif, :font-weight 100})
+
 (def style-logo
   {:background-image "url(http://logo.respo.site/respo.png)",
    :width 160,
    :height 160,
    :background-size :cover})
-
-(def style-home
-  {:font-size 48, :font-family "Josefin Sans", :color colors/motif, :font-weight 100})
 
 (defcomp
  comp-home

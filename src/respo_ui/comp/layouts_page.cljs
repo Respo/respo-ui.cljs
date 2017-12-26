@@ -5,9 +5,9 @@
             [respo-ui.style :as ui]
             [respo-ui.style.colors :as colors]))
 
-(defn render-small [color] (div {:style {:width 20, :height 20, :background-color color}}))
-
 (defn render-flex [color] (div {:style (merge ui/flex {:background-color color})}))
+
+(defn render-small [color] (div {:style {:width 20, :height 20, :background-color color}}))
 
 (def style-area {:width 100, :height 100, :background-color colors/motif-light})
 
