@@ -53,9 +53,9 @@
 
 (def flex {:flex 1})
 
-(def font-fancy "Josefin Sans, Helvetica neue, Arial, sans-serif")
+(def font-code "Source Code Pro, Menlo, monospace")
 
-(def font-mono "Source Code Pro, Menlo, monospace")
+(def font-fancy "Josefin Sans, Helvetica neue, Arial, sans-serif")
 
 (def font-normal "Hind, Helvatica, Arial, sans-serif")
 

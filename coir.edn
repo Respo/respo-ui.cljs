@@ -1845,7 +1845,7 @@
           :type :expr, :id "H1ZbplDxBf", :by nil, :at 1506675837748
           :data {
            "T" {:type :leaf, :id "SysItIY3YijW", :text "render-font-demo", :by "root", :at 1506675837748}
-           "j" {:type :leaf, :id "S1nItLt2YiiZ", :text "ui/font-mono", :by "root", :at 1516429630399}
+           "j" {:type :leaf, :id "S1nItLt2YiiZ", :text "ui/font-code", :by "root", :at 1516430826089}
            "r" {:type :leaf, :id "Bk6IY8t2tisZ", :text "100", :by "root", :at 1516429508326}
           }
          }
@@ -1853,7 +1853,7 @@
           :type :expr, :id "rkIplveSG", :by nil, :at 1506675837748
           :data {
            "T" {:type :leaf, :id "SysItIY3YijW", :text "render-font-demo", :by "root", :at 1506675837748}
-           "j" {:type :leaf, :id "S1nItLt2YiiZ", :text "ui/font-mono", :by "root", :at 1516429632763}
+           "j" {:type :leaf, :id "S1nItLt2YiiZ", :text "ui/font-code", :by "root", :at 1516430828589}
            "r" {:type :leaf, :id "Bk6IY8t2tisZ", :text "300", :by "root", :at 1516429511339}
           }
          }
@@ -1861,7 +1861,7 @@
           :type :expr, :id "B1OalweSM", :by nil, :at 1506675837748
           :data {
            "T" {:type :leaf, :id "SysItIY3YijW", :text "render-font-demo", :by "root", :at 1506675837748}
-           "j" {:type :leaf, :id "S1nItLt2YiiZ", :text "ui/font-mono", :by "root", :at 1516429633517}
+           "j" {:type :leaf, :id "S1nItLt2YiiZ", :text "ui/font-code", :by "root", :at 1516430829642}
            "r" {:type :leaf, :id "Bk6IY8t2tisZ", :text "400", :by "root", :at 1506675837748}
           }
          }
@@ -5438,20 +5438,20 @@
        }
       }
      }
+     "font-code" {
+      :type :expr, :by "root", :at 1516429369300, :id "BJgWHeDlrz"
+      :data {
+       "T" {:type :leaf, :by "root", :at 1516429602614, :text "def", :id "rJbWHxPlBz"}
+       "j" {:type :leaf, :by "root", :at 1516429369300, :text "font-code", :id "HkfWrewlHz"}
+       "r" {:type :leaf, :by "root", :at 1516429611656, :text "|Source Code Pro, Menlo, monospace", :id "r1x3QbvlSG"}
+      }
+     }
      "font-fancy" {
       :type :expr, :by "root", :at 1516429352990, :id "S1x-EgvlHM"
       :data {
        "T" {:type :leaf, :by "root", :at 1516429578596, :text "def", :id "B1ZWVlDxHG"}
        "j" {:type :leaf, :by "root", :at 1516429352990, :text "font-fancy", :id "H1MW4gDerG"}
        "r" {:type :leaf, :by "root", :at 1516429595718, :text "|Josefin Sans, Helvetica neue, Arial, sans-serif", :id "r1NMbweSM"}
-      }
-     }
-     "font-mono" {
-      :type :expr, :by "root", :at 1516429369300, :id "BJgWHeDlrz"
-      :data {
-       "T" {:type :leaf, :by "root", :at 1516429602614, :text "def", :id "rJbWHxPlBz"}
-       "j" {:type :leaf, :by "root", :at 1516429369300, :text "font-mono", :id "HkfWrewlHz"}
-       "r" {:type :leaf, :by "root", :at 1516429611656, :text "|Source Code Pro, Menlo, monospace", :id "r1x3QbvlSG"}
       }
      }
      "font-normal" {
