@@ -2,7 +2,7 @@
 (ns respo-ui.comp.home
   (:require [respo.macros :refer [defcomp div a img <>]]
             [respo.comp.space :refer [=<]]
-            [respo-ui.style.colors :as colors]))
+            [respo-ui.colors :as colors]))
 
 (def repo-url "http://github.com/Respo/respo-ui")
 

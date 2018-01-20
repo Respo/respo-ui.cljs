@@ -2,8 +2,8 @@
 (ns respo-ui.comp.widgets-page
   (:require [respo.macros :refer [defcomp div input textarea button span select option a <>]]
             [respo.comp.space :refer [=<]]
-            [respo-ui.style :as ui]
-            [respo-ui.style.colors :as colors]))
+            [respo-ui.core :as ui]
+            [respo-ui.colors :as colors]))
 
 (defcomp
  comp-widgets-page

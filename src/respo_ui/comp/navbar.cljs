@@ -1,8 +1,8 @@
 
 (ns respo-ui.comp.navbar
   (:require [respo.macros :refer [defcomp div <>]]
-            [respo-ui.style :as ui]
-            [respo-ui.style.colors :as colors]))
+            [respo-ui.core :as ui]
+            [respo-ui.colors :as colors]))
 
 (def style-container
   (merge

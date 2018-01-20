@@ -1,8 +1,8 @@
 
 (ns respo-ui.comp.colors-page
   (:require [respo.macros :refer [defcomp div <>]]
-            [respo-ui.style.colors :as colors]
-            [respo-ui.style :as ui]))
+            [respo-ui.colors :as colors]
+            [respo-ui.core :as ui]))
 
 (def style-palette
   {:max-width 400,

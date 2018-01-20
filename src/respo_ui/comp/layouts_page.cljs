@@ -2,8 +2,8 @@
 (ns respo-ui.comp.layouts-page
   (:require [respo.macros :refer [defcomp div a <>]]
             [respo.comp.space :refer [=<]]
-            [respo-ui.style :as ui]
-            [respo-ui.style.colors :as colors]))
+            [respo-ui.core :as ui]
+            [respo-ui.colors :as colors]))
 
 (defn render-flex [color] (div {:style (merge ui/flex {:background-color color})}))
 

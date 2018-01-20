@@ -31,4 +31,4 @@
      {}
      (<> "respo-ui.comp.switchy/comp-switch")
      (=< 16 nil)
-     (comp-switch state (fn [new-status dispatch! mutate!] (mutate! *cursor* (not state))))))))
+     (comp-switch state (fn [new-status dispatch! mutate!] (mutate! (not state))))))))

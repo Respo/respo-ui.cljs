@@ -13,12 +13,12 @@ Read stylesheets: [style.cljs](https://github.com/Respo/respo-ui/blob/master/src
 [![Clojars Project](https://img.shields.io/clojars/v/respo/ui.svg)](https://clojars.org/respo/ui)
 
 ```clojure
-[respo/ui "0.2.4"]
+[respo/ui "0.3.0"]
 ```
 
 ```clojure
-[respo-ui.style :as ui]
-[respo-ui.style.colors :as colors]
+[respo-ui.core :as ui]
+[respo-ui.colors :as colors]
 [respo-ui.comp.switchy :refer [comp-switch]] ; `switch` is a reserved word
 ```
 
