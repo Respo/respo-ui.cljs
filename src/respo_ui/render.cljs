@@ -24,7 +24,8 @@
    "/colors.html"
    "/layouts.html"
    "/fonts.html"
-   "/components.html"])
+   "/components.html"
+   "/icons.html"])
 
 (def preview? (= "preview" js/process.env.prod))
 

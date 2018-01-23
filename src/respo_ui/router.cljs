@@ -8,6 +8,7 @@
    "fonts.html" [],
    "widgets.html" [],
    "layouts.html" [],
-   "components.html" []})
+   "components.html" [],
+   "icons.html" []})
 
 (def mode :history)

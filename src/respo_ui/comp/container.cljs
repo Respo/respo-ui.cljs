@@ -12,7 +12,8 @@
             [respo-ui.comp.layouts-page :refer [comp-layouts-page]]
             [respo-ui.comp.fonts-page :refer [comp-fonts-page]]
             [respo-ui.comp.components :refer [comp-components-page]]
-            [respo-ui.comp.navbar :refer [comp-navbar]]))
+            [respo-ui.comp.navbar :refer [comp-navbar]]
+            [respo-ui.comp.icons-page :refer [comp-icons-page]]))
 
 (def style-content {:padding 8})
 
@@ -40,4 +41,5 @@
         "layouts.html" (comp-layouts-page)
         "fonts.html" (comp-fonts-page)
         "components.html" (cursor-> :components comp-components-page states)
+        "icons.html" (comp-icons-page)
         (<> (pr-str router))))))))
