@@ -3,13 +3,24 @@
   (:require [respo.macros :refer [defcomp div a <>]]
             [respo.comp.space :refer [=<]]
             [respo-ui.core :as ui]
-            [respo-ui.colors :as colors]))
+            [respo-ui.colors :as colors]
+            [hsl.core :refer [hsl]]
+            [respo-markdown.comp.md-article :refer [comp-md-article]]))
 
-(defn render-flex [color] (div {:style (merge ui/flex {:background-color color})}))
+(def style-sample
+  {:padding "4px 8px", :color :white, :font-size 12, :font-family ui/font-code})
 
-(defn render-small [color] (div {:style {:width 20, :height 20, :background-color color}}))
-
-(def style-area {:width 100, :height 100, :background-color colors/motif-light})
+(defn render-demo [title layout]
+  (div
+   {:style {:margin 16}}
+   (div {:style {}} (<> title))
+   (div
+    {:style (merge
+             layout
+             {:border (str "1px solid " (hsl 0 0 86)), :width 120, :height 120})}
+    (div {:style (merge style-sample {:background-color (hsl 0 80 70)})} (<> "A"))
+    (div {:style (merge style-sample {:background-color (hsl 120 80 70)})} (<> "B"))
+    (div {:style (merge style-sample {:background-color (hsl 240 80 80)})} (<> "C")))))
 
 (defcomp
  comp-layouts-page
@@ -24,67 +35,16 @@
     {:href "https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/layouts_page.cljs",
      :inner-text "Source",
      :target "_blank"}))
+  (comp-md-article
+   "Flexbox styles are defined in variables like `ui/row` `ui/center` in flex containers. Here are how they take effects."
+   {})
   (div
-   {}
-   (div {} (<> "ui/center"))
-   (div
-    {:style (merge ui/center style-area)}
-    (render-small colors/motif)
-    (div {:style {:width 40, :height 40, :background-color colors/motif-dark}})
-    (render-small colors/motif)))
-  (div
-   {}
-   (div {} (<> "ui/row"))
-   (div
-    {:style (merge ui/row style-area)}
-    (render-flex colors/motif)
-    (render-flex colors/motif-dark)
-    (render-flex colors/motif)))
-  (div
-   {}
-   (div {} (<> "ui/column"))
-   (div
-    {:style (merge ui/column style-area)}
-    (render-flex colors/motif)
-    (render-flex colors/motif-dark)
-    (render-flex colors/motif)))
-  (div
-   {}
-   (div {} (<> "ui/row-parted"))
-   (div
-    {:style (merge ui/row-parted style-area)}
-    (render-small colors/motif)
-    (render-small colors/motif-dark)
-    (render-small colors/motif)))
-  (div
-   {}
-   (div {} (<> "ui/column-parted"))
-   (div
-    {:style (merge ui/column-parted style-area)}
-    (div {:style {:height 20, :background-color colors/motif, :margin 4}})
-    (div {:style {:height 20, :background-color colors/motif-dark, :margin 4}})
-    (div {:style {:height 20, :background-color colors/motif, :margin 4}})))
-  (div
-   {}
-   (div {} (<> "ui/row-center"))
-   (div
-    {:style (merge ui/row-center style-area)}
-    (render-small colors/motif)
-    (render-small colors/motif-dark)
-    (render-small colors/motif)))
-  (div
-   {}
-   (div {} (<> "ui/row-dispersive"))
-   (div
-    {:style (merge ui/row-dispersive style-area)}
-    (render-small colors/motif)
-    (render-small colors/motif-dark)
-    (render-small colors/motif)))
-  (div
-   {}
-   (div {} (<> "ui/column-dispersive"))
-   (div
-    {:style (merge ui/column-dispersive style-area)}
-    (render-small colors/motif)
-    (render-small colors/motif-dark)
-    (render-small colors/motif)))))
+   {:style (merge ui/row {:flex-wrap :wrap, :font-family ui/font-code, :font-size 12})}
+   (render-demo "ui/center" ui/center)
+   (render-demo "ui/row-center" ui/row-center)
+   (render-demo "ui/row" ui/row)
+   (render-demo "ui/column" ui/column)
+   (render-demo "ui/row-parted" ui/row-parted)
+   (render-demo "ui/column-parted" ui/column-parted)
+   (render-demo "ui/row-dispersive" ui/row-dispersive)
+   (render-demo "ui/column-dispersive" ui/column-dispersive))))

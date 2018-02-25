@@ -31,7 +31,7 @@ Use `ui/button` as `:style` attributes for buttons.
 
 ### Develop
 
-https://github.com/mvc-works/coworkflow
+https://github.com/mvc-works/calcit-workflow
 
 ### License
 
