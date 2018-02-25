@@ -6226,7 +6226,7 @@
           :type :expr, :id "S1QcB8tnYjoZ", :by nil, :at 1506675837748
           :data {
            "T" {:type :leaf, :id "ryNcHUF3tiiW", :text "comp-container", :by "root", :at 1506675837748}
-           "j" {:type :leaf, :id "HJHcrLtnKoob", :text "@store-ref", :by "root", :at 1506675837748}
+           "j" {:type :leaf, :id "HJHcrLtnKoob", :text "@*store", :by "root", :at 1519578540486}
           }
          }
          "v" {:type :leaf, :id "B1D5S8Khtosb", :text "dispatch!", :by "root", :at 1506675837748}

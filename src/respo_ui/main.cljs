@@ -31,7 +31,7 @@
 
 (def mount-target (.querySelector js/document ".app"))
 
-(defn render-app! [renderer] (renderer mount-target (comp-container @store-ref) dispatch!))
+(defn render-app! [renderer] (renderer mount-target (comp-container @*store) dispatch!))
 
 (defn render-router! [] (render-url! (:router @*store) router/dict router/mode))
 
