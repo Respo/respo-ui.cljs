@@ -5,7 +5,7 @@
             [respo-ui.core :as ui]
             [respo-ui.colors :as colors]
             [hsl.core :refer [hsl]]
-            [respo-markdown.comp.md-article :refer [comp-md-article]]))
+            [respo-md.comp.md :refer [comp-md-block]]))
 
 (def style-sample
   {:padding "4px 8px", :color :white, :font-size 12, :font-family ui/font-code})
@@ -35,7 +35,7 @@
     {:href "https://github.com/Respo/respo-ui/blob/master/src/respo_ui/comp/layouts_page.cljs",
      :inner-text "Source",
      :target "_blank"}))
-  (comp-md-article
+  (comp-md-block
    "Flexbox styles are defined in variables like `ui/row` `ui/center` in flex containers. Here are how they take effects."
    {})
   (div

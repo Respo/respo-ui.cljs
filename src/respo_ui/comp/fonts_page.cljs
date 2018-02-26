@@ -3,7 +3,7 @@
   (:require [respo.macros :refer [defcomp div <>]]
             [respo-ui.core :as ui]
             [respo.comp.space :refer [=<]]
-            [respo-markdown.comp.md-article :refer [comp-md-article]]))
+            [respo-md.comp.md :refer [comp-md-block]]))
 
 (def style-demo {:font-size 20, :font-weight "bold", :line-height "56px"})
 
@@ -22,19 +22,19 @@
  (div
   {}
   (div {:style style-section} (<> "Normal fonts"))
-  (comp-md-article "which can be used with `ui/font-normal`. It's Hind fonts." {})
+  (comp-md-block "which can be used with `ui/font-normal`. It's Hind fonts." {})
   (render-font-demo ui/font-normal 300)
   (render-font-demo ui/font-normal 400)
   (render-font-demo ui/font-normal 500)
   (=< nil 32)
   (div {:style style-section} (<> "Fancy fonts"))
-  (comp-md-article "which can be used with `ui/font-fancy`. Josefin Sans is used here." {})
+  (comp-md-block "which can be used with `ui/font-fancy`. Josefin Sans is used here." {})
   (render-font-demo ui/font-fancy 100)
   (render-font-demo ui/font-fancy 300)
   (render-font-demo ui/font-fancy 400)
   (=< nil 32)
   (div {:style style-section} (<> "Code fonts"))
-  (comp-md-article "which can be used with `ui/font-code`." {})
+  (comp-md-block "which can be used with `ui/font-code`." {})
   (render-font-demo ui/font-code 100)
   (render-font-demo ui/font-code 300)
   (render-font-demo ui/font-code 400)))

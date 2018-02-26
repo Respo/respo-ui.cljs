@@ -24,9 +24,9 @@
  (div
   {:style (style-container mobile?)}
   (render-entry "index.html" "Home" mobile?)
-  (render-entry "colors.html" "Colors" mobile?)
-  (render-entry "fonts.html" "Fonts" mobile?)
-  (render-entry "widgets.html" "Widgets" mobile?)
   (render-entry "layouts.html" "Layouts" mobile?)
+  (render-entry "widgets.html" "Widgets" mobile?)
+  (render-entry "icons.html" "Icons" mobile?)
+  (render-entry "fonts.html" "Fonts" mobile?)
   (render-entry "components.html" "Components" mobile?)
-  (render-entry "icons.html" "Icons" mobile?)))
+  (render-entry "colors.html" "Colors" mobile?)))
