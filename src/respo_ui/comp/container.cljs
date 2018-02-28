@@ -20,15 +20,13 @@
 (defcomp
  comp-container
  (store)
- (let [router (first (:path (:router store)))
-       mobile? (:mobile? store)
-       states (:states store)]
+ (let [router (first (:path (:router store))), states (:states store)]
    (div
     {:style (merge ui/fullscreen ui/global)}
     (comp-navbar)
     (div
-     {:style (if mobile? nil (merge ui/row {:padding-top 32}))}
-     (comp-sidebar mobile?)
+     {:style (merge ui/row {:padding-top 32})}
+     (comp-sidebar)
      (div
       {:style (merge ui/flex style-content)}
       (case (:name router)

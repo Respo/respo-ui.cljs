@@ -4,29 +4,27 @@
 
 (defn on-route [path-name] (fn [e dispatch! mutate!] (dispatch! :router/nav path-name)))
 
-(defn style-entry [mobile?]
-  (merge
-   {:color colors/texture,
-    :line-height "40px",
-    :padding "0 16px",
-    :font-size "16px",
-    :cursor "pointer"}
-   (if mobile? {:display :inline-block, :padding "0 8px", :line-height "32px"})))
+(def style-entry
+  {:color colors/texture,
+   :line-height "40px",
+   :padding "0 16px",
+   :font-size "16px",
+   :cursor "pointer"})
 
-(defn render-entry [path title mobile?]
-  (div {:style (style-entry mobile?), :on {:click (on-route path)}} (<> title)))
+(defn render-entry [path title]
+  (div {:style style-entry, :on {:click (on-route path)}} (<> title)))
 
-(defn style-container [mobile?] (if mobile? {:margin-bottom 16} {:width 240}))
+(def style-container {:width 240})
 
 (defcomp
  comp-sidebar
- (mobile?)
+ ()
  (div
-  {:style (style-container mobile?)}
-  (render-entry "index.html" "Home" mobile?)
-  (render-entry "layouts.html" "Layouts" mobile?)
-  (render-entry "widgets.html" "Widgets" mobile?)
-  (render-entry "icons.html" "Icons" mobile?)
-  (render-entry "fonts.html" "Fonts" mobile?)
-  (render-entry "components.html" "Components" mobile?)
-  (render-entry "colors.html" "Colors" mobile?)))
+  {:style style-container}
+  (render-entry "index.html" "Home")
+  (render-entry "layouts.html" "Layouts")
+  (render-entry "widgets.html" "Widgets")
+  (render-entry "icons.html" "Icons")
+  (render-entry "fonts.html" "Fonts")
+  (render-entry "components.html" "Components")
+  (render-entry "colors.html" "Colors")))

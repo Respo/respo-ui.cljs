@@ -16,8 +16,7 @@
     schema/store
     {:router (parse-address
               (str (.-pathname js/location) (.-search js/location))
-              router/dict),
-     :mobile? (< (.-innerWidth js/window) 600)})))
+              router/dict)})))
 
 (defn updater [store op op-data]
   (case op

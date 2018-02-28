@@ -1,4 +1,4 @@
 
 (ns respo-ui.schema )
 
-(def store {:router nil, :mobile? true, :states {}})
+(def store {:router nil, :states {}})
