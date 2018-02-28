@@ -23,17 +23,6 @@
    :justify-content "center",
    :align-items "center"})
 
-(def clickable-text
-  {:color colors/motif,
-   :text-decoration :underline,
-   :user-select :no-select,
-   :height 24,
-   :line-height "24px",
-   :margin 4,
-   :padding "0 8px",
-   :display :inline-block,
-   :cursor :pointer})
-
 (def column {:display "flex", :align-items "stretch", :flex-direction "column"})
 
 (def column-dispersive
@@ -77,6 +66,16 @@
     :height 32,
     :font-family default-fonts,
     :vertical-align :top}))
+
+(def link
+  {:color colors/motif,
+   :text-decoration :underline,
+   :user-select :no-select,
+   :height 24,
+   :line-height "24px",
+   :margin 4,
+   :display :inline-block,
+   :cursor :pointer})
 
 (def row {:display "flex", :align-items "stretch", :flex-direction "row"})
 

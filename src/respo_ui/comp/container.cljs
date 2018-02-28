@@ -22,22 +22,19 @@
  (store)
  (let [router (first (:path (:router store))), states (:states store)]
    (div
-    {:style (merge ui/fullscreen ui/global)}
-    (comp-navbar)
+    {:style (merge ui/fullscreen ui/row ui/global {:padding-top 32})}
+    (comp-sidebar (or (:name router) "index.html"))
     (div
-     {:style (merge ui/row {:padding-top 32})}
-     (comp-sidebar)
-     (div
-      {:style (merge ui/flex style-content)}
-      (case (:name router)
-        nil (comp-home)
-        "home" (comp-home)
-        "index.html" (comp-home)
-        "dev.html" (comp-home)
-        "colors.html" (comp-colors-page)
-        "widgets.html" (cursor-> :widgets comp-widgets-page states)
-        "layouts.html" (comp-layouts-page)
-        "fonts.html" (comp-fonts-page)
-        "components.html" (cursor-> :components comp-components-page states)
-        "icons.html" (comp-icons-page)
-        (<> (pr-str router))))))))
+     {:style (merge ui/flex style-content)}
+     (case (:name router)
+       nil (comp-home)
+       "home" (comp-home)
+       "index.html" (comp-home)
+       "dev.html" (comp-home)
+       "colors.html" (comp-colors-page)
+       "widgets.html" (cursor-> :widgets comp-widgets-page states)
+       "layouts.html" (comp-layouts-page)
+       "fonts.html" (comp-fonts-page)
+       "components.html" (cursor-> :components comp-components-page states)
+       "icons.html" (comp-icons-page)
+       (<> (pr-str router)))))))

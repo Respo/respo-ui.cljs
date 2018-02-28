@@ -23,7 +23,7 @@
      {}
      (<> span "Some text as description" ui/text-label)
      (=< nil 16)
-     (<> span "clickable" ui/clickable-text))
+     (<> span "link" ui/link))
     (=< nil 16)
     (div
      {}
