@@ -32,5 +32,4 @@
   (render-entry "widgets.html" "Widgets" router-name)
   (render-entry "icons.html" "Icons" router-name)
   (render-entry "fonts.html" "Fonts" router-name)
-  (render-entry "components.html" "Components" router-name)
-  (render-entry "colors.html" "Colors" router-name)))
+  (render-entry "components.html" "Components" router-name)))

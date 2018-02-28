@@ -18,7 +18,6 @@ Read stylesheets: [style.cljs](https://github.com/Respo/respo-ui/blob/master/src
 
 ```clojure
 [respo-ui.core :as ui]
-[respo-ui.colors :as colors]
 ```
 
 ```clojure

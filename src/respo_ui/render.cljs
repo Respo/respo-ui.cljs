@@ -18,7 +18,6 @@
 (def page-routes
   ["/index.html"
    "/widgets.html"
-   "/colors.html"
    "/layouts.html"
    "/fonts.html"
    "/components.html"

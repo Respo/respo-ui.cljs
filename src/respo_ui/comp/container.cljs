@@ -7,12 +7,10 @@
             [respo-ui.colors :as colors]
             [respo-ui.comp.sidebar :refer [comp-sidebar]]
             [respo-ui.comp.home :refer [comp-home]]
-            [respo-ui.comp.colors-page :refer [comp-colors-page]]
             [respo-ui.comp.widgets-page :refer [comp-widgets-page]]
             [respo-ui.comp.layouts-page :refer [comp-layouts-page]]
             [respo-ui.comp.fonts-page :refer [comp-fonts-page]]
             [respo-ui.comp.components :refer [comp-components-page]]
-            [respo-ui.comp.navbar :refer [comp-navbar]]
             [respo-ui.comp.icons-page :refer [comp-icons-page]]))
 
 (def style-content {:padding 8})
@@ -31,7 +29,6 @@
        "home" (comp-home)
        "index.html" (comp-home)
        "dev.html" (comp-home)
-       "colors.html" (comp-colors-page)
        "widgets.html" (cursor-> :widgets comp-widgets-page states)
        "layouts.html" (comp-layouts-page)
        "fonts.html" (comp-fonts-page)
