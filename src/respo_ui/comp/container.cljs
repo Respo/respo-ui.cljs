@@ -20,7 +20,7 @@
  (store)
  (let [router (first (:path (:router store))), states (:states store)]
    (div
-    {:style (merge ui/fullscreen ui/row ui/global {:padding-top 32})}
+    {:style (merge ui/fullscreen ui/row ui/global {:padding-top 16})}
     (comp-sidebar (or (:name router) "index.html"))
     (div
      {:style (merge ui/flex style-content)}
