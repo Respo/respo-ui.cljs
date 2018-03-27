@@ -17,6 +17,9 @@
 (defn comp-icon [icon-name]
   (create-element :i {:class-name (str "ion-" (get-string icon-name))}))
 
+(defn comp-ion [icon-name styles]
+  (create-element :i {:class-name (str "ion-" (get-string icon-name)), :style styles}))
+
 (defcomp
  comp-ios-icon
  (icon-name)

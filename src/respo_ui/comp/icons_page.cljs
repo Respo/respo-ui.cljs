@@ -2,7 +2,7 @@
 (ns respo-ui.comp.icons-page
   (:require [respo.macros :refer [defcomp div <>]]
             [respo-ui.core :as ui]
-            [respo-ui.comp.icon :refer [comp-icon comp-android-icon comp-ios-icon]]
+            [respo-ui.comp.icon :refer [comp-ion comp-icon comp-android-icon comp-ios-icon]]
             [respo-md.comp.md :refer [comp-md comp-md-block]]
             [respo.comp.space :refer [=<]]))
 
@@ -15,6 +15,11 @@
   (comp-md-block
    "Icons can be found at http://cdn.tiye.me/favored-fonts/ionioncs-2.0.1/cheatsheet.html"
    {})
+  (div
+   {}
+   (comp-md "Render icon with `(comp-ion :home {:color :red})`")
+   (=< 16 nil)
+   (comp-ion :home {:color :red}))
   (div {} (comp-md "Render icon with `(comp-icon :flash)`") (=< 16 nil) (comp-icon :flash))
   (div
    {}
