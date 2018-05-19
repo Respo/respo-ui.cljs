@@ -5828,12 +5828,12 @@
      }
     }
    }
-   "respo-ui.render" {
+   "respo-ui.page" {
     :ns {
      :type :expr, :id "Hyx7wa9isZ", :by "root", :at 1506680155320
      :data {
       "T" {:type :leaf, :text "ns", :id "By-XP65sob", :by "root", :at 1506680155320}
-      "j" {:type :leaf, :text "respo-ui.render", :id "S1fQvT9ijb", :by "root", :at 1506680155320}
+      "j" {:type :leaf, :text "respo-ui.page", :id "S1fQvT9ijb", :by "root", :at 1506680155320}
       "r" {
        :type :expr, :id "SynwacjiW", :by "root", :at 1506680163585
        :data {
@@ -6016,7 +6016,7 @@
                 :type :expr, :id "ryb1ERcisZ", :by "root", :at 1506680358826
                 :data {
                  "T" {:type :leaf, :text "[]", :id "H1xyVRcjoZ", :by "root", :at 1506680360059}
-                 "v" {:type :leaf, :text "|/main.js", :id "ByMJIRcsj-", :by "root", :at 1519574543719}
+                 "v" {:type :leaf, :text "|/client.js", :id "ByMJIRcsj-", :by "root", :at 1526744800363}
                 }
                }
               }
