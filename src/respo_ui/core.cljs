@@ -3,15 +3,15 @@
 
 (def button
   {:min-width "80px",
-   :line-height "32px",
+   :line-height "30px",
+   :border-radius "16px",
    :font-size 14,
    :text-align "center",
-   :background-color colors/motif,
-   :color (hsl 0 0 100),
+   :border (str "1px solid " colors/motif),
+   :color colors/motif,
    :cursor "pointer",
    :display "inline-block",
    :padding "0 8px",
-   :border :none,
    :outline :none,
    :vertical-align :top})
 

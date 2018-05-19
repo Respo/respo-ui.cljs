@@ -27,9 +27,15 @@
     (=< nil 16)
     (div
      {}
-     (button {:style (merge ui/button {:background-color colors/attractive})} (<> "Yes"))
+     (button
+      {:style (merge ui/button {:border-color colors/attractive, :color colors/attractive})}
+      (<> "Yes"))
      (=< 16 nil)
-     (button {:style (merge ui/button {:background-color colors/irreversible})} (<> "Yes"))
+     (button
+      {:style (merge
+               ui/button
+               {:border-color colors/irreversible, :color colors/irreversible})}
+      (<> "Yes"))
      (=< 16 nil))
     (=< nil 16)
     (div
