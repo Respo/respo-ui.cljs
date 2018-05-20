@@ -56,9 +56,9 @@
 (def input
   (merge
    global
-   {:border "none",
+   {:border (str "1px solid " (hsl 0 0 80)),
     :outline "none",
-    :background-color colors/paper,
+    :border-radius "4px",
     :font-size "14px",
     :padding "8px 8px",
     :min-width "120px",
@@ -99,8 +99,8 @@
    :outline "none",
    :font-size 14,
    :min-width 120,
-   :border "none",
-   :background-color colors/paper,
+   :border (str "1px solid " (hsl 0 0 80)),
+   :border-radius "4px",
    :font-family default-fonts,
    :vertical-align :top})
 
@@ -113,10 +113,10 @@
 
 (def textarea
   {:outline :none,
-   :border :none,
+   :border (str "1px solid " (hsl 0 0 80)),
    :font-size 14,
    :font-family default-fonts,
-   :background-color colors/paper,
+   :border-radius "4px",
    :padding 8,
    :min-width 240,
    :vertical-align :top})
