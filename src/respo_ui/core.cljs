@@ -3,15 +3,15 @@
 
 (def button
   {:min-width "80px",
-   :line-height "32px",
+   :line-height "30px",
+   :border-radius "16px",
    :font-size 14,
    :text-align "center",
-   :background-color colors/motif,
-   :color (hsl 0 0 100),
+   :border (str "1px solid " colors/motif),
+   :color colors/motif,
    :cursor "pointer",
    :display "inline-block",
    :padding "0 8px",
-   :border :none,
    :outline :none,
    :vertical-align :top})
 
@@ -56,9 +56,9 @@
 (def input
   (merge
    global
-   {:border "none",
+   {:border (str "1px solid " (hsl 0 0 80)),
     :outline "none",
-    :background-color colors/paper,
+    :border-radius "4px",
     :font-size "14px",
     :padding "8px 8px",
     :min-width "120px",
@@ -99,8 +99,8 @@
    :outline "none",
    :font-size 14,
    :min-width 120,
-   :border "none",
-   :background-color colors/paper,
+   :border (str "1px solid " (hsl 0 0 80)),
+   :border-radius "4px",
    :font-family default-fonts,
    :vertical-align :top})
 
@@ -113,10 +113,10 @@
 
 (def textarea
   {:outline :none,
-   :border :none,
+   :border (str "1px solid " (hsl 0 0 80)),
    :font-size 14,
    :font-family default-fonts,
-   :background-color colors/paper,
+   :border-radius "4px",
    :padding 8,
    :min-width 240,
    :vertical-align :top})
