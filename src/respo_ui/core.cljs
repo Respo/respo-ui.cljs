@@ -13,7 +13,8 @@
    :display "inline-block",
    :padding "0 8px",
    :outline :none,
-   :vertical-align :top})
+   :vertical-align :top,
+   :background-color :white})
 
 (def card {:padding "16px"})
 
@@ -48,7 +49,8 @@
 
 (def font-normal "Hind, Helvatica, Arial, sans-serif")
 
-(def fullscreen {:position "absolute", :left 0, :top 0, :width "100%", :height "100%"})
+(def fullscreen
+  {:position "absolute", :left 0, :top 0, :width "100%", :height "100%", :overflow :auto})
 
 (def global
   {:line-height 2, :font-size "14px", :font-family default-fonts, :color colors/texture})
