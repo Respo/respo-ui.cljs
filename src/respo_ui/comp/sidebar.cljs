@@ -24,7 +24,7 @@
    (<> title)))
 
 (def style-logo
-  {:background-image "url(http://logo.respo.site/respo.png)",
+  {:background-image "url(http://cdn.tiye.me/logo/respo.png)",
    :width 80,
    :height 80,
    :background-size :cover,

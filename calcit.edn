@@ -3573,7 +3573,7 @@
           :type :expr, :id "S1PGPIYnKijb", :by nil, :at 1506675837748
           :data {
            "T" {:type :leaf, :id "SJdzvIF2Kso-", :text ":background-image", :by "root", :at 1506675837748}
-           "j" {:type :leaf, :id "SytzwUFhKooW", :text "|url(http://logo.respo.site/respo.png)", :by "root", :at 1506675837748}
+           "j" {:type :leaf, :id "SytzwUFhKooW", :text "|url(http://cdn.tiye.me/logo/respo.png)", :by "root", :at 1538414124502}
           }
          }
          "r" {
