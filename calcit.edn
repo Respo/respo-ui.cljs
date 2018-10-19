@@ -2652,6 +2652,14 @@
              "j" {:type :leaf, :by "root", :at 1519575622667, :text "ui/row-center", :id "Hk4l-vldG"}
             }
            }
+           "pT" {
+            :type :expr, :by "root", :at 1519575269970, :id "CXRUbVAnXC"
+            :data {
+             "T" {:type :leaf, :by "root", :at 1519575272514, :text "render-demo", :id "H1AyWweufleaf"}
+             "b" {:type :leaf, :by "bjmr3HZle", :at 1539920004309, :text "|ui/row-middle", :id "BJcIbvl_f"}
+             "j" {:type :leaf, :by "bjmr3HZle", :at 1539920006309, :text "ui/row-middle", :id "Hk4l-vldG"}
+            }
+           }
            "q" {
             :type :expr, :by "root", :at 1519575269970, :id "SkCZMDe_G"
             :data {
@@ -5110,6 +5118,47 @@
           :data {
            "T" {:type :leaf, :id "rkIcVIKhFisZ", :text ":flex-direction", :by "root", :at 1506675837748}
            "j" {:type :leaf, :id "rkv54IKnKio-", :text "|row", :by "root", :at 1506675837748}
+          }
+         }
+        }
+       }
+      }
+     }
+     "row-middle" {
+      :type :expr, :by "bjmr3HZle", :at 1539919964573, :id "wTSM7c1XnN"
+      :data {
+       "T" {:type :leaf, :by "bjmr3HZle", :at 1539920439537, :text "def", :id "ycybEkJ_Md"}
+       "j" {:type :leaf, :by "bjmr3HZle", :at 1539919964573, :text "row-middle", :id "BMgFalQYQM"}
+       "r" {
+        :type :expr, :by "bjmr3HZle", :at 1539919976502, :id "zDKmRfuIdI"
+        :data {
+         "T" {:type :leaf, :by "bjmr3HZle", :at 1539919976502, :text "{}", :id "NM3pOWj5-p"}
+         "j" {
+          :type :expr, :by "bjmr3HZle", :at 1539919976502, :id "14U0CHK7TS"
+          :data {
+           "T" {:type :leaf, :by "bjmr3HZle", :at 1539919976502, :text ":display", :id "uhdrN50GHP"}
+           "j" {:type :leaf, :by "bjmr3HZle", :at 1539919979097, :text ":flex", :id "Fl4fyrM-Sh"}
+          }
+         }
+         "r" {
+          :type :expr, :by "bjmr3HZle", :at 1539919976502, :id "8ogUUQqkGZ"
+          :data {
+           "T" {:type :leaf, :by "bjmr3HZle", :at 1539919976502, :text ":align-items", :id "3VAOSjdRwJ"}
+           "j" {:type :leaf, :by "bjmr3HZle", :at 1539919982472, :text ":center", :id "HWafD0awQz"}
+          }
+         }
+         "v" {
+          :type :expr, :by "bjmr3HZle", :at 1539919976502, :id "Y3cMjEy6Az"
+          :data {
+           "T" {:type :leaf, :by "bjmr3HZle", :at 1539919976502, :text ":justify-content", :id "Ia121EmVSl"}
+           "j" {:type :leaf, :by "bjmr3HZle", :at 1539919985629, :text ":flex-start", :id "eSvJ8DzYTr"}
+          }
+         }
+         "x" {
+          :type :expr, :by "bjmr3HZle", :at 1539919976502, :id "g11Z24QN3h"
+          :data {
+           "T" {:type :leaf, :by "bjmr3HZle", :at 1539919976502, :text ":flex-direction", :id "4UQaNiH-mWR"}
+           "j" {:type :leaf, :by "bjmr3HZle", :at 1539919987430, :text ":row", :id "suDoRAmRkvp"}
           }
          }
         }

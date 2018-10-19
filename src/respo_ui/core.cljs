@@ -90,6 +90,9 @@
    :justify-content "space-around",
    :flex-direction "row"})
 
+(def row-middle
+  {:display :flex, :align-items :center, :justify-content :flex-start, :flex-direction :row})
+
 (def row-parted
   {:display "flex",
    :align-items "center",

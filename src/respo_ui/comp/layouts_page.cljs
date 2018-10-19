@@ -42,6 +42,7 @@
    {:style (merge ui/row {:flex-wrap :wrap, :font-family ui/font-code, :font-size 12})}
    (render-demo "ui/center" ui/center)
    (render-demo "ui/row-center" ui/row-center)
+   (render-demo "ui/row-middle" ui/row-middle)
    (render-demo "ui/row" ui/row)
    (render-demo "ui/column" ui/column)
    (render-demo "ui/row-parted" ui/row-parted)

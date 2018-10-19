@@ -13,7 +13,7 @@ Read stylesheets: [style.cljs](https://github.com/Respo/respo-ui/blob/master/src
 [![Clojars Project](https://img.shields.io/clojars/v/respo/ui.svg)](https://clojars.org/respo/ui)
 
 ```clojure
-[respo/ui "0.3.7"]
+[respo/ui "0.3.8"]
 ```
 
 ```clojure
