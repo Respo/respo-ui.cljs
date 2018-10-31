@@ -1,7 +1,7 @@
 
 (ns respo-ui.comp.container
   (:require [hsl.core :refer [hsl]]
-            [respo.macros :refer [defcomp cursor-> div span input <>]]
+            [respo.core :refer [defcomp cursor-> div span input <>]]
             [respo.comp.space :refer [=<]]
             [respo-ui.core :as ui]
             [respo-ui.colors :as colors]

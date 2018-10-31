@@ -1,6 +1,6 @@
 
 (ns respo-ui.comp.home
-  (:require [respo.macros :refer [defcomp div a img <>]]
+  (:require [respo.core :refer [defcomp div a img <>]]
             [respo.comp.space :refer [=<]]
             [respo-ui.colors :as colors]
             [respo-md.comp.md :refer [comp-md-block]]))

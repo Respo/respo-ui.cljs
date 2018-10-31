@@ -1,6 +1,6 @@
 
 (ns respo-ui.comp.icons-page
-  (:require [respo.macros :refer [defcomp div <>]]
+  (:require [respo.core :refer [defcomp div <>]]
             [respo-ui.core :as ui]
             [respo-ui.comp.icon :refer [comp-ion comp-icon comp-android-icon comp-ios-icon]]
             [respo-md.comp.md :refer [comp-md comp-md-block]]

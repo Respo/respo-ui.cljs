@@ -1,6 +1,6 @@
 
 (ns respo-ui.comp.sidebar
-  (:require [respo.macros :refer [defcomp div <>]]
+  (:require [respo.core :refer [defcomp div <>]]
             [respo-ui.colors :as colors]
             [respo-ui.core :as ui]
             [hsl.core :refer [hsl]]

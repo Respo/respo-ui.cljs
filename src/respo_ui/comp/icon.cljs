@@ -1,7 +1,8 @@
 
 (ns respo-ui.comp.icon
-  (:require [respo.macros :refer [defcomp div input textarea button span select option a <>]]
-            [respo.core :refer [create-element]]))
+  (:require [respo.core
+             :refer
+             [create-element defcomp div input textarea button span select option a <>]]))
 
 (defn get-string [icon-name]
   (cond

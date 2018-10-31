@@ -1,6 +1,6 @@
 
 (ns respo-ui.comp.components
-  (:require [respo.macros :refer [defcomp div a <>]] [respo.comp.space :refer [=<]]))
+  (:require [respo.core :refer [defcomp div a <>]] [respo.comp.space :refer [=<]]))
 
 (defn render-entry [url title] (div {} (a {:href url, :inner-text title})))
 

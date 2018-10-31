@@ -1,6 +1,6 @@
 
 (ns respo-ui.comp.fonts-page
-  (:require [respo.macros :refer [defcomp div <>]]
+  (:require [respo.core :refer [defcomp div <>]]
             [respo-ui.core :as ui]
             [respo.comp.space :refer [=<]]
             [respo-md.comp.md :refer [comp-md-block]]))
