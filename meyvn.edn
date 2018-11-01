@@ -1,7 +1,7 @@
 
 {:pom {:group-id "respo",
        :artifact-id "ui",
-       :version "0.3.9",
+       :version "0.3.10",
        :name "Tiny collection of styles used in Respo"}
  :packaging {:jar {:enabled true
                    :remote-repository {:id "clojars"
