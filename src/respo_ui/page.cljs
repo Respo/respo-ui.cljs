@@ -13,7 +13,9 @@
 (defn dev-page []
   (make-page
    ""
-   (merge base-info {:styles ["http://localhost:8100/main.css"], :scripts ["/client.js"]})))
+   (merge
+    base-info
+    {:styles ["http://localhost:8100/main-eva.css"], :scripts ["/client.js"]})))
 
 (def page-routes
   ["/index.html"
@@ -31,7 +33,7 @@
         prefix-cdn (fn [x] (str cdn x))
         page-options (merge
                       base-info
-                      {:styles ["http://cdn.tiye.me/favored-fonts/main.css"],
+                      {:styles ["http://cdn.tiye.me/favored-fonts/main-eva.css"],
                        :scripts (map #(-> % :output-name prefix-cdn) assets),
                        :ssr nil})]
     (make-page

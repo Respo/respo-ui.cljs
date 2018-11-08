@@ -10,18 +10,8 @@
     (string? icon-name) icon-name
     :else (throw (js/Error. (str "Unknown icon: " (pr-str icon-name))))))
 
-(defcomp
- comp-android-icon
- (icon-name)
- (create-element :i {:class-name (str "ion-android-" (get-string icon-name))}))
-
 (defn comp-icon [icon-name]
-  (create-element :i {:class-name (str "ion-" (get-string icon-name))}))
+  (create-element :i {:class-name (str "eva eva-" (get-string icon-name))}))
 
 (defn comp-ion [icon-name styles]
-  (create-element :i {:class-name (str "ion-" (get-string icon-name)), :style styles}))
-
-(defcomp
- comp-ios-icon
- (icon-name)
- (create-element :i {:class-name (str "ion-ios-" (get-string icon-name))}))
+  (create-element :i {:class-name (str "eva eva-" (get-string icon-name)), :style styles}))
