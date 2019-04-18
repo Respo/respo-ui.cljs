@@ -15,7 +15,7 @@ Icons https://github.com/akveo/eva-icons
 [![Clojars Project](https://img.shields.io/clojars/v/respo/ui.svg)](https://clojars.org/respo/ui)
 
 ```clojure
-[respo/ui "0.3.10"]
+[respo/ui "0.3.11"]
 ```
 
 ```clojure
