@@ -22,11 +22,6 @@ Icons https://github.com/akveo/eva-icons
 [respo-ui.core :as ui]
 ```
 
-```clojure
-(respo-ui.comp.icon/comp-ion :home {:color :red})
-(respo-ui.comp.icon/comp-icon :flash)
-```
-
 Use `ui/button` as `:style` attributes for buttons.
 
 ### Develop
