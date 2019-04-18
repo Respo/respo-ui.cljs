@@ -8,7 +8,8 @@
             [respo-router.parser :refer [parse-address]]
             [respo-ui.router :as router]
             [cljs.reader :refer [read-string]]
-            [respo-ui.schema :as schema]))
+            [respo-ui.schema :as schema]
+            [respo-ui.config :as config]))
 
 (defonce *store
   (atom
@@ -25,7 +26,7 @@
     store))
 
 (defn dispatch! [op op-data]
-  (println "Dispatch!" op op-data)
+  (when config/dev? (println "Dispatch:" op))
   (reset! *store (updater @*store op op-data)))
 
 (def mount-target (.querySelector js/document ".app"))
@@ -37,6 +38,7 @@
 (def ssr? (some? (.querySelector js/document "meta.respo-ssr")))
 
 (defn main! []
+  (println "Running mode:" (if config/dev? "dev" "release"))
   (if ssr? (render-app! realize-ssr!))
   (render-app! render!)
   (add-watch *store :changes (fn [] (render-app! render!)))
@@ -46,5 +48,3 @@
   (println "App started!"))
 
 (defn reload! [] (clear-cache!) (render-app! render!) (println "Code updated!"))
-
-(set! js/window.onload main!)

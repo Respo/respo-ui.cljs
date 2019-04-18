@@ -6,16 +6,22 @@
             [respo-ui.schema :as schema]
             [respo-ui.router :as router]
             [respo-router.parser :refer [parse-address]]
-            [cljs.reader :refer [read-string]]))
+            [cljs.reader :refer [read-string]]
+            [respo-ui.config :as config]
+            [cumulo-util.build :refer [get-ip!]])
+  (:require-macros [clojure.core.strint :refer [<<]]))
 
-(def base-info {:title "Respo UI", :icon "http://cdn.tiye.me/logo/respo.png", :ssr nil})
+(def base-info
+  {:title (:title config/site), :icon (:icon config/site), :ssr nil, :inline-html nil})
 
 (defn dev-page []
   (make-page
    ""
    (merge
     base-info
-    {:styles ["http://localhost:8100/main-eva.css"], :scripts ["/client.js"]})))
+    {:styles [(<< "http://~(get-ip!):8100/main.css") "/entry/main.css"],
+     :scripts ["/client.js"],
+     :inline-styles []})))
 
 (def page-routes
   ["/index.html"
@@ -25,23 +31,24 @@
    "/components.html"
    "/icons.html"])
 
-(def preview? (= "preview" js/process.env.prod))
-
 (defn prod-page [path]
-  (let [assets (read-string (slurp "dist/assets.edn"))
-        cdn (if preview? "" "http://cdn.tiye.me/respo-ui/")
-        prefix-cdn (fn [x] (str cdn x))
-        page-options (merge
-                      base-info
-                      {:styles ["http://cdn.tiye.me/favored-fonts/main-eva.css"],
-                       :scripts (map #(-> % :output-name prefix-cdn) assets),
-                       :ssr nil})]
+  (let [html-content (make-string
+                      (comp-container
+                       (assoc schema/store :router (parse-address path router/dict))))
+        assets (read-string (slurp "dist/assets.edn"))
+        cdn (if config/cdn? (:cdn-url config/site) "")
+        prefix-cdn (fn [x] (str cdn x))]
     (make-page
-     (make-string
-      (comp-container (assoc schema/store :router (parse-address path router/dict))))
-     page-options)))
+     html-content
+     (merge
+      base-info
+      {:styles [(:release-ui config/site)],
+       :scripts (map #(-> % :output-name prefix-cdn) assets),
+       :ssr "respo-ssr",
+       :inline-styles [(slurp "./entry/main.css")]}))))
 
 (defn main! []
-  (if (= js/process.env.env "dev")
+  (println "Running mode:" (if config/dev? "dev" "release"))
+  (if config/dev?
     (spit "target/index.html" (dev-page))
     (doseq [path page-routes] (spit (str "dist" path) (prod-page path)))))

@@ -41,6 +41,8 @@
 (def default-fonts
   "Hind,Verdana,'Hiragino Sans GB','WenQuanYi Micro Hei','Microsoft Yahei',sans-serif")
 
+(def expand {:flex 1, :overflow :auto})
+
 (def flex {:flex 1})
 
 (def font-code "Source Code Pro, Menlo, monospace")
