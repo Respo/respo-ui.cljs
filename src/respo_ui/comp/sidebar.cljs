@@ -1,7 +1,6 @@
 
 (ns respo-ui.comp.sidebar
   (:require [respo.core :refer [defcomp div <>]]
-            [respo-ui.colors :as colors]
             [respo-ui.core :as ui]
             [hsl.core :refer [hsl]]
             [respo.comp.space :refer [=<]]))
@@ -11,7 +10,7 @@
 (defn render-entry [path title router-name]
   (div
    {:style (merge
-            {:color colors/texture,
+            {:color (hsl 0 0 20),
              :line-height "40px",
              :font-size 20,
              :cursor "pointer",
@@ -41,6 +40,5 @@
   (render-entry "index.html" "Respo UI" router-name)
   (render-entry "layouts.html" "Layouts" router-name)
   (render-entry "widgets.html" "Widgets" router-name)
-  (render-entry "icons.html" "Icons" router-name)
   (render-entry "fonts.html" "Fonts" router-name)
   (render-entry "components.html" "Components" router-name)))

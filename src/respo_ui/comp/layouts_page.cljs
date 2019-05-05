@@ -3,7 +3,6 @@
   (:require [respo.core :refer [defcomp div a <>]]
             [respo.comp.space :refer [=<]]
             [respo-ui.core :as ui]
-            [respo-ui.colors :as colors]
             [hsl.core :refer [hsl]]
             [respo-md.comp.md :refer [comp-md-block]]))
 
