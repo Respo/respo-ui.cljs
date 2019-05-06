@@ -1,5 +1,5 @@
 
-(ns respo-ui.core (:require [hsl.core :refer [hsl]] [respo-ui.colors :as colors]))
+(ns respo-ui.core (:require [hsl.core :refer [hsl]]))
 
 (def button
   {:min-width "80px",
@@ -7,8 +7,8 @@
    :border-radius "16px",
    :font-size 14,
    :text-align "center",
-   :border (str "1px solid " colors/motif),
-   :color colors/motif,
+   :border (str "1px solid " (hsl 200 100 76)),
+   :color (hsl 200 100 76),
    :cursor "pointer",
    :display "inline-block",
    :padding "0 8px",
@@ -55,7 +55,7 @@
   {:position "absolute", :left 0, :top 0, :width "100%", :height "100%", :overflow :auto})
 
 (def global
-  {:line-height 2, :font-size "14px", :font-family default-fonts, :color colors/texture})
+  {:line-height 2, :font-size "14px", :font-family default-fonts, :color (hsl 0 0 20)})
 
 (def input
   (merge
@@ -72,7 +72,7 @@
     :vertical-align :top}))
 
 (def link
-  {:color colors/motif,
+  {:color (hsl 200 100 76),
    :text-decoration :underline,
    :user-select :no-select,
    :height 24,
@@ -114,7 +114,7 @@
 (def text-label
   {:line-height "32px",
    :font-size 14,
-   :color colors/texture,
+   :color (hsl 0 0 20),
    :display :inline-block,
    :vertical-align :top})
 

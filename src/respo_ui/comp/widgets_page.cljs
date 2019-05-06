@@ -3,7 +3,7 @@
   (:require [respo.core :refer [defcomp div input textarea button span select option a <>]]
             [respo.comp.space :refer [=<]]
             [respo-ui.core :as ui]
-            [respo-ui.colors :as colors]))
+            [hsl.core :refer [hsl]]))
 
 (defcomp
  comp-widgets-page
@@ -28,13 +28,11 @@
     (div
      {}
      (button
-      {:style (merge ui/button {:border-color colors/attractive, :color colors/attractive})}
+      {:style (merge ui/button {:border-color (hsl 220 100 76), :color (hsl 220 100 76)})}
       (<> "Yes"))
      (=< 16 nil)
      (button
-      {:style (merge
-               ui/button
-               {:border-color colors/irreversible, :color colors/irreversible})}
+      {:style (merge ui/button {:border-color (hsl 6 100 60), :color (hsl 6 100 60)})}
       (<> "Yes"))
      (=< 16 nil))
     (=< nil 16)

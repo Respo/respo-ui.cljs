@@ -13,6 +13,8 @@
     (div
      {}
      (<> "There are also components follow the guidelines of Respo UI:")
+     (render-entry "https://github.com/Respo/alerts" "alerts")
+     (render-entry "https://github.com/Respo/respo-feather" "respo-feather")
      (render-entry "https://github.com/Respo/global-popup" "global-popup")
      (render-entry "https://github.com/Respo/inflow-popup" "inflow-popup")
      (render-entry "https://github.com/Respo/respo-message" "respo-message")

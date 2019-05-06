@@ -4,11 +4,9 @@
 (def dict
   {"index.html" [],
    "dev.html" [],
-   "colors.html" [],
    "fonts.html" [],
    "widgets.html" [],
    "layouts.html" [],
-   "components.html" [],
-   "icons.html" []})
+   "components.html" []})
 
 (def mode :history)
