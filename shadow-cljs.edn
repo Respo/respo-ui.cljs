@@ -3,10 +3,10 @@
  :cache-blockers #{cumulo-util.build}
  :dependencies [[mvc-works/hsl          "0.1.2"]
                 [mvc-works/shell-page   "0.1.10"]
-                [respo                  "0.10.11"]
+                [respo                  "0.11.5"]
                 [respo/router           "0.4.0"]
-                [respo/markdown         "0.2.4"]
-                [cumulo/util            "0.1.8"]
+                [respo/markdown         "0.2.5"]
+                [cumulo/util            "0.1.10"]
                 [org.clojure/core.incubator "0.1.4"]]
  :repositories {"central" {:url "https://maven.aliyun.com/nexus/content/groups/public/"}
                 "clojars" {:url "https://mirrors.ustc.edu.cn/clojars/"}}
@@ -23,8 +23,4 @@
           :page {:target :node-script
                  :output-to "target/page.js"
                  :main respo-ui.page/main!
-                 :devtools {:after-load respo-ui.page/main!}}
-          :upload {:target :node-script
-                   :output-to "target/upload.js"
-                   :main respo-ui.upload/main!
-                   :devtools {:after-load respo-ui.upload/main!}}}}
+                 :devtools {:after-load respo-ui.page/main!}}}}

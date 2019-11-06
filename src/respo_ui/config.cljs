@@ -17,9 +17,7 @@
 (def site
   {:dev-ui "http://localhost:8100/main.css",
    :release-ui "http://cdn.tiye.me/favored-fonts/main.css",
-   :cdn-url "http://cdn.tiye.me/respo-ui/",
    :cdn-folder "tiye.me:cdn/respo-ui",
    :title "Respo UI",
    :icon "http://cdn.tiye.me/logo/respo.png",
-   :storage-key "respo-ui",
-   :upload-folder "tiye.me:repo/Respo/ui/"})
+   :storage-key "respo-ui"})
