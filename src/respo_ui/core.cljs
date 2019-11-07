@@ -55,7 +55,7 @@
   {:position "absolute", :left 0, :top 0, :width "100%", :height "100%", :overflow :auto})
 
 (def global
-  {:line-height 2, :font-size "14px", :font-family default-fonts, :color (hsl 0 0 20)})
+  {:line-height "2", :font-size "14px", :font-family default-fonts, :color (hsl 0 0 20)})
 
 (def input
   (merge
