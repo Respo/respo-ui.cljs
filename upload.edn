@@ -2,5 +2,5 @@
 {:host "tiye.me"
  :uploads [{:from "dist/*"
             :to "cdn/respo-ui/"}
-           {:from "dist/{index.html,manifest.json}"
+           {:from "dist/{*.html,manifest.json}"
             :to "repo/Respo/ui/"}]}
