@@ -1,0 +1,6 @@
+{:version "0.3.14-a1"
+ :group-id "respo"
+ :artifact-id "ui"
+ :description "Tiny collection of styles used in Respo"
+ :skip-tag true
+ :scm-url "https://github.com/Respo/respo-ui"}
