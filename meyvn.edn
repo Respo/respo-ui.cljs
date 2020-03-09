@@ -1,9 +1,0 @@
-
-{:pom {:group-id "respo",
-       :artifact-id "ui",
-       :version "0.3.13",
-       :name "Tiny collection of styles used in Respo"}
- :packaging {:jar {:enabled true
-                   :remote-repository {:id "clojars"
-                                       :url "https://clojars.org/repo"}}}
- :scm {:enabled true}}

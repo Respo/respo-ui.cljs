@@ -358,7 +358,7 @@
             :data $ {}
               |T $ {} (:type :leaf) (:by |root) (:at 1516429602614) (:text |def) (:id |rJbWHxPlBz)
               |j $ {} (:type :leaf) (:by |root) (:at 1516429369300) (:text |font-code) (:id |HkfWrewlHz)
-              |r $ {} (:type :leaf) (:by |root) (:at 1516429611656) (:text "||Source Code Pro, Menlo, monospace") (:id |r1x3QbvlSG)
+              |r $ {} (:type :leaf) (:by |bjmr3HZle) (:at 1583727181875) (:text "||Source Code Pro, Menlo, Ubuntu Mono, Consolas, monospace") (:id |r1x3QbvlSG)
           |textarea $ {} (:type :expr) (:id |SJDX48t3Kij-) (:by nil) (:at 1506675837748)
             :data $ {}
               |T $ {} (:type :leaf) (:id |Bkd7VUY2Fijb) (:text |def) (:by |root) (:at 1506675837748)
