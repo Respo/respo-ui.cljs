@@ -8,7 +8,7 @@
 (defcomp
  comp-widgets-page
  (states)
- (let [state (:data states)]
+ (let [cursor (:cursor states), state (:data states)]
    (div
     {}
     (div
@@ -42,7 +42,7 @@
       {:placeholder "Some short text",
        :value state,
        :style ui/input,
-       :on {:input (fn [e dispatch! mutate!] (mutate! (:value e)))}})
+       :on {:input (fn [e dispatch!] (dispatch! cursor (:value e)))}})
      (=< 16 nil)
      (button {:style (merge ui/button)} (<> "Add"))
      (=< 16 nil)
