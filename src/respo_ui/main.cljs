@@ -1,7 +1,7 @@
 
 (ns respo-ui.main
   (:require [respo.core :refer [render! clear-cache! realize-ssr!]]
-            [respo.cursor :refer [mutate]]
+            [respo.cursor :refer [update-states]]
             [respo-ui.comp.container :refer [comp-container]]
             [respo-router.core :refer [render-url!]]
             [respo-router.listener :refer [listen!]]
@@ -21,7 +21,7 @@
 
 (defn updater [store op op-data]
   (case op
-    :states (update store :states (mutate op-data))
+    :states (update-states store op-data)
     :router/nav (assoc store :router (parse-address op-data router/dict))
     store))
 

@@ -1,7 +1,7 @@
 
 (ns respo-ui.comp.container
   (:require [hsl.core :refer [hsl]]
-            [respo.core :refer [defcomp cursor-> div span input <>]]
+            [respo.core :refer [defcomp >> div span input <>]]
             [respo.comp.space :refer [=<]]
             [respo-ui.core :as ui]
             [respo-ui.comp.sidebar :refer [comp-sidebar]]
@@ -27,8 +27,8 @@
        "home" (comp-home)
        "index.html" (comp-home)
        "dev.html" (comp-home)
-       "widgets.html" (cursor-> :widgets comp-widgets-page states)
+       "widgets.html" (comp-widgets-page (>> states :widgets))
        "layouts.html" (comp-layouts-page)
        "fonts.html" (comp-fonts-page)
-       "components.html" (cursor-> :components comp-components-page states)
+       "components.html" (comp-components-page (>> states :components))
        (<> (pr-str router)))))))
