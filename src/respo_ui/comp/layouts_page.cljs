@@ -47,4 +47,6 @@
    (render-demo "ui/row-parted" ui/row-parted)
    (render-demo "ui/column-parted" ui/column-parted)
    (render-demo "ui/row-dispersive" ui/row-dispersive)
-   (render-demo "ui/column-dispersive" ui/column-dispersive))))
+   (render-demo "ui/column-dispersive" ui/column-dispersive)
+   (render-demo "ui/row-evenly" ui/row-evenly)
+   (render-demo "ui/column-evenly" ui/column-evenly))))

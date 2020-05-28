@@ -7,7 +7,7 @@
     [respo "0.12.1"]
     [respo/router "0.4.0"]
     [respo/markdown "0.2.5"]
-    [cumulo/util "0.1.10"]
+    [cumulo/util "0.1.12"]
     [org.clojure/core.incubator "0.1.4"]
   ]
   :open-file-command [
