@@ -32,6 +32,12 @@
    :justify-content "space-around",
    :flex-direction "column"})
 
+(def column-evenly
+  {:display "flex",
+   :align-items "center",
+   :justify-content "space-evenly",
+   :flex-direction "column"})
+
 (def column-parted
   {:display :flex,
    :align-items :stretch,
@@ -91,6 +97,12 @@
    :align-items "center",
    :justify-content "space-around",
    :flex-direction "row"})
+
+(def row-evenly
+  {:display "flex",
+   :align-items "center",
+   :flex-direction "row",
+   :justify-content "space-evenly"})
 
 (def row-middle
   {:display :flex, :align-items :center, :justify-content :flex-start, :flex-direction :row})
