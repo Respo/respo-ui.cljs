@@ -20,7 +20,7 @@
    (merge
     base-info
     {:styles [(<< "http://~(get-ip!):8100/main.css") "/entry/main.css"],
-     :scripts ["/client.js"],
+     :scripts [{:src "/client.js", :defer? true}],
      :inline-styles []})))
 
 (def page-routes
@@ -38,7 +38,7 @@
      (merge
       base-info
       {:styles [(:release-ui config/site)],
-       :scripts (map #(-> % :output-name prefix-cdn) assets),
+       :scripts (map #({:src (-> % :output-name prefix-cdn), :defer? true}) assets),
        :ssr "respo-ssr",
        :inline-styles [(slurp "./entry/main.css")]}))))
 

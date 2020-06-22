@@ -20,7 +20,7 @@
   "author": "jiyinyiyong",
   "license": "MIT",
   "devDependencies": {
-    "shadow-cljs": "^2.9.10"
+    "shadow-cljs": "^2.9.12"
   },
   "dependencies": {}
 }
