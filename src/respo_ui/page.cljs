@@ -38,7 +38,7 @@
      (merge
       base-info
       {:styles [(:release-ui config/site)],
-       :scripts (map #({:src (-> % :output-name prefix-cdn), :defer? true}) assets),
+       :scripts (map (fn [x] {:src (-> x :output-name prefix-cdn), :defer? true}) assets),
        :ssr "respo-ssr",
        :inline-styles [(slurp "./entry/main.css")]}))))
 
