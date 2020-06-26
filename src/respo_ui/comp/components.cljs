@@ -2,19 +2,9 @@
 (ns respo-ui.comp.components
   (:require [respo.core :refer [defcomp >> div a <> pre code]]
             [respo.comp.space :refer [=<]]
-            [respo-ui.comp :refer [comp-tabs comp-placeholder]]
+            [respo-ui.comp :refer [comp-tabs comp-placeholder comp-snippet]]
             [respo-ui.core :as ui]
             [hsl.core :refer [hsl]]))
-
-(defcomp
- comp-snippet
- (text)
- (pre
-  {:style {:font-size 12,
-           :font-family ui/font-code,
-           :color (hsl 0 0 40),
-           :line-height "18px"}}
-  (code {:inner-text text})))
 
 (def style-title
   {:margin-top 40, :font-size 18, :font-family ui/font-fancy, :color (hsl 0 0 70)})
@@ -28,7 +18,8 @@
   (comp-placeholder "This is a demo")
   (comp-placeholder "中文 Demo")
   (comp-snippet
-   "respo-ui.comp/comp-placeholder\n\n(comp-placeholder \"demo\")\n(comp-placeholder \"中文\")")))
+   "respo-ui.comp/comp-placeholder\n\n(comp-placeholder \"demo\")\n(comp-placeholder \"中文\")"
+   {})))
 
 (defcomp
  comp-demo-tabs
@@ -59,8 +50,10 @@
      (fn [info d!]
        (println "selected" info)
        (d! cursor (assoc state :selected (:name info)))))
+    (=< nil 8)
     (comp-snippet
-     "respo-ui.comp/comp-tabs\n\n(comp-tabs\n {:selected (:selected state) :style {}}\n [{:name :book, :title \"Book\"}\n  {:name :card, :title \"Card\"}\n  {:name :pl, :title \"Programming language\"}]\n (fn [info d!]\n   (println \"selected\" info)\n   (d! cursor (assoc state :selected (:name info)))))")
+     "respo-ui.comp/comp-tabs\n\n(comp-tabs\n {:selected (:selected state) :style {}}\n [{:name :book, :title \"Book\"}\n  {:name :card, :title \"Card\"}\n  {:name :pl, :title \"Programming language\"}]\n (fn [info d!]\n   (println \"selected\" info)\n   (d! cursor (assoc state :selected (:name info)))))"
+     {})
     (comp-tabs
      {:selected (:selected state), :vertical? true, :width 200, :style {}}
      en-tabs
@@ -68,7 +61,8 @@
        (println "selected" info)
        (d! cursor (assoc state :selected (:name info)))))
     (comp-snippet
-     "respo-ui.comp/comp-tabs\n\n(comp-tabs\n {:selected (:selected state) :style {}, :vertical? true, :width 200}\n tabs (fn [info d!]))"))))
+     "respo-ui.comp/comp-tabs\n\n(comp-tabs\n {:selected (:selected state) :style {}, :vertical? true, :width 200}\n tabs (fn [info d!]))"
+     {}))))
 
 (defn render-entry [url title] (div {} (a {:href url, :inner-text title})))
 

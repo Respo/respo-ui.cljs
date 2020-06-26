@@ -3,8 +3,8 @@
   :cache-blockers #{cumulo-util.build}
   :dependencies [
     [mvc-works/hsl "0.1.2"]
-    [mvc-works/shell-page "0.1.13-a3"]
-    [respo "0.12.3-a1"]
+    [mvc-works/shell-page "0.1.13"]
+    [respo "0.12.3"]
     [respo/router "0.4.0"]
     [respo/markdown "0.2.5"]
     [cumulo/util "0.1.12"]
