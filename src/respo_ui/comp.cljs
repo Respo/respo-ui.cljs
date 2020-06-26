@@ -23,6 +23,22 @@
 (defn comp-sidebar [] )
 
 (defcomp
+ comp-snippet
+ (text styles)
+ (div
+  {:style (merge
+           {:font-family ui/font-code,
+            :white-space :pre,
+            :font-size 12,
+            :line-height "20px",
+            :color (hsl 0 0 40),
+            :padding "4px 6px",
+            :border (str "1px solid " (hsl 0 0 90)),
+            :border-radius "4px"}
+           styles)}
+  (<> text)))
+
+(defcomp
  comp-tabs
  (options tabs on-route)
  (list->
