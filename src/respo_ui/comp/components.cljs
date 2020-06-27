@@ -2,7 +2,9 @@
 (ns respo-ui.comp.components
   (:require [respo.core :refer [defcomp >> div a <> pre code]]
             [respo.comp.space :refer [=<]]
-            [respo-ui.comp :refer [comp-tabs comp-placeholder comp-snippet]]
+            [respo-ui.comp
+             :refer
+             [comp-tabs comp-placeholder comp-snippet comp-button comp-link]]
             [respo-ui.core :as ui]
             [hsl.core :refer [hsl]]))
 
@@ -10,11 +12,40 @@
   {:margin-top 40, :font-size 18, :font-family ui/font-fancy, :color (hsl 0 0 70)})
 
 (defcomp
+ comp-demo-buttons
+ ()
+ (div
+  {}
+  (div {:style style-title} (<> "Buttons demo"))
+  (div
+   {}
+   (comp-button {:text "Normal button"})
+   (comp-button
+    {:type :main,
+     :text "Main button",
+     :on-click (fn [e d!] (js/alert "Click on main button"))})
+   (comp-button {:type :cancel, :text "Cancel button"})
+   (comp-button {:disabled? true, :text "Button disabled"}))
+  (=< nil 8)
+  (comp-snippet
+   "respo-ui.comp/comp-button\n\n(comp-button {:type :normal})\n(comp-button {:type :main})\n(comp-button {:type :cancel})\n(comp-button {:disabled? true})\n\n"
+   {})))
+
+(defcomp
+ comp-demo-links
+ ()
+ (div
+  {}
+  (div {:style style-title} (<> "Links demo"))
+  (comp-link {:text "a link", :on-click (fn [e d!] (println "clicked"))})
+  (comp-snippet "respo-ui.comp/comp-link\n\n(comp-link {:text \"demo\"})\n" {})))
+
+(defcomp
  comp-demo-placeholder
  ()
  (div
-  {:style style-title}
-  (div {} (<> "Placeholder demo"))
+  {}
+  (div {:style style-title} (<> "Placeholder demo"))
   (comp-placeholder "This is a demo")
   (comp-placeholder "中文 Demo")
   (comp-snippet
@@ -90,4 +121,6 @@
        :target "_blank",
        :inner-text "Source"}))
     (comp-demo-placeholder)
-    (comp-demo-tabs (>> states :tabs)))))
+    (comp-demo-tabs (>> states :tabs))
+    (comp-demo-buttons)
+    (comp-demo-links))))

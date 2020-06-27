@@ -21,7 +21,7 @@
     {:style (merge ui/fullscreen ui/row ui/global {:padding-top 16})}
     (comp-sidebar (or (:name router) "index.html"))
     (div
-     {:style (merge ui/flex style-content)}
+     {:style (merge ui/expand style-content)}
      (case (:name router)
        nil (comp-home)
        "home" (comp-home)
