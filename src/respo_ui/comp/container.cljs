@@ -9,7 +9,8 @@
             [respo-ui.comp.widgets-page :refer [comp-widgets-page]]
             [respo-ui.comp.layouts-page :refer [comp-layouts-page]]
             [respo-ui.comp.fonts-page :refer [comp-fonts-page]]
-            [respo-ui.comp.components :refer [comp-components-page]]))
+            [respo-ui.comp.components :refer [comp-components-page]]
+            [respo-ui.comp.lay-out-page :refer [comp-lay-out-page]]))
 
 (def style-content {:padding 8})
 
@@ -29,6 +30,7 @@
        "dev.html" (comp-home)
        "widgets.html" (comp-widgets-page (>> states :widgets))
        "layouts.html" (comp-layouts-page)
+       "lay-out.html" (comp-lay-out-page)
        "fonts.html" (comp-fonts-page)
        "components.html" (comp-components-page (>> states :components))
        (<> (pr-str router)))))))

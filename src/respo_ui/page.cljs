@@ -24,7 +24,12 @@
      :inline-styles []})))
 
 (def page-routes
-  ["/index.html" "/widgets.html" "/layouts.html" "/fonts.html" "/components.html"])
+  ["/index.html"
+   "/widgets.html"
+   "/layouts.html"
+   "/lay-out.html"
+   "/fonts.html"
+   "/components.html"])
 
 (defn prod-page [path]
   (let [html-content (make-string
