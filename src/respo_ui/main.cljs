@@ -47,4 +47,9 @@
   (add-watch *store :router-changes render-router!)
   (println "App started!"))
 
-(defn reload! [] (clear-cache!) (render-app! render!) (println "Code updated!"))
+(defn ^:dev/after-load
+  reload!
+  []
+  (clear-cache!)
+  (render-app! render!)
+  (println "Code updated!"))

@@ -3,8 +3,8 @@
   :cache-blockers #{cumulo-util.build}
   :dependencies [
     [mvc-works/hsl "0.1.2"]
-    [mvc-works/shell-page "0.1.13"]
-    [respo "0.12.3"]
+    [mvc-works/shell-page "0.1.15"]
+    [respo "0.13.3"]
     [respo/router "0.4.0"]
     [respo/markdown "0.2.5"]
     [cumulo/util "0.1.12"]
@@ -21,7 +21,6 @@
       :modules {
         :client {:init-fn respo-ui.main/main!}
       }
-      :devtools {:after-load respo-ui.main/reload!}
       :release {
         :output-dir "dist/", :module-hash-names 8
         :build-options {:manifest-name "assets.edn"}
@@ -29,7 +28,6 @@
     }
     :page {
       :target :node-script, :output-to "target/page.js", :main respo-ui.page/main!
-      :devtools {:after-load respo-ui.page/main!}
     }
   }
 }
