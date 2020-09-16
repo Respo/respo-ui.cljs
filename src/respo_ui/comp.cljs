@@ -74,8 +74,6 @@
             :font-style :italic})}
   (<> text)))
 
-(defn comp-sidebar [] )
-
 (defcomp
  comp-snippet
  (text styles)

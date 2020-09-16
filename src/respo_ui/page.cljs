@@ -19,12 +19,17 @@
    ""
    (merge
     base-info
-    {:styles [(<< "http://~(get-ip!):8100/main.css") "/entry/main.css"],
+    {:styles [(<< "http://~(get-ip!):8100/main-fonts.css") "/entry/main.css"],
      :scripts [{:src "/client.js", :defer? true}],
      :inline-styles []})))
 
 (def page-routes
-  ["/index.html" "/widgets.html" "/layouts.html" "/fonts.html" "/components.html"])
+  ["/index.html"
+   "/widgets.html"
+   "/layouts.html"
+   "/lay-out.html"
+   "/fonts.html"
+   "/components.html"])
 
 (defn prod-page [path]
   (let [html-content (make-string

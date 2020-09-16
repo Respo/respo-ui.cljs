@@ -39,6 +39,7 @@
   (=< nil 16)
   (render-entry "index.html" "Respo UI" router-name)
   (render-entry "layouts.html" "Layouts" router-name)
+  (render-entry "lay-out.html" "Lay Out" router-name)
   (render-entry "widgets.html" "Widgets" router-name)
   (render-entry "fonts.html" "Fonts" router-name)
   (render-entry "components.html" "Components" router-name)))
