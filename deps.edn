@@ -1,6 +1,9 @@
 
 {
   :paths ["src"]
+  :deps {
+    mvc-works/lilac {:mvn/version "0.1.6"}
+  }
   :aliases {
     :release {
       :extra-deps {
