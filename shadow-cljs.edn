@@ -5,7 +5,7 @@
     [mvc-works/hsl "0.1.2"]
     [mvc-works/shell-page "0.1.15"]
     [mvc-works/lilac "0.1.6"]
-    [respo "0.13.4-a1"]
+    [respo "0.13.4"]
     [respo/router "0.4.0"]
     [respo/markdown "0.2.5"]
     [cumulo/util "0.1.12"]
@@ -27,8 +27,6 @@
         :build-options {:manifest-name "assets.edn"}
       }
     }
-    :page {
-      :target :node-script, :output-to "target/page.js", :main respo-ui.page/main!
-    }
+    :page {:target :node-script, :output-to "target/page.js", :main respo-ui.page/main!}
   }
 }

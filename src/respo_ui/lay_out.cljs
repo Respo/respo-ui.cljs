@@ -80,9 +80,7 @@
     :items (vector+
             (or+
              [(record+ {:type (is+ :item), :style lilac-style, :fill (any+)})
-              (record+ {:type :flex})
-              (record+ {:type :list})
-              (record+ {:type :grid})])
+              (record+ {:type (is+ :flex)})])
             {:allow-seq? true})}
    {:check-keys? true}))
 
