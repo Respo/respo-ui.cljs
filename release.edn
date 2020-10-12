@@ -1,4 +1,4 @@
-{:version "0.3.16-a2",
+{:version "0.3.16",
  :group-id "respo",
  :artifact-id "ui",
  :description "Tiny collection of styles used in Respo",

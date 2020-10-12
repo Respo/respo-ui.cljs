@@ -2,7 +2,7 @@
 {
   :paths ["src"]
   :deps {
-    mvc-works/lilac {:mvn/version "0.1.6"}
+    mvc-works/lilac {:mvn/version "0.1.7"}
   }
   :aliases {
     :release {

@@ -47,7 +47,7 @@
             (cond (vector? gap) (first gap) (number? gap) gap :else nil))
           nil)
        (contains? #{:column :column-parted :center} (:layout rule)) (=< nil (:gap rule))
-       :else {:background-color :red, :width 4, :height 4})]))
+       :else (div {:style {:background-color :red, :width 4, :height 4}}))]))
 
 (def style-no-match {:outline (str "1px solid red")})
 
